@@ -3,7 +3,7 @@
 This is the course page for an 18.S096 Special Subject in Mathematics at MIT taught in **January 2022** ([IAP](https://elo.mit.edu/iap/)) by
 Professors [Alan Edelman](https://math.mit.edu/~edelman/) and [Steven G. Johnson](https://math.mit.edu/~stevenj/).
 
-**Lectures:** MWF 11am–1pm, Jan 10–28, *virtually*.  Zoom link TBA.  3 units, *2 problem sets* due Jan 12 and Jan 26, no exams.
+**Lectures:** MWF 11am–1pm, Jan 10–28, *virtually* [via Zoom](https://mit.zoom.us/j/92847472121?pwd=K2xEZE1xUXVyY2xKZ0VyT2FMMTQrUT09).  3 units, *2 problem sets* due Jan 12 and Jan 26, no exams.
 
 **Description:**
 
