@@ -33,7 +33,7 @@ The following is a list of topics we intend to cover, and roughly the order in w
 
 * part 2: [derivatives as linear operators](https://www.dropbox.com/s/d7t8g9h19utqlcj/Fr%C3%A9chet%20Derivatives.pdf?dl=0) (handwritten notes)
 
-* video: to be posted (unfortunately missing a section of part 2).
+* [lecture video](https://mit.zoom.us/rec/share/qi7oSsGUm6wKaCQ2foToEqgIieRymEQfX462F-mhHg1YZ49TiCm_p0jQHx4VE-Ll.x4C_yE7md1junk6M?startTime=1641830229000) (unfortunately missing a section of part 2).
 
 **Further reading**: [matrixcalculus.org](http://www.matrixcalculus.org/) (linked in the slides) is a fun site to play with derivatives of matrix and vector functions.  The [Matrix Cookbook](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf) has a lot of formulas for these derivatives, but no derivations.  Some [notes on vector and matrix differentiation](https://cdn-uploads.piazza.com/paste/j779e63owl53k6/04b2cb8c2f300212d723bea822a6b856085b28e28ca9debc75a05761a436499c/6.S087_Lecture_2.pdf) were posted for 6.S087 from IAP 2021.
 
