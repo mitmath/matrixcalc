@@ -29,6 +29,14 @@ The following is a list of topics we intend to cover, and roughly the order in w
 
 ## Lecture 1 (Jan 10)
 
-* [introductory slides](https://docs.google.com/presentation/d/1RqkL3AD6hVrUNpevQ7lhQ3InGr5-quQrnhQPsjvosDU/edit?usp=sharing)
+* part 1: [introductory slides](https://docs.google.com/presentation/d/1RqkL3AD6hVrUNpevQ7lhQ3InGr5-quQrnhQPsjvosDU/edit?usp=sharing)
 
-Materials and notes for lecture 1 will be posted here.
+* part 2: [derivatives as linear operators](https://www.dropbox.com/s/d7t8g9h19utqlcj/Fr%C3%A9chet%20Derivatives.pdf?dl=0) (handwritten notes)
+
+* video: to be posted (unfortunately missing a section of part 2).
+
+Materials and notes for lecture 1.
+
+## Lecture 2 (Jan 12)
+
+* part 1: [derivatives as linear operators](https://www.dropbox.com/s/d7t8g9h19utqlcj/Fr%C3%A9chet%20Derivatives.pdf?dl=0), continued from lecture 1.
