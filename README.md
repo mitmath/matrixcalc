@@ -44,5 +44,7 @@ The following is a list of topics we intend to cover, and roughly the order in w
 * part 1: [derivatives as linear operators](https://www.dropbox.com/s/d7t8g9h19utqlcj/Fr%C3%A9chet%20Derivatives.pdf?dl=0), continued from lecture 1.
 
 * part 2: [2x2 matrix jacobians (download pdf)](https://github.com/mitmath/matrixcalc/raw/main/%F0%9F%8E%88%202x2Jacobians.jl%20%E2%80%94%20Pluto.jl.pdf)
-* [2x2 matrix jacobians (html)](https://github.com/mitmath/matrixcalc/blob/main/2x2Jacobians%20(static%20html).html)
+*         [2x2 matrix jacobians (ugly raw html but you can download)](https://github.com/mitmath/matrixcalc/raw/main/2x2Jacobians%20(static%20html).html)
+
+
 More to come.
