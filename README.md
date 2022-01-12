@@ -42,10 +42,11 @@ The following is a list of topics we intend to cover, and roughly the order in w
 ## Lecture 2 (Jan 12)
 
 * part 1: [derivatives as linear operators](https://www.dropbox.com/s/d7t8g9h19utqlcj/Fr%C3%A9chet%20Derivatives.pdf?dl=0), continued from lecture 1.
+* part 2: 2x2 Matrix Jacobians [(pdf)](https://github.com/mitmath/matrixcalc/raw/main/%F0%9F%8E%88%202x2Jacobians.jl%20%E2%80%94%20Pluto.jl.pdf)  [(html)](https://rawcdn.githack.com/mitmath/matrixcalc/ed1837dd681e3c39895241b6f9982caf9acb8058/2x2Jacobians%20(static%20html).html) [(pluto notebook source code)](https://github.com/mitmath/matrixcalc/blob/main/2x2Jacobians.jl)
 
-* part 2: [2x2 matrix jacobians (download pdf)](https://github.com/mitmath/matrixcalc/raw/main/%F0%9F%8E%88%202x2Jacobians.jl%20%E2%80%94%20Pluto.jl.pdf)
-* part 2: [2x2 matrix jacobians (ugly raw html but you can download)](https://github.com/mitmath/matrixcalc/raw/main/2x2Jacobians%20(static%20html).html)
-* part 2: [2x2 matrix jacobians (pluto notebook, but can download)](https://github.com/mitmath/matrixcalc/blob/main/2x2Jacobians.jl)
+Continued discussing Jacobian matrices (for vector-valued functions of vectors), with some example.  Sum, product, and chain rules for derivatives as linear operators.
+
+The chain rule and associativity: forward vs. reverse differentiation.
 
 
 More to come.
