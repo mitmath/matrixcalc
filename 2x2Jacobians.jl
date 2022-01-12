@@ -320,7 +320,7 @@ The relationship between θ,r to p,s:
 """
 
 # ╔═╡ b25dc0d2-c533-435d-ad43-748b94a8da22
-S, Q*Λ*Q', [r*cos(θ) r*sin(θ) ; r*sin(θ) -r*cos(θ)]
+S, simplify.(Q*Λ*Q'), [r*cos(θ) r*sin(θ) ; r*sin(θ) -r*cos(θ)]
 
 # ╔═╡ 1281cb63-afd9-419f-bb39-4807def53309
 md"""
@@ -329,7 +329,7 @@ from other classes that relate cartesian coordinates to polar coordinates in the
 """
 
 # ╔═╡ 426c7518-150c-4b3a-9fdc-1eb59c48c9cb
-Symbolics.jacobian( (Q*Λ*Q')[1:2] ,  [r,θ]), [cos(θ) -r*sin(θ); sin(θ) r*cos(θ)]
+simplify.(Symbolics.jacobian( (Q*Λ*Q')[1:2] ,  [r,θ])), [cos(θ) -r*sin(θ); sin(θ) r*cos(θ)]
 
 # ╔═╡ e312cf5c-7c05-4cf8-9d63-639cd614e564
 md"""
@@ -386,9 +386,6 @@ that is there is a tendency for the two eigenvalues to not want to be too close
 together.  (If both are equal, when n=2, the matrix is ``\alpha I``, one condition
 takes four paremeters down to 1)
 """
-
-# ╔═╡ 7dc527d9-abfd-47c9-8d8b-b9cb0abf65f7
-Pkg.status()
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
@@ -1022,9 +1019,9 @@ uuid = "4607b0f0-06f3-5cda-b6b1-a6196a1729e9"
 
 [[deps.SymbolicUtils]]
 deps = ["AbstractTrees", "Bijections", "ChainRulesCore", "Combinatorics", "ConstructionBase", "DataStructures", "DocStringExtensions", "DynamicPolynomials", "IfElse", "LabelledArrays", "LinearAlgebra", "Metatheory", "MultivariatePolynomials", "NaNMath", "Setfield", "SparseArrays", "SpecialFunctions", "StaticArrays", "TermInterface", "TimerOutputs"]
-git-tree-sha1 = "f71363d920219e26f6bfffd85d2fcefd366ec8d6"
+git-tree-sha1 = "d8a229358904e51e90a2aa4b48d7ce1f461c7dfe"
 uuid = "d1185830-fcd6-423d-90d6-eec64667417b"
-version = "0.19.0"
+version = "0.19.1"
 
 [[deps.Symbolics]]
 deps = ["ArrayInterface", "ConstructionBase", "DataStructures", "DiffRules", "Distributions", "DocStringExtensions", "DomainSets", "IfElse", "Latexify", "Libdl", "LinearAlgebra", "MacroTools", "Metatheory", "NaNMath", "RecipesBase", "Reexport", "Requires", "RuntimeGeneratedFunctions", "SciMLBase", "Setfield", "SparseArrays", "SpecialFunctions", "StaticArrays", "SymbolicUtils", "TermInterface", "TreeViews"]
@@ -1201,6 +1198,5 @@ uuid = "3f19e933-33d8-53b3-aaab-bd5110c3b7a0"
 # ╠═1b640642-920e-4ec3-80e9-9001e96e1634
 # ╠═1c59f408-9a0d-46f5-9f4e-481c5b34ccca
 # ╟─03a0fb73-a3f3-4c6f-9483-369beeac85ba
-# ╠═7dc527d9-abfd-47c9-8d8b-b9cb0abf65f7
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
