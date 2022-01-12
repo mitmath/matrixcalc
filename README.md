@@ -43,12 +43,16 @@ The following is a list of topics we intend to cover, and roughly the order in w
 
 * part 1: [derivatives as linear operators](https://www.dropbox.com/s/d7t8g9h19utqlcj/Fr%C3%A9chet%20Derivatives.pdf?dl=0), continued from lecture 1.
 * part 2: 2x2 Matrix Jacobians [(pdf)](https://github.com/mitmath/matrixcalc/raw/main/%F0%9F%8E%88%202x2Jacobians.jl%20%E2%80%94%20Pluto.jl.pdf)  [(html)](https://rawcdn.githack.com/mitmath/matrixcalc/ed1837dd681e3c39895241b6f9982caf9acb8058/2x2Jacobians%20(static%20html).html) [(pluto notebook source code)](https://github.com/mitmath/matrixcalc/blob/main/2x2Jacobians.jl)
+* pset 1: to be posted soon (due next Wed)
 
-Continued discussing Jacobian matrices (for vector-valued functions of vectors), with some example.  Sum, product, and chain rules for derivatives as linear operators.
+Continued discussing Jacobian matrices (for vector-valued functions of vectors), with some example.  Switched a streamlined "infinitesimal" notation df=f'(x)dx, where we now simply omit higher-order terms instead of writing o(δx), and f'(x) is taken to be a linear operator acting to the right on dx (≠ dx f'(x)!).  Sum, product, and chain rules for derivatives as linear operators.
 
 The chain rule and associativity: forward vs. reverse differentiation.   The chain rule leads to a product of Jacobian matrices, and while you can't rearrange this product (matrix multiplication is *not commutative*) you can change the order in which you do the multiplications from left-to-right or right-to-left (matrix multiplication is *associative*).  It turns out that this ordering can have a huge impact on the practical speed at which you can compute derivatives in large problem.  Explained why, if you have 1 (or few) *outputs*, then you want to do Jacobian products from left-to-right so that you do vector–matrix products and not matrix–matrix products: this is called **reverse-mode** differentiation (also "adjoint" differentiation, or "backpropagation" in machine learning).  Conversely, if there is only 1 (or a few) *inputs*, then you want to do the chain rule from right-to-left, calledd **forward-mode** differentiation.   Gave an example of training neural networks, where there are zillions of inputs (the "fitting" parameters of the NN) but only one output (the "loss" function measuring the error compared to training data), and this leads to reverse-mode differentiation or "backpropagation".  (Unfortunately somewhat garbled during lecture, but written notes are cleaned up.)
 
-In part 2 (last few minutes), began setting up some example problems involving matrix functions of matrices, and "vectorization" to Kronecker products.  To be continued.
+In part 2 (last few minutes), began setting up some example problems involving matrix functions of matrices, and "[vectorization](https://en.wikipedia.org/wiki/Vectorization_(mathematics))" of matrices to vectors and linear operators to [Kronecker products](https://en.wikipedia.org/wiki/Kronecker_product).  To be continued.
 
+**Further reading**: The terms "forward-mode" and "reverse-mode" differentiation are most prevalent in [automatic differentiation](https://en.wikipedia.org/wiki/Automatic_differentiation), which will will cover later in this course. You can find many, many articles online about [backpropagation](https://en.wikipedia.org/wiki/Backpropagation) in neural networks.   There are many other versions of this, e.g. in differential geometry the derivative linear operator (multiplying Jacobians and perturbations dx right-to-left) is called a [pushforward](https://en.wikipedia.org/wiki/Pushforward_(differential)), whereas multiplying a gradient row vector (covector) by a Jacobian left-to-right is called a [pullback](https://en.wikipedia.org/wiki/Pullback_(differential_geometry)).
 
-More to come.
+## Lecture 3 (Jan 14)
+
+Matrix Jacobians, continued from lecture 2.
