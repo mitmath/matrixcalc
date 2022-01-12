@@ -46,7 +46,9 @@ The following is a list of topics we intend to cover, and roughly the order in w
 
 Continued discussing Jacobian matrices (for vector-valued functions of vectors), with some example.  Sum, product, and chain rules for derivatives as linear operators.
 
-The chain rule and associativity: forward vs. reverse differentiation.
+The chain rule and associativity: forward vs. reverse differentiation.   The chain rule leads to a product of Jacobian matrices, and while you can't rearrange this product (matrix multiplication is *not commutative*) you can change the order in which you do the multiplications from left-to-right or right-to-left (matrix multiplication is *associative*).  It turns out that this ordering can have a huge impact on the practical speed at which you can compute derivatives in large problem.  Explained why, if you have 1 (or few) *outputs*, then you want to do Jacobian products from left-to-right so that you do vector–matrix products and not matrix–matrix products: this is called **reverse-mode** differentiation (also "adjoint" differentiation, or "backpropagation" in machine learning).  Conversely, if there is only 1 (or a few) *inputs*, then you want to do the chain rule from right-to-left, calledd **forward-mode** differentiation.   Gave an example of training neural networks, where there are zillions of inputs (the "fitting" parameters of the NN) but only one output (the "loss" function measuring the error compared to training data), and this leads to reverse-mode differentiation or "backpropagation".  (Unfortunately somewhat garbled during lecture, but written notes are cleaned up.)
+
+In part 2 (last few minutes), began setting up some example problems involving matrix functions of matrices, and "vectorization" to Kronecker products.  To be continued.
 
 
 More to come.
