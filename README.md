@@ -43,7 +43,7 @@ The following is a list of topics we intend to cover, and roughly the order in w
 * [video](https://mit.zoom.us/rec/share/QmAPatyA-0uih6FebzqgWb_i_6NUW-MG0vwUZwAKR46tkrXOWddBMqIThWoONEnU.EAVw3yrEBjRJYzft?startTime=1642003088000)
 * part 1: [derivatives as linear operators](https://www.dropbox.com/s/d7t8g9h19utqlcj/Fr%C3%A9chet%20Derivatives.pdf?dl=0), continued from lecture 1.
 * part 2: 2x2 Matrix Jacobians [(pdf)](https://github.com/mitmath/matrixcalc/raw/main/%F0%9F%8E%88%202x2Jacobians.jl%20%E2%80%94%20Pluto.jl.pdf)  [(html)](https://rawcdn.githack.com/mitmath/matrixcalc/ed1837dd681e3c39895241b6f9982caf9acb8058/2x2Jacobians%20(static%20html).html) [(pluto notebook source code)](https://github.com/mitmath/matrixcalc/blob/main/2x2Jacobians.jl)
-* pset 1: to be posted soon (due next Wed)
+* [pset 1](hw1.pdf) (due next Wed)
 
 Continued discussing Jacobian matrices (for vector-valued functions of vectors), with some example.  Switched a streamlined "infinitesimal" notation df=f'(x)dx, where we now simply omit higher-order terms instead of writing o(δx), and f'(x) is taken to be a linear operator acting to the right on dx (≠ dx f'(x)!).  Sum, product, and chain rules for derivatives as linear operators.
 
