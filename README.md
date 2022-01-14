@@ -59,4 +59,4 @@ In part 2 (last few minutes), began setting up some example problems involving m
 * part 1: Matrix Jacobians notebook from lecture 2 [(html)](https://rawcdn.githack.com/mitmath/matrixcalc/ed1837dd681e3c39895241b6f9982caf9acb8058/2x2Jacobians%20(static%20html).html), [(pluto notebook source code)](https://github.com/mitmath/matrixcalc/blob/main/2x2Jacobians.jl)
 * part 2: [notebook](https://nbviewer.org/github/mitmath/matrixcalc/blob/main/Finite%20difference%20checks.ipynb)
 
-Matrix Jacobians, continued from lecture 2.
+Revisiting the gradient ∇f.   Scalar functions of matrices, matrix dot products, and the trace.  Matrix Jacobians, continued from lecture 2.   Finite-difference approximation.
