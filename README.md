@@ -55,4 +55,8 @@ In part 2 (last few minutes), began setting up some example problems involving m
 
 ## Lecture 3 (Jan 14)
 
+* part 1: [slides](https://docs.google.com/presentation/d/1ov4Rl3wZ9ZbkYTDcCTHmyDiwHLYiGPYjCJjHKWWFiS4/edit?usp=sharing)
+* part 1: Matrix Jacobians notebook from lecture 2 [(html)](https://rawcdn.githack.com/mitmath/matrixcalc/ed1837dd681e3c39895241b6f9982caf9acb8058/2x2Jacobians%20(static%20html).html), [(pluto notebook source code)](https://github.com/mitmath/matrixcalc/blob/main/2x2Jacobians.jl)
+* part 2: [notebook](https://nbviewer.org/github/mitmath/matrixcalc/blob/main/Finite%20difference%20checks.ipynb)
+
 Matrix Jacobians, continued from lecture 2.
