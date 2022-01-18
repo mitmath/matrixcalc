@@ -4,9 +4,6 @@
 using Markdown
 using InteractiveUtils
 
-# ╔═╡ 1c59f408-9a0d-46f5-9f4e-481c5b34ccca
-using Pkg
-
 # ╔═╡ 2b24bf38-7398-11ec-2375-3360ec3a2b76
 using Symbolics, LinearAlgebra, PlutoUI
 
@@ -40,8 +37,8 @@ md"""
 # Symbolic Matrices
 """
 
-# ╔═╡ 6ef0b837-5a13-4b03-a2b8-583a6ae28b49
-@variables p q r s
+# ╔═╡ f3df5702-881d-41f2-9788-25cdab6863fb
+@variables p,q,r,s,θ
 
 # ╔═╡ df4b65fb-c061-4ff1-bef8-7df3b6dc8cbc
 X = [p r;q s]
@@ -72,8 +69,11 @@ md"""
 The Jacobian of the (flattened) matrix function X² symbolically
 """
 
+# ╔═╡ 2a93a2f0-a846-4c7c-91ab-7da411902022
+jac(Y,X) =  Symbolics.jacobian(vec(Y),vec(X))
+
 # ╔═╡ f4789b01-101d-47f3-9dd2-b48fa845d271
-J = Symbolics.jacobian(vec(X^2), vec(X))
+J = jac(X^2, X)
 
 # ╔═╡ b647c2d0-07b6-48ef-a3cb-c09e95da2e1f
 md"""
@@ -95,7 +95,8 @@ substitute(J,Dict(p=>1,q=>3,r=>2,s=>4)) * vec(E)
 
 # ╔═╡ fdb5bb9b-1491-48f6-aa5f-c74835b2e947
 md"""
-## Linear Transformation Jacobian
+## Linear Transformation Jacobian 
+Notice: there is no flattening; this is just matrix to matrix.
 """
 
 # ╔═╡ 82dc6ca6-b232-4721-8132-52628acf2996
@@ -107,6 +108,7 @@ linear_transformation(E)
 # ╔═╡ 2a373129-5ea1-4345-b55f-2d11c441b929
 md"""
 ## Kronecker product or ⊗ notation
+Notation that kind of lets you think "flattened" or "not flattened" at the same time
 """
 
 # ╔═╡ f7942604-85e6-4220-8473-1f0a78e1648e
@@ -120,14 +122,35 @@ md"""
 Notice all possible products with the first matrix and the second
 """
 
+# ╔═╡ f1590695-e3ef-4473-b61b-2081401ff05c
+kron([a;b],[p q;r s])
+
 # ╔═╡ ee91570e-9668-4da5-9b3d-9dc4407dad32
-kron([p r;q s],[a c;b d] )
+kron([a c;b d],[p q;r s] )
+
+# ╔═╡ 8ab37951-7f07-4d0e-bd02-b89069807062
+@variables e f g h  🍕 👽 🐼 😸
+
+# ╔═╡ 8e16e22b-8a01-4c67-8314-fec376b4d59d
+kron([a b c;d e f],[🍕 👽; 🐼 😸])
+
+# ╔═╡ d0192d30-28ca-451e-9d6b-2026fbef757a
+md"""
+It is very reasonable to express the Jacobian of the matrix square function as $(br)
+``I_2 \otimes X + X^T \otimes I_2``
+"""
 
 # ╔═╡ df8abae6-14ef-45f9-9545-a5e6ef27e56c
 begin
 	I2 = [1 0; 0 1]
 	kron(I2,X) + kron(X',I2) , J
 end
+
+# ╔═╡ 4567d87e-6234-4c46-8b9b-ad3cf7c86150
+kron([🍕 👽; 🐼 😸],I2)
+
+# ╔═╡ 1a455f8e-1b43-4037-a8fe-829c23fdb05b
+kron(I2,[🍕 👽; 🐼 😸])
 
 # ╔═╡ e0beb540-8e6b-4ed1-86ff-c9460b032b13
 kron(I2,X)
@@ -138,16 +161,19 @@ kron(X',I2)
 # ╔═╡ 35139dda-d446-4213-a13e-66a21332beae
 md"""
 ### Key Kronecker identity
-  (A ⊗ B) * vec(C) =  vec(BCA')
+  (A ⊗ B) * vec(C) =  vec(BCAᵀ)
 """
 
 # ╔═╡ 0a78fe1c-e613-48b9-8e3b-2fe162c4b238
 begin
-	A = rand(2,2)
-	B = rand(2,2)
-	C = rand(2,2)
+	A = rand(5,7)
+	B = rand(4,3)
+	C = rand(3,7)
 	kron(A,B) * vec(C) ≈ vec(B*C*A')
 end
+
+# ╔═╡ ccccb3c3-a4c8-4600-af5b-62eaff769079
+kron( rand(5,5) , rand(5,5) )
 
 # ╔═╡ 12b2e304-a25c-4dfb-882b-5d77b029438f
 md"""
@@ -176,7 +202,10 @@ md"""
 # ╔═╡ 45864dac-896a-483c-8b8a-c040fb99cebb
 md"""
 You see (I⊗X + X'⊗I) vec(dX) = vec(XdX + dX X) = vec( d(X²))  $(br)
-showing that d(X²) = (I⊗X + X'⊗I).
+showing that d(X²) = (I⊗X + X'⊗I) dX.
+
+(I feel it's okay to drop the "vec" and think of the kronecker notation
+as defining the linear operator from matrices to matrices)
 
 Do look this over. $(br)
 """
@@ -197,6 +226,9 @@ ForwardDiff.jacobian(X->X^2,M)
 #Check
 substitute(J, Dict(X.=>[1 3;2 4] ))
 
+# ╔═╡ 21030b50-6484-4d9b-a58f-5655f769e367
+ForwardDiff.jacobian(X->X^2,X)
+
 # ╔═╡ 0fe3ac0b-fa39-4210-b442-2255314b2ea2
 md"""
 # 2) The matrix cube Function
@@ -212,7 +244,10 @@ The Jacobian of the (flattened) matrix function X² symbolically
 """
 
 # ╔═╡ 9ca4d018-bfd6-4b91-8e98-a4485dae90c0
-expand.(Symbolics.jacobian(vec(X^3), vec(X)))
+expand.(jac(X^3, X))
+
+# ╔═╡ c1ec4ac7-7185-4d8e-b6b3-2652912cb3a7
+expand.(ForwardDiff.jacobian(X->X^3,X))
 
 # ╔═╡ 6d3f1227-1b9f-4dfd-9c3e-99531a45d8ad
 md"""
@@ -281,11 +316,8 @@ The four entries of X: p,q,r,s are transformed into these four entries in LU:
 # ╔═╡ 4695b82d-2f06-42e5-b446-da8a7a23046b
 [L[2,1],U[1,1],U[1,2],U[2,2]]
 
-# ╔═╡ a4aa2dde-730b-48b4-8a9d-f0ff65a0d9f3
-vec(X^2)
-
 # ╔═╡ bf000d5a-ccdb-4fbe-a13f-6277758e9c99
-Symbolics.jacobian([L[2,1],U[1,1],U[1,2],U[2,2]], vec(X))
+jac([L[2,1],U[1,1],U[1,2],U[2,2]], X)
 
 # ╔═╡ aed69d60-dfc3-421c-900f-20fe4450a64e
 md"""
@@ -300,9 +332,6 @@ md"""
 # ╔═╡ 27b84eb1-54ce-4ad2-9481-0303360ad252
 S = [p s; s -p]
 
-# ╔═╡ 63384f6f-5013-48f1-a690-34bd4c992599
-@variables θ
-
 # ╔═╡ df2247ff-8748-403f-bb31-87c97a937f3b
 md"""
 We know that the eigenvalues add to 0 (from the trace) and the eigenvectors are orthogonal (from being symmetric), so we can represent the eigenvectors and eigenvalues:
@@ -311,8 +340,20 @@ We know that the eigenvalues add to 0 (from the trace) and the eigenvectors are 
 # ╔═╡ 52cf1b9f-6536-451a-9bec-e7a049773d97
 Q = [cos(θ/2) -sin(θ/2); sin(θ/2) cos(θ/2)]  # Eigenvector matrix
 
+# ╔═╡ 00ad9b68-54da-4a47-a149-9505e25afee1
+simplify.( Q*[r 0 ; 0 -r]*Q' )
+
 # ╔═╡ bce0919f-5951-4f52-96ee-a71fa49c5228
 Λ = [r 0;0 -r] # Eigenvalue matrix
+
+# ╔═╡ f14811a4-8e89-4613-b543-e5b85ebd6389
+Q
+
+# ╔═╡ e804c01e-d83b-41a4-94ae-8c515b985b1f
+Λ
+
+# ╔═╡ 407e8403-6d9f-442c-985a-04e578c3ed0d
+Symbolics.simplify.(Q * Λ * Q')
 
 # ╔═╡ c5022a6a-8991-42c0-95b2-fbe0ef1f5773
 md"""
@@ -322,6 +363,9 @@ The relationship between θ,r to p,s:
 # ╔═╡ b25dc0d2-c533-435d-ad43-748b94a8da22
 S, simplify.(Q*Λ*Q'), [r*cos(θ) r*sin(θ) ; r*sin(θ) -r*cos(θ)]
 
+# ╔═╡ 58de51b7-6ae3-4fc0-98b5-5e9eba8a0876
+simplify.(jac( (Q*Λ*Q')[1:2] ,  [r,θ]))
+
 # ╔═╡ 1281cb63-afd9-419f-bb39-4807def53309
 md"""
 Interesting mathematical observation: these are the formulas you may remember
@@ -329,7 +373,7 @@ from other classes that relate cartesian coordinates to polar coordinates in the
 """
 
 # ╔═╡ 426c7518-150c-4b3a-9fdc-1eb59c48c9cb
-simplify.(Symbolics.jacobian( (Q*Λ*Q')[1:2] ,  [r,θ])), [cos(θ) -r*sin(θ); sin(θ) r*cos(θ)]
+jacobian_det = simplify(det(simplify.(jac( (Q*Λ*Q')[1:2] ,  [r,θ]))))
 
 # ╔═╡ e312cf5c-7c05-4cf8-9d63-639cd614e564
 md"""
@@ -375,7 +419,7 @@ let
 	Q = [cos(θ) -sin(θ); sin(θ) cos(θ)]
 	S = Q*[λ₁ 0;0 λ₂]*Q'
 	[p s;s r], S
-	J = Symbolics.jacobian([S[1,1],S[2,2],S[1,2]] , [λ₁,λ₂,θ])
+	J = jac([S[1,1],S[2,2],S[1,2]] , [λ₁,λ₂,θ])
 end
 
 # ╔═╡ 03a0fb73-a3f3-4c6f-9483-369beeac85ba
@@ -384,7 +428,7 @@ The determinant of this transformation simplifies to ``\lambda_1 - \lambda_2``
 which some people interpret as a kind of repulsion between the two eigenvalues:
 that is there is a tendency for the two eigenvalues to not want to be too close
 together.  (If both are equal, when n=2, the matrix is ``\alpha I``, one condition
-takes four paremeters down to 1)
+takes three parameters down to 1)
 """
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
@@ -392,7 +436,6 @@ PLUTO_PROJECT_TOML_CONTENTS = """
 [deps]
 ForwardDiff = "f6369f11-7733-5829-9624-2563aa707210"
 LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
-Pkg = "44cfe95a-1eb2-52ea-b672-e2afdf69b78f"
 PlutoUI = "7f904dfe-b85e-4ff6-b463-dae2292396a8"
 Symbolics = "0c5d862f-8b57-4792-8d23-62f2024744c7"
 
@@ -436,9 +479,9 @@ uuid = "0dad84c5-d112-42e6-8d28-ef12dabb789f"
 
 [[deps.ArrayInterface]]
 deps = ["Compat", "IfElse", "LinearAlgebra", "Requires", "SparseArrays", "Static"]
-git-tree-sha1 = "d0d82f1c0b651173a4f839d84f662d03f3417740"
+git-tree-sha1 = "ffc6588e17bcfcaa79dfa5b4f417025e755f83fc"
 uuid = "4fba245c-0d91-5ea0-9b3e-6abc04ee57a9"
-version = "4.0.0"
+version = "4.0.1"
 
 [[deps.Artifacts]]
 uuid = "56f22d72-fd6d-98f1-02f0-08ddc0907c33"
@@ -450,9 +493,9 @@ version = "0.2.0"
 
 [[deps.BangBang]]
 deps = ["Compat", "ConstructionBase", "Future", "InitialValues", "LinearAlgebra", "Requires", "Setfield", "Tables", "ZygoteRules"]
-git-tree-sha1 = "95831c49cf801756a922e50641361e3b4476a782"
+git-tree-sha1 = "a33794b483965bf49deaeec110378640609062b1"
 uuid = "198e06fe-97b7-11e9-32a5-e1d131e6ad66"
-version = "0.3.33"
+version = "0.3.34"
 
 [[deps.Base64]]
 uuid = "2a0f44e3-6c83-55bd-87e4-b1978d98bd5f"
@@ -580,9 +623,9 @@ uuid = "8ba89e20-285c-5b6f-9357-94700520ee1b"
 
 [[deps.Distributions]]
 deps = ["ChainRulesCore", "DensityInterface", "FillArrays", "LinearAlgebra", "PDMats", "Printf", "QuadGK", "Random", "SparseArrays", "SpecialFunctions", "Statistics", "StatsBase", "StatsFuns", "Test"]
-git-tree-sha1 = "6a8dc9f82e5ce28279b6e3e2cea9421154f5bd0d"
+git-tree-sha1 = "97e9e9d0b8303bae296f3bdd1c2b0065dcb7e7ef"
 uuid = "31c24e10-a181-5473-b8eb-7969acd0382f"
-version = "0.25.37"
+version = "0.25.38"
 
 [[deps.DocStringExtensions]]
 deps = ["LibGit2"]
@@ -607,9 +650,10 @@ uuid = "7c1d4256-1411-5781-91ec-d7bc3513ac07"
 version = "0.4.1"
 
 [[deps.EllipsisNotation]]
-git-tree-sha1 = "18ee049accec8763be17a933737c1dd0fdf8673a"
+deps = ["ArrayInterface"]
+git-tree-sha1 = "d7ab55febfd0907b285fbf8dc0c73c0825d9d6aa"
 uuid = "da5c29d0-fa7d-589e-88eb-ea29b0a81949"
-version = "1.0.0"
+version = "1.3.0"
 
 [[deps.ExprTools]]
 git-tree-sha1 = "24565044e60bc48a7562e75bcf14f084901dc0b6"
@@ -667,9 +711,9 @@ uuid = "615f187c-cbe4-4ef1-ba3b-2fcf58d6d173"
 version = "0.1.1"
 
 [[deps.InitialValues]]
-git-tree-sha1 = "40c555f961d7ccf86d8ccd150b9eef379cbfa0a3"
+git-tree-sha1 = "4da0f88e9a39111c2fa3add390ab15f3a44f3ca3"
 uuid = "22cec73e-a1b8-11e9-2c92-598750a2cf9c"
-version = "0.3.0"
+version = "0.3.1"
 
 [[deps.InteractiveUtils]]
 deps = ["Markdown"]
@@ -699,9 +743,9 @@ version = "1.0.0"
 
 [[deps.JLLWrappers]]
 deps = ["Preferences"]
-git-tree-sha1 = "642a199af8b68253517b80bd3bfd17eb4e84df6e"
+git-tree-sha1 = "22df5b96feef82434b07327e2d3c770a9b21e023"
 uuid = "692b3bcd-3c85-4b1f-b108-f13ce0eb3210"
-version = "1.3.0"
+version = "1.4.0"
 
 [[deps.JSON]]
 deps = ["Dates", "Mmap", "Parsers", "Unicode"]
@@ -779,10 +823,10 @@ uuid = "e9d8d322-4543-424a-9be4-0cc815abe26c"
 version = "1.3.3"
 
 [[deps.MicroCollections]]
-deps = ["BangBang", "Setfield"]
-git-tree-sha1 = "4f65bdbbe93475f6ff9ea6969b21532f88d359be"
+deps = ["BangBang", "InitialValues", "Setfield"]
+git-tree-sha1 = "6bb7786e4f24d44b4e29df03c69add1b63d88f01"
 uuid = "128add7d-3638-4c79-886c-908ea0c25c34"
-version = "0.1.1"
+version = "0.1.2"
 
 [[deps.Missings]]
 deps = ["DataAPI"]
@@ -849,9 +893,9 @@ version = "0.12.3"
 
 [[deps.Parsers]]
 deps = ["Dates"]
-git-tree-sha1 = "d7fa6237da8004be601e19bd6666083056649918"
+git-tree-sha1 = "92f91ba9e5941fc781fecf5494ac1da87bdac775"
 uuid = "69de0a69-1ddd-5017-9359-2bf0b02dc9f0"
-version = "2.1.3"
+version = "2.2.0"
 
 [[deps.Pkg]]
 deps = ["Artifacts", "Dates", "Downloads", "LibGit2", "Libdl", "Logging", "Markdown", "Printf", "REPL", "Random", "SHA", "Serialization", "TOML", "Tar", "UUIDs", "p7zip_jll"]
@@ -859,9 +903,9 @@ uuid = "44cfe95a-1eb2-52ea-b672-e2afdf69b78f"
 
 [[deps.PlutoUI]]
 deps = ["AbstractPlutoDingetjes", "Base64", "ColorTypes", "Dates", "Hyperscript", "HypertextLiteral", "IOCapture", "InteractiveUtils", "JSON", "Logging", "Markdown", "Random", "Reexport", "UUIDs"]
-git-tree-sha1 = "7711172ace7c40dc8449b7aed9d2d6f1cf56a5bd"
+git-tree-sha1 = "5c0eb9099596090bb3215260ceca687b888a1575"
 uuid = "7f904dfe-b85e-4ff6-b463-dae2292396a8"
-version = "0.7.29"
+version = "0.7.30"
 
 [[deps.Preferences]]
 deps = ["TOML"]
@@ -1019,9 +1063,9 @@ uuid = "4607b0f0-06f3-5cda-b6b1-a6196a1729e9"
 
 [[deps.SymbolicUtils]]
 deps = ["AbstractTrees", "Bijections", "ChainRulesCore", "Combinatorics", "ConstructionBase", "DataStructures", "DocStringExtensions", "DynamicPolynomials", "IfElse", "LabelledArrays", "LinearAlgebra", "Metatheory", "MultivariatePolynomials", "NaNMath", "Setfield", "SparseArrays", "SpecialFunctions", "StaticArrays", "TermInterface", "TimerOutputs"]
-git-tree-sha1 = "d8a229358904e51e90a2aa4b48d7ce1f461c7dfe"
+git-tree-sha1 = "3f8f28a4d36f224bb3f79ddc5b675b78cec2e16b"
 uuid = "d1185830-fcd6-423d-90d6-eec64667417b"
-version = "0.19.1"
+version = "0.19.2"
 
 [[deps.Symbolics]]
 deps = ["ArrayInterface", "ConstructionBase", "DataStructures", "DiffRules", "Distributions", "DocStringExtensions", "DomainSets", "IfElse", "Latexify", "Libdl", "LinearAlgebra", "MacroTools", "Metatheory", "NaNMath", "RecipesBase", "Reexport", "Requires", "RuntimeGeneratedFunctions", "SciMLBase", "Setfield", "SparseArrays", "SpecialFunctions", "StaticArrays", "SymbolicUtils", "TermInterface", "TreeViews"]
@@ -1123,32 +1167,41 @@ uuid = "3f19e933-33d8-53b3-aaab-bd5110c3b7a0"
 # ╠═2b24bf38-7398-11ec-2375-3360ec3a2b76
 # ╠═473e7843-2c5c-4602-b0d2-022edc5cb317
 # ╟─15626238-97a6-4a9b-8e62-694c75255e18
-# ╠═6ef0b837-5a13-4b03-a2b8-583a6ae28b49
+# ╠═f3df5702-881d-41f2-9788-25cdab6863fb
+# ╠═00ad9b68-54da-4a47-a149-9505e25afee1
 # ╠═df4b65fb-c061-4ff1-bef8-7df3b6dc8cbc
 # ╟─d3682699-c9f3-43d0-a0e6-42500a36a0fe
 # ╠═a052db18-1aef-4bd2-8f4a-64ee9fe0d93a
-# ╠═22b9fb13-bbb8-4b41-adde-a70969f4b176
+# ╟─22b9fb13-bbb8-4b41-adde-a70969f4b176
 # ╠═c8eb1613-1be3-4334-a025-e102d8a0b45a
 # ╠═ade5eaaf-0b53-4230-9264-6c0c7faa3486
 # ╟─2e886e5d-b23d-4d72-a14f-c069c6ce416b
+# ╠═2a93a2f0-a846-4c7c-91ab-7da411902022
 # ╠═f4789b01-101d-47f3-9dd2-b48fa845d271
 # ╟─b647c2d0-07b6-48ef-a3cb-c09e95da2e1f
 # ╠═2507be58-29b5-4b65-b093-c1ba5b1161f3
 # ╠═f5d34fa1-f673-440d-a6f2-1c978ba77230
 # ╠═8d66e0f8-c739-44cf-a280-f03945098eb9
-# ╠═fdb5bb9b-1491-48f6-aa5f-c74835b2e947
+# ╟─fdb5bb9b-1491-48f6-aa5f-c74835b2e947
 # ╠═82dc6ca6-b232-4721-8132-52628acf2996
 # ╠═b217a000-8fbd-4497-a7cb-5172378442bc
 # ╟─2a373129-5ea1-4345-b55f-2d11c441b929
 # ╠═f7942604-85e6-4220-8473-1f0a78e1648e
 # ╠═d8b6487f-9349-4bc8-a121-6b908ce03b3b
 # ╟─400adebe-26cd-4174-a797-f64d6bc24aa3
+# ╠═f1590695-e3ef-4473-b61b-2081401ff05c
 # ╠═ee91570e-9668-4da5-9b3d-9dc4407dad32
+# ╠═8ab37951-7f07-4d0e-bd02-b89069807062
+# ╠═8e16e22b-8a01-4c67-8314-fec376b4d59d
+# ╠═4567d87e-6234-4c46-8b9b-ad3cf7c86150
+# ╠═1a455f8e-1b43-4037-a8fe-829c23fdb05b
 # ╠═e0beb540-8e6b-4ed1-86ff-c9460b032b13
 # ╠═056e4b31-b070-492b-9165-3f2a79693184
+# ╟─d0192d30-28ca-451e-9d6b-2026fbef757a
 # ╠═df8abae6-14ef-45f9-9545-a5e6ef27e56c
 # ╟─35139dda-d446-4213-a13e-66a21332beae
 # ╠═0a78fe1c-e613-48b9-8e3b-2fe162c4b238
+# ╠═ccccb3c3-a4c8-4600-af5b-62eaff769079
 # ╟─12b2e304-a25c-4dfb-882b-5d77b029438f
 # ╟─3173f5ad-88bb-48dc-b247-e3f33fbd6f56
 # ╟─45864dac-896a-483c-8b8a-c040fb99cebb
@@ -1157,10 +1210,12 @@ uuid = "3f19e933-33d8-53b3-aaab-bd5110c3b7a0"
 # ╠═4b10b0a3-f47b-493a-a47f-2e30c24847a2
 # ╠═e9186f6d-485e-446e-b412-1f3de9a9473f
 # ╠═70fa3888-4fd8-4dae-993f-e9defd565d19
+# ╠═21030b50-6484-4d9b-a58f-5655f769e367
 # ╟─0fe3ac0b-fa39-4210-b442-2255314b2ea2
 # ╠═5f86f7b0-5165-496a-8951-8306825efb5c
 # ╟─5fe9ab2a-9988-4773-bb8d-c2182eafd0d6
 # ╠═9ca4d018-bfd6-4b91-8e98-a4485dae90c0
+# ╠═c1ec4ac7-7185-4d8e-b6b3-2652912cb3a7
 # ╟─6d3f1227-1b9f-4dfd-9c3e-99531a45d8ad
 # ╟─0f5bc339-d325-4ab4-be75-93f3d7aba92a
 # ╟─00514808-b660-4ccb-b3f6-4bfadbde6db0
@@ -1177,26 +1232,27 @@ uuid = "3f19e933-33d8-53b3-aaab-bd5110c3b7a0"
 # ╠═c621d2fc-9808-4035-9674-21d984043b8e
 # ╟─e322f5a8-93b4-4d6e-ab93-c98d56cf853e
 # ╠═4695b82d-2f06-42e5-b446-da8a7a23046b
-# ╠═a4aa2dde-730b-48b4-8a9d-f0ff65a0d9f3
 # ╠═bf000d5a-ccdb-4fbe-a13f-6277758e9c99
 # ╠═aed69d60-dfc3-421c-900f-20fe4450a64e
 # ╟─261c7aef-0fad-4e38-ab5d-3a28eda8061a
 # ╠═27b84eb1-54ce-4ad2-9481-0303360ad252
-# ╠═63384f6f-5013-48f1-a690-34bd4c992599
 # ╟─df2247ff-8748-403f-bb31-87c97a937f3b
 # ╠═52cf1b9f-6536-451a-9bec-e7a049773d97
 # ╠═bce0919f-5951-4f52-96ee-a71fa49c5228
-# ╠═c5022a6a-8991-42c0-95b2-fbe0ef1f5773
+# ╠═f14811a4-8e89-4613-b543-e5b85ebd6389
+# ╠═e804c01e-d83b-41a4-94ae-8c515b985b1f
+# ╠═407e8403-6d9f-442c-985a-04e578c3ed0d
+# ╟─c5022a6a-8991-42c0-95b2-fbe0ef1f5773
 # ╠═b25dc0d2-c533-435d-ad43-748b94a8da22
+# ╠═58de51b7-6ae3-4fc0-98b5-5e9eba8a0876
 # ╟─1281cb63-afd9-419f-bb39-4807def53309
 # ╠═426c7518-150c-4b3a-9fdc-1eb59c48c9cb
 # ╟─e312cf5c-7c05-4cf8-9d63-639cd614e564
 # ╟─a67c807d-2d65-43fa-944a-7a8e6df031b9
 # ╠═ad3b7548-8822-4304-a24d-d3e49e79a09f
-# ╠═1f67e9f6-23ce-43ae-9280-84a5747fa577
+# ╟─1f67e9f6-23ce-43ae-9280-84a5747fa577
 # ╟─1b9912e2-3d35-43a6-9d52-6aef7c780873
 # ╠═1b640642-920e-4ec3-80e9-9001e96e1634
-# ╠═1c59f408-9a0d-46f5-9f4e-481c5b34ccca
 # ╟─03a0fb73-a3f3-4c6f-9483-369beeac85ba
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
