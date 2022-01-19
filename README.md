@@ -66,4 +66,13 @@ Revisiting the gradient ∇f.   Scalar functions of matrices, matrix dot product
 
 ## Lecture 4 (Jan 19)
 
-Coming soon…
+* part 1: derivative of matrix determinant and inverse [(html)](https://rawcdn.githack.com/mitmath/matrixcalc/c97512521a9ff63802454ee258f1759c45f7d8b6/determinant_and_inverse.html) [(julia source)](determinant_and_inverse.jl)
+* part 2: nonlinear root-finding, optimization, and adjoint-method [slides](https://docs.google.com/presentation/d/1U1lB5bhscjbxEuH5FcFwMl5xbHl0qIEkMf5rm0MO8uE/edit?usp=sharing)
+* [video](https://mit.zoom.us/rec/share/Fp41z7ftWiSyn8oFR12pb4Xgyf5hEghj6paskaE_MUVPo5id-ZFRJeQqlqMRE-My.ZT8OEUhWsmpBc_U5?startTime=1642607958000) (missing lecture part 2, sorry!)
+* pset 1 solutions: coming soon
+* pset 2 (due next Wed): coming soon
+
+**Further reading (part 1)**: There are lots of discussions of the
+[derivative of a determinant](https://en.wikipedia.org/wiki/Jacobi%27s_formula) online, involving the ["adjugate" matrix](https://en.wikipedia.org/wiki/Adjugate_matrix) det(A)A⁻¹.  The formula for the [derivative of log(det A)](https://statisticaloddsandends.wordpress.com/2018/05/24/derivative-of-log-det-x/), and logs of determinants appear in surprisingly many applications (from statistics to quantum field theory).  The [Matrix Cookbook](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf) contains many of these formulas, but no derivations.
+
+**Further reading (part 2)**:  SGJ gave another [overview of optimization](notes/optimization.pdf) in 18.335 ([video](https://mit.zoom.us/rec/share/QwT0OMMFfkgi9dD0Zoa_3UK-14LbQR8GFcd7Q-O9PqIJTbbULGYqX3isDkLa1kOw.CNhZ0KukrqW2kxeT?startTime=1619031558000)).  There are many textbooks on [nonlinear optimization](http://www.athenasc.com/nonlinbook.html) algorithms of various sorts, including specialized books on [convex optimization](http://web.stanford.edu/~boyd/cvxbook/), [derivative-free optimization](http://bookstore.siam.org/mp08/), etcetera.  A useful review of topology-optimization methods can be found in [Sigmund and Maute (2013)](https://link.springer.com/article/10.1007/s00158-013-0978-6).  See the [notes on adjoint methods](notes/adjoint/adjoint.pdf) and [slides](notes/adjoint/adjoint-intro.pdf) from 18.335 ([video](https://mit.zoom.us/rec/share/xLxMyhBSoIhSFxce5lHb1ubItby5BKFs6mgJJ7kMmjotETmaYm4YA22TA8w8n13i.6sTEFrkkloG7LFeR?startTime=1619463273000)).
