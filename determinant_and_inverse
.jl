@@ -64,7 +64,10 @@ md"""
 """
 
 # ╔═╡ cd0836e7-ad52-433e-81f4-b2cdeb3a0da6
-A = rand(5,5); dA = rand(5,5) * .00001
+begin
+  n  = 9
+  A = rand(n,n); dA = rand(n,n) * .00001
+end
 
 # ╔═╡ 2cd45d14-9158-422a-9c77-a171c9a1ac5e
 det(A+dA) - det(A),  tr(  adj(A) * dA )
@@ -78,7 +81,7 @@ md"""
 ForwardDiff.gradient(A->det(A), A)
 
 # ╔═╡ 01398311-2790-475b-adc0-572d27f96e29
-adj(A')
+cofactor(A)
 
 # ╔═╡ 7bf51e17-106e-412a-b909-81161ed0a2a8
 md"""
@@ -110,7 +113,7 @@ md"""
 A direct proof where you just differentiate the scalar with respect to every input
 can be obtained as a simple consequence from the cofactor expansion a.k.a. the [Laplace expansion](https://en.wikipedia.org/wiki/Laplace_expansion) of the determinant based on the ``i``th row. 
 
-``\det(A) = A_{i1} C_{i1} + A_{i2}C_{i2} + \ldots A_{in}C_{in}``
+``\det(A) = A_{i1} C_{i1} + A_{i2}C_{i2} + \ldots + A_{in}C_{in}``
 
 Recall that the determinant is a linear (affine) function of any element with slope equal to the cofactor.
 
@@ -125,7 +128,7 @@ $(br) **Example:**
 
 # ╔═╡ c38aed11-89d6-44fd-8489-850e6a37777a
 begin
-i,j = 3,3
+i,j = 2,1
 Z= [Num(4) 1 5; 3 4 5 ; 6 7 8]
 Z[i,j] = a
 Z
@@ -142,19 +145,23 @@ md"""
 # Fancy Proof
 Figure out linearization near the identity I $(br)
 
-det(I+dA) = trace(dA)  (think of the n! terms in the determinant and drop higher terms) $(br)
+det(I+dA)- 1 = trace(dA)  (think of the n! terms in the determinant and drop higher terms) $(br)
 """
 
 # ╔═╡ 8be99015-e89a-4f6f-8472-7f304e681318
 md"""
-``\det(A+ A(A^{-1}dA)) = \det(A)\det(I+A^{-1}dA) = 
-\det(A) \text{tr}( A^{-1}dA) =
+``\det(A+ A(A^{-1}dA)) - \det(A) = \det(A)\det(I+A^{-1}dA) -\det(A) = ``  
+``\det(A) \text{tr}( A^{-1}dA) =
 \text{tr}(\det(A) A^{-1}dA)``
 """
 
 # ╔═╡ a54041d7-0107-4710-bf0d-d138abbf74c3
 md"""
-## Application to derivative of the characteristic polynomial
+## Application to derivative of the characteristic polynomial evaluated at x
+
+p(x) = Det(xI-A),  a scalar function of x
+
+Recall that p(x) can be written in terms of the eigenvalues λᵢ:
 
 
 """
@@ -165,6 +172,7 @@ md"""
 
 ``\frac{d}{dx} \prod_i (x-\lambda_i) \ = \ \sum_i \prod_{j\ne i} (x-\lambda _j) =
  \prod_i (x-\lambda_i)   \left\{ \sum_i (x-\lambda_i)^{-1} \right\}``
+(as long as x≠λᵢ)
 
 $(br)
 Perfectly good simple proof, but if you want to show off...
@@ -177,7 +185,7 @@ md"""
 ``d(\det (xI-A))= \det(xI-A) \text{tr}( (xI-A)^{-1} d(xI-A)  )  ``$(br)
 ``  \hspace{1.2in}=  \det(xI-A) \text{tr}(xI-A)^{-1} dx``
 
-Note: ``d(xI-A)=dxI`` when ``M`` is constant and  $(br) ``\text{tr}(Mdx) = \text{tr}(M)dx`` since ``dx`` is a scalar.
+Note: ``d(xI-A)=dxI`` when ``A`` is constant and  $(br) ``\text{tr}(Adx) = \text{tr}(A)dx`` since ``dx`` is a scalar.
 """
 
 # ╔═╡ 5e1905cd-2687-401e-b913-cff5626707cc
@@ -196,7 +204,8 @@ end
 md"""
 ## Application d(log(det(A)))
 
-``d(\log(\det(A))) = \det(A^{-1}) d(\det(A)) = \text{tr}( A^{-1} ) dA``  $(br)
+``d(\log(\det(A))) = \frac{d(\det(A))}{\det A} =  \det(A^{-1}) d(\det(A)) =
+\text{tr}( A^{-1} dA) ``  $(br)
 
 The logarithmic derivative shows up a lot in applied mathematics. For example the  key term in Newton's method: ``f(x)/f'(x)`` may be written ``1/ \left\{ \log f(x) \right\}'``
 """
@@ -209,10 +218,13 @@ md"""
 """
 
 # ╔═╡ b56a6bf8-fa04-487d-8a62-d8bb28f1ec04
-let
-	A = rand(3,3)
-	ForwardDiff.jacobian(A->inv(A),A) ≈-kron(inv(A'),inv(A))
+begin
+	C = rand(4,4)
+	ForwardDiff.jacobian(A->inv(A),C)   
 end
+
+# ╔═╡ 1ba06d45-df23-4776-a154-65f8206a9a71
+-kron(inv(C'),inv(C)) 
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
@@ -997,7 +1009,7 @@ uuid = "3f19e933-33d8-53b3-aaab-bd5110c3b7a0"
 # ╠═c30eec99-ea46-4e48-bd51-fb27b1cb516e
 # ╠═01398311-2790-475b-adc0-572d27f96e29
 # ╟─7bf51e17-106e-412a-b909-81161ed0a2a8
-# ╠═7fc6d585-177d-46f7-9fcd-ec9e74d88ef7
+# ╟─7fc6d585-177d-46f7-9fcd-ec9e74d88ef7
 # ╠═2235f273-b10f-4bd2-a1f6-24a6d56a7b14
 # ╟─a49b7161-7015-416f-a8df-a393341ecd9e
 # ╠═dafd2a0f-c416-48de-b176-eb54c8395d1a
@@ -1016,5 +1028,6 @@ uuid = "3f19e933-33d8-53b3-aaab-bd5110c3b7a0"
 # ╟─b2777d02-9918-4721-84bb-33015a2c21a9
 # ╟─d610e914-6940-4a3f-83c2-fb426346dc23
 # ╠═b56a6bf8-fa04-487d-8a62-d8bb28f1ec04
+# ╠═1ba06d45-df23-4776-a154-65f8206a9a71
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
