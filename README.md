@@ -66,4 +66,9 @@ Revisiting the gradient ∇f.   Scalar functions of matrices, matrix dot product
 
 ## Lecture 4 (Jan 19)
 
-Coming soon…
+* part 1: derivative of matrix determinant and inverse [(html)](https://rawcdn.githack.com/mitmath/matrixcalc/c97512521a9ff63802454ee258f1759c45f7d8b6/determinant_and_inverse.html) [(julia source)](determinant_and_inverse.jl)
+* part 2: nonlinear root-finding and optimization [slides](https://docs.google.com/presentation/d/1U1lB5bhscjbxEuH5FcFwMl5xbHl0qIEkMf5rm0MO8uE/edit?usp=sharing)
+* part 3: the "adjoint method" of differentiation: handwritten notes (to be posted)
+* video: coming soon
+* pset 1 solutions: coming soon
+* pset 2: coming soon
