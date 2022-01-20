@@ -70,10 +70,10 @@ Revisiting the gradient ∇f.   Scalar functions of matrices, matrix dot product
 * part 2: nonlinear root-finding, optimization, and adjoint-method [slides](https://docs.google.com/presentation/d/1U1lB5bhscjbxEuH5FcFwMl5xbHl0qIEkMf5rm0MO8uE/edit?usp=sharing)
 * [video](https://mit.zoom.us/rec/share/Fp41z7ftWiSyn8oFR12pb4Xgyf5hEghj6paskaE_MUVPo5id-ZFRJeQqlqMRE-My.ZT8OEUhWsmpBc_U5?startTime=1642607958000) (missing lecture part 2, sorry!)
 * [pset 1 solutions](hw1sol.pdf) and computational [notebook](https://nbviewer.org/github/mitmath/matrixcalc/blob/main/hw1sol.ipynb)
-* pset 2 (due next Wed): coming soon
+* [pset 2](hw2.pdf) (due Wed Jan 26)
 
 **Further reading (part 1)**: There are lots of discussions of the
-[derivative of a determinant](https://en.wikipedia.org/wiki/Jacobi%27s_formula) online, involving the ["adjugate" matrix](https://en.wikipedia.org/wiki/Adjugate_matrix) det(A)A⁻¹. 
+[derivative of a determinant](https://en.wikipedia.org/wiki/Jacobi%27s_formula) online, involving the ["adjugate" matrix](https://en.wikipedia.org/wiki/Adjugate_matrix) det(A)A⁻¹.
 Not as well documented is that the gradient of the determinant is the cofactor matrix widely used for the [Laplace expansion](https://en.wikipedia.org/wiki/Laplace_expansion) of a determinant.
 The formula for the [derivative of log(det A)](https://statisticaloddsandends.wordpress.com/2018/05/24/derivative-of-log-det-x/) is also nice, and logs of determinants appear in surprisingly many applications (from statistics to quantum field theory).  The [Matrix Cookbook](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf) contains many of these formulas, but no derivations.   A nice application of d(det(A)) is solving for eigenvalues λ by applying Newton's method to det(A-λI)=0, and more generally one can solve det(M(λ))=0 for any function Μ(λ) — the resulting roots λ are called [nonlinear eigenvalues](https://en.wikipedia.org/wiki/Nonlinear_eigenproblem) (if M is nonlinear in λ), and one can [apply Newton's method](https://www.maths.manchester.ac.uk/~ftisseur/talks/FT_talk2.pdf) using the determinant-derivative formula here.
 
