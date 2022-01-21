@@ -82,6 +82,7 @@ The formula for the [derivative of log(det A)](https://statisticaloddsandends.wo
 ## Lecture 5 (Jan 21)
 
 * [notes](https://rawcdn.githack.com/mitmath/matrixcalc/e90417f46a20bec6d9c743c6b7bf5b178e77913a/automatic_differentiation_done_quick.html) (and [Julia source](automatic_differentiation_done_quick.jl) in [Weave.jl](https://github.com/JunoLab/Weave.jl)-compatible form)
+* video: coming soon
 
 Automatic differentiation, guest lecture by [Dr. Chris Rackauckas](https://chrisrackauckas.com/).
 
