@@ -81,4 +81,6 @@ The formula for the [derivative of log(det A)](https://statisticaloddsandends.wo
 
 ## Lecture 5 (Jan 21)
 
+* [notes](automatic_differentiation_done_quick.html)
+
 Automatic differentiation, guest lecture by [Dr. Chris Rackauckas](https://chrisrackauckas.com/).
