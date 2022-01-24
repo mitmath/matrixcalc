@@ -90,6 +90,6 @@ Automatic differentiation, guest lecture by [Dr. Chris Rackauckas](https://chris
 
 # Lecture 6 (Jan 24)
 
-* part 1: derivatives of eigenproblems [(html)])(https://rawcdn.githack.com/mitmath/matrixcalc/69cbb521f357a9633ea4e5f77079eb399986240a/symeig.jl.html) [(julia source)](symeig.jl)
+* part 1: derivatives of eigenproblems [(html)](https://rawcdn.githack.com/mitmath/matrixcalc/69cbb521f357a9633ea4e5f77079eb399986240a/symeig.jl.html) [(julia source)](symeig.jl)
 * part 2: second derivatives, bilinear forms, and Hessian matrices (notes to be posted)
 * video: to be posted
