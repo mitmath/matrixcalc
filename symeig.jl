@@ -141,15 +141,6 @@ orthogonal matrices U and V.
 
 """
 
-# ╔═╡ 24a09e01-b01c-4986-9f1d-8dfa8ff11f06
-let
-	M = rand(4,4)
-	Q = qr(M).Q
-	with_terminal() do 
-		dump(Q) 
-	end
-end
-
 # ╔═╡ acaccf1f-cc17-47d8-ad6d-49108f067e17
 md"""
 ## Differentiating the Symmetric Eigendecomposition
@@ -215,7 +206,7 @@ and left multiply by ``Q`` to obtain  ``\frac{dQ}{dt}.``
 md"""
 It is interesting to get the second derivative of eigenvalues when moving along a line in symmetric matrix space.  For simplicity we'll start at a diagonal matrix ``\Lambda``.
 
-Let ``S(t)= \Lambda + \epsilon E``.  
+Let ``S(t)= \Lambda + t E``.  
 
 Differentiating ``\frac{d\Lambda}{dt} = diag( Q^T \frac{dS}{dt} Q)`` we get
 ``\frac{d^2\Lambda}{dt^2} = diag( Q^T \frac{d^2S}{dt^2} Q) + 2 diag(Q^T \frac{dS}{dt} \frac{dQ}{dt}).``
@@ -446,21 +437,20 @@ uuid = "3f19e933-33d8-53b3-aaab-bd5110c3b7a0"
 # ╟─fd24a55b-d4d4-4bfe-a485-552c69c2c7f7
 # ╠═71ca8eac-0864-4beb-9f1a-b12ef4e6cf7b
 # ╟─63df3a83-cd11-4d48-a24a-28d97deea00f
-# ╠═38f7d4de-1072-4127-bbce-4e80da9273a8
+# ╟─38f7d4de-1072-4127-bbce-4e80da9273a8
 # ╠═44471684-8f86-43b3-8d79-660a48912dc0
 # ╟─5c83619a-3983-4c0a-ac2a-3f88fa6366c5
 # ╟─ac64ea62-e6f5-4b0b-8a21-4a0d84c9ed7b
 # ╠═6f687dd6-78fb-4e5f-9bf8-e41f4a7665f4
-# ╠═c9ccb3f3-70c6-4f99-92f4-a8529705b237
-# ╠═dd659a37-3235-4f56-921a-b348e233ce73
-# ╠═24a09e01-b01c-4986-9f1d-8dfa8ff11f06
+# ╟─c9ccb3f3-70c6-4f99-92f4-a8529705b237
+# ╟─dd659a37-3235-4f56-921a-b348e233ce73
 # ╟─acaccf1f-cc17-47d8-ad6d-49108f067e17
 # ╟─1023e972-bd69-45ae-974a-1a093a57ece4
 # ╠═7f566eab-a296-4666-8b5b-e94cf2debf68
-# ╠═049e54a1-ee97-4fda-a9c6-2865ffe938a2
+# ╟─049e54a1-ee97-4fda-a9c6-2865ffe938a2
 # ╟─769d7ff6-bae1-423e-890b-69e0a0a9a79b
-# ╠═c9c7011a-8eca-4169-b890-97d6bb4a8244
-# ╠═c3ae2756-5a33-4ec1-8323-262d65f018c6
-# ╠═81be4b3e-b7b8-4814-8239-11f949561868
+# ╟─c9c7011a-8eca-4169-b890-97d6bb4a8244
+# ╟─c3ae2756-5a33-4ec1-8323-262d65f018c6
+# ╟─81be4b3e-b7b8-4814-8239-11f949561868
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
