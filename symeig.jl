@@ -21,9 +21,9 @@ Geometrically, we all know that velocity vectors (equivalently tangents) on the 
 # ╔═╡ 71ca8eac-0864-4beb-9f1a-b12ef4e6cf7b
 begin
 	x = randn(5)
-	dx= .0001 * randn(5)
+	dx= .000001 * randn(5)
 	
-	q = normalize(x)   # make x a unit vector
+	q = normalize(x)   # make x a unit vector   x/norm(x)
 	dq = normalize(x+dx)-q # make (x+dx) a unit vector and subtract from q
 	
 	q'dq
@@ -32,12 +32,27 @@ end
 # ╔═╡ 63df3a83-cd11-4d48-a24a-28d97deea00f
 md"""
 Since ``x^Tx=1``, we have that $(br)
-``x^Tdx=d(1)=0``, which says that at the point ``x`` on the sphere (a radius, if you will), ``dx``,
+``2x^Tdx=d(1)=0``, which says that at the point ``x`` on the sphere (a radius, if you will), ``dx``,
 the linearization of the constraint of moving along the sphere satisfies ``dx \perp x``
 (dot product is 0).
 
 This is our first example where we have seen the infinitesimal perturbation ``dx`` being constrained.
 """
+
+# ╔═╡ 38f7d4de-1072-4127-bbce-4e80da9273a8
+md"""
+## Special case: a circle
+Let us consider simply the circle in the plane.
+
+``x = (\cos \theta, \sin \theta)`` $(br)
+``x^T dx = (\cos \theta, \sin \theta) \cdot  (-\sin \theta, \cos \theta) d\theta= 0``
+
+We can think of ``x`` as "extrinsic" coordinates, in that it is a vector in ``R^2.``
+On the other hand ``\theta`` is an "intrinsic" coordinate, every point on the circle is specified by one ``\theta``.
+"""
+
+# ╔═╡ 44471684-8f86-43b3-8d79-660a48912dc0
+
 
 # ╔═╡ 5c83619a-3983-4c0a-ac2a-3f88fa6366c5
 md"""
@@ -75,23 +90,65 @@ md"""
 # ╔═╡ 6f687dd6-78fb-4e5f-9bf8-e41f4a7665f4
 begin
 	A = randn(5,5)
-	dA = .0001 * randn(5,5)
+	dA = .00001 * randn(5,5)
 	Q = qr(A).Q
 	dQ = qr(A+dA).Q - Q
-	Q'dQ
+	(Q'dQ)/.00001
 end
 
 # ╔═╡ c9ccb3f3-70c6-4f99-92f4-a8529705b237
 md"""
 Do you see the structure?
 
-Q^TdQ is anti-symmetric.  
+Q^TdQ is anti-symmetric (sometimes called skew-symmetric).  
+
+(If ``M=-M^T``, we say that ``M`` is anti-symmetric.  Note all anti-symmetric
+have 0 diagonally)
 
 Proof:  The constraint of being orthogonal is ``Q^TQ=I``
 so differentiating, ``Q^TdQ + dQ^TQ=0`` which is the same as
-saying `` (Q^TdQ) + (Q^TdQ)^T = 0$, but this is the equation
+saying `` (Q^TdQ) + (Q^TdQ)^T = 0``, but this is the equation
 for being antisymmetric.
 """
+
+# ╔═╡ dd659a37-3235-4f56-921a-b348e233ce73
+md"""
+## What is the dimension of the "surface" of orthogonal matrices in the ``n^2`` dimensional , n by n matrix space?
+
+For example when n=2 we have rotations (and reflections). Rotations have the form
+$(br)
+``Q = \begin{pmatrix} \cos \theta & \sin \theta \\ -\sin \theta & \cos \theta \end{pmatrix} ``
+
+When n=2 we have one parameter.
+
+When n=3, airplane pilots know about "roll, pitch, and yaw" and these are three parameters. 
+
+For general ``n`` the answer is ``n(n-1)/2.``
+
+A few ways to see that:
+
+* n^2  free parameters, orthogonality ``Q^TQ=I`` imposes n(n+1)/2 constraints leaving
+``n(n-1)/2`` free parameters.
+
+* When we do QR, the R "eats" up n(n+1)/2 parameters leaving n(n-1)/2 for Q.
+
+* Think about the symmetric eigenvalue problem:  S = QΛQᵀ.
+S has n(n+1)/2 and Λ has n, leaving n(n-1)/2 for Q.
+
+* Think about the singular value decomposition.  A = UΣVᵀ
+A has n^2, and Σ has n, leaving n(n-1) to be split evenly for the
+orthogonal matrices U and V.
+
+"""
+
+# ╔═╡ 24a09e01-b01c-4986-9f1d-8dfa8ff11f06
+let
+	M = rand(4,4)
+	Q = qr(M).Q
+	with_terminal() do 
+		dump(Q) 
+	end
+end
 
 # ╔═╡ acaccf1f-cc17-47d8-ad6d-49108f067e17
 md"""
@@ -115,15 +172,15 @@ Exercise: Check that the left and right side of the above are both symmetric.
 let
    A = randn(5,5)
    dA = .00001 * randn(5,5)
-   S = A+A'
-   dS = dA + dA'
+   S = A+A' # symmetrize A 
+   dS = dA + dA' # symmetrize dA
    Λ,Q = eigen(Symmetric(S))
    Λ₁,Q₁ =	eigen(Symmetric(S+dS)) 
 	dQ =  Q₁-Q
 	dΛ = Λ₁-Λ 
 
 	
-	[Q'*dS*Q  ; diagm(dΛ) + Q'dQ-dQ'Q]
+	[Q'*dS*Q  ; diagm(dΛ) + Q'dQ*diagm(Λ)-diagm(Λ)*Q'dQ]
 
 	
 
@@ -138,6 +195,11 @@ md"""
 Hence ``q_i^T dS q_i = d\lambda_i.``
 
 Sometimes we think of a curve of matrices ``S(t)`` depending on a parameter such as time.  If we ask for ``\frac{d\lambda_i}{dt}`` we have that it equals ``q_i^T \frac{dS(t)}{dt} q_i``.
+
+How do we get the gradient  ``\nabla \lambda_i`` of one eigenvalue ``\lambda_i``?
+
+trace(``(q_i q_i^T)^T dS``) ``= d\lambda_i``, thus we instantly see
+that ``\nabla \lambda_i = q_i q_i^T``
 """
 
 # ╔═╡ 769d7ff6-bae1-423e-890b-69e0a0a9a79b
@@ -153,10 +215,10 @@ and left multiply by ``Q`` to obtain  ``\frac{dQ}{dt}.``
 md"""
 It is interesting to get the second derivative of eigenvalues when moving along a line in symmetric matrix space.  For simplicity we'll start at a diagonal matrix ``\Lambda``.
 
-Let ``S(t)= \Lambda + tE``.  
+Let ``S(t)= \Lambda + \epsilon E``.  
 
 Differentiating ``\frac{d\Lambda}{dt} = diag( Q^T \frac{dS}{dt} Q)`` we get
-``\frac{d^2\Lambda}{dt^2} = diag( Q^T \frac{d^2S}{dt^2} Q) + 2 diag(\frac{dQ}{dt}^T \frac{dS}{dt} \frac{dQ}{dt}).``
+``\frac{d^2\Lambda}{dt^2} = diag( Q^T \frac{d^2S}{dt^2} Q) + 2 diag(Q^T \frac{dS}{dt} \frac{dQ}{dt}).``
 """
 
 # ╔═╡ c3ae2756-5a33-4ec1-8323-262d65f018c6
@@ -383,13 +445,17 @@ uuid = "3f19e933-33d8-53b3-aaab-bd5110c3b7a0"
 # ╠═c6386d30-fc92-4d12-922c-3fe14d59ad68
 # ╟─fd24a55b-d4d4-4bfe-a485-552c69c2c7f7
 # ╠═71ca8eac-0864-4beb-9f1a-b12ef4e6cf7b
-# ╠═63df3a83-cd11-4d48-a24a-28d97deea00f
-# ╠═5c83619a-3983-4c0a-ac2a-3f88fa6366c5
-# ╠═ac64ea62-e6f5-4b0b-8a21-4a0d84c9ed7b
+# ╟─63df3a83-cd11-4d48-a24a-28d97deea00f
+# ╠═38f7d4de-1072-4127-bbce-4e80da9273a8
+# ╠═44471684-8f86-43b3-8d79-660a48912dc0
+# ╟─5c83619a-3983-4c0a-ac2a-3f88fa6366c5
+# ╟─ac64ea62-e6f5-4b0b-8a21-4a0d84c9ed7b
 # ╠═6f687dd6-78fb-4e5f-9bf8-e41f4a7665f4
-# ╟─c9ccb3f3-70c6-4f99-92f4-a8529705b237
-# ╠═acaccf1f-cc17-47d8-ad6d-49108f067e17
-# ╠═1023e972-bd69-45ae-974a-1a093a57ece4
+# ╠═c9ccb3f3-70c6-4f99-92f4-a8529705b237
+# ╠═dd659a37-3235-4f56-921a-b348e233ce73
+# ╠═24a09e01-b01c-4986-9f1d-8dfa8ff11f06
+# ╟─acaccf1f-cc17-47d8-ad6d-49108f067e17
+# ╟─1023e972-bd69-45ae-974a-1a093a57ece4
 # ╠═7f566eab-a296-4666-8b5b-e94cf2debf68
 # ╠═049e54a1-ee97-4fda-a9c6-2865ffe938a2
 # ╟─769d7ff6-bae1-423e-890b-69e0a0a9a79b
