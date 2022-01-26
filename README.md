@@ -103,7 +103,7 @@ In physics, first and second derivatives of eigenvalues and first derivatives of
 
 * part 1: continued [Hessian notes](https://www.dropbox.com/s/tde5cow6wuais8y/Hessians.pdf?dl=0) from previous lecture
 * part 2: derivatives and backpropagation on graphs and linear operators (to be posted)
-* video: to be posted
+* [video](https://mit.zoom.us/rec/share/DblFFU72Nary_yKfaQis0WaDoFEznD-92EPr52LHE1QBKcVWPUlmBPgApjre2uf9.oqtYrgEg73glPWx-?startTime=1643212653000)
 * pset 2 solutions: to be posted
 
 **Further reading (part 1)**: [Positive-definite](https://en.wikipedia.org/wiki/Definite_matrix) Hessian matrices, or more generally [definite quadratic forms](https://en.wikipedia.org/wiki/Definite_quadratic_form) f″, appear at extrema (f′=0) of scalar-valued functions f(x) that are local minima; there a lot [more formal treatments](http://www.columbia.edu/~md3405/Unconstrained_Optimization.pdf) of the same idea, and conversely Khan academy has the [simple 2-variable version](https://www.khanacademy.org/math/multivariable-calculus/applications-of-multivariable-derivatives/optimizing-multivariable-functions/a/second-partial-derivative-test) where you can check the sign of the 2×2 eigenvalues just by looking at the determinant and a single entry (or the trace).  There's a nice [stackexchange discussion](https://math.stackexchange.com/questions/2285282/relating-condition-number-of-hessian-to-the-rate-of-convergence) on why an [ill-conditioned](https://nhigham.com/2020/03/19/what-is-a-condition-number/) Hessian tends to make steepest descent converge slowly; some Toronto [course notes on the topic](https://www.cs.toronto.edu/~rgrosse/courses/csc421_2019/slides/lec07.pdf) may also be helpful.
