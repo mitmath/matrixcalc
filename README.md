@@ -101,7 +101,7 @@ In physics, first and second derivatives of eigenvalues and first derivatives of
 
 # Lecture 7 (Jan 26)
 
-* part 1: continued [Hessian notes](https://www.dropbox.com/s/tde5cow6wuais8y/Hessians.pdf?dl=0) from previous lecture
+* part 1: continued [Hessian notes](https://www.dropbox.com/s/tde5cow6wuais8y/Hessians.pdf?dl=0) from previous lecture: minima/maxima and f″ definiteness, Hessian conditioning and steepest-descent convergence
 * part 2: derivatives and backpropagation on graphs and linear operators (to be posted)
 * [video](https://mit.zoom.us/rec/share/DblFFU72Nary_yKfaQis0WaDoFEznD-92EPr52LHE1QBKcVWPUlmBPgApjre2uf9.oqtYrgEg73glPWx-?startTime=1643212653000)
 * [pset 2 solutions](hw2sol.pdf) and computational [notebook](https://nbviewer.org/github/mitmath/matrixcalc/blob/main/hw2sol.ipynb)
@@ -109,3 +109,14 @@ In physics, first and second derivatives of eigenvalues and first derivatives of
 **Further reading (part 1)**: [Positive-definite](https://en.wikipedia.org/wiki/Definite_matrix) Hessian matrices, or more generally [definite quadratic forms](https://en.wikipedia.org/wiki/Definite_quadratic_form) f″, appear at extrema (f′=0) of scalar-valued functions f(x) that are local minima; there a lot [more formal treatments](http://www.columbia.edu/~md3405/Unconstrained_Optimization.pdf) of the same idea, and conversely Khan academy has the [simple 2-variable version](https://www.khanacademy.org/math/multivariable-calculus/applications-of-multivariable-derivatives/optimizing-multivariable-functions/a/second-partial-derivative-test) where you can check the sign of the 2×2 eigenvalues just by looking at the determinant and a single entry (or the trace).  There's a nice [stackexchange discussion](https://math.stackexchange.com/questions/2285282/relating-condition-number-of-hessian-to-the-rate-of-convergence) on why an [ill-conditioned](https://nhigham.com/2020/03/19/what-is-a-condition-number/) Hessian tends to make steepest descent converge slowly; some Toronto [course notes on the topic](https://www.cs.toronto.edu/~rgrosse/courses/csc421_2019/slides/lec07.pdf) may also be helpful.
 
 **Further reading (part 2)**: See this blog post on [calculus on computational graphs](https://colah.github.io/posts/2015-08-Backprop/) for a gentle review, and these Columbia [course notes](http://www.cs.columbia.edu/~mcollins/ff2.pdf) for a more formal approach.
+
+
+# Lecture 8 (Jan 28)
+
+* part 1: continued [Hessian notes](https://www.dropbox.com/s/tde5cow6wuais8y/Hessians.pdf?dl=0): using Hessians for optimization (Newton & quasi-Newton & Newton–Krylov methods), cost of Hessians
+* part 2: adjoint differentiation of ODES (guest lecture by Dr. Chris Rackauckas), notes coming soon
+* video: coming soon
+
+**Further reading (part 1)**: See e.g. these Stanford notes on [sequential quadratic optimization](https://web.stanford.edu/class/ee364b/lectures/seq_notes.pdf) using trust regions (sec. 2.2).  See 18.335 [notes on BFGS quasi-Newton methods](https://github.com/mitmath/18335/blob/spring21/notes/BFGS.pdf) (also [video](https://mit.zoom.us/rec/share/naqcRgSkZ0VNeDp0ht8QmB566mPowuHJ8k0LcaAmZ7XxaCT1ch4j_O4Khzi-taXm.CXI8xFthag4RvvoC?startTime=1620241284000)).   The fact that a quadratic optimization problem in a sphere has [strong duality](https://en.wikipedia.org/wiki/Strong_duality) and hence is efficiently solvable is discussed in section 5.2.4 of the [*Convex Optimization* book](https://web.stanford.edu/~boyd/cvxbook/).  There has been a lot of work on [automatic Hessian computation](https://en.wikipedia.org/wiki/Hessian_automatic_differentiation), but for large-scale problems you can ultimately only compute Hessian–vector products efficiently in general, which are equivalent to a directional derivative of the gradient, and can be used e.g. for [Newton–Krylov methods](https://en.wikipedia.org/wiki/Newton%E2%80%93Krylov_method).
+
+**Further reading (part 2)**: A very general reference on adjoint-method (reverse-mode/backpropagation) differentiation of ODEs (and generalizations thereof), using notation similar to that of Chris R. today, is [Cao et al (2003)](https://epubs.siam.org/doi/10.1137/S1064827501380630) ([pdf](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.65.455&rep=rep1&type=pdf)).  See also the [adjoint sensitivity analysis](https://diffeq.sciml.ai/stable/extras/sensitivity_math/) and [automatic sensitivity analysis](https://diffeq.sciml.ai/stable/analysis/sensitivity/) sections of Chris's amazing [DifferentialEquations.jl software suite](https://diffeq.sciml.ai/stable/) for numerical solution of ODEs in Julia.  There is a nice YouTube [lecture on adjoint sensitivity of ODEs](https://www.youtube.com/watch?v=k6s2G5MZv-I), again using a similar notation.
