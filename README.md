@@ -18,14 +18,17 @@ Course will involve simple numerical compuations using the [Julia language](http
 
 **Topics:**
 
-The following is a list of topics we intend to cover, and roughly the order in which we will cover them.  Subject to revision as the course progresses.
+Here are some of the topics covered:
 
-* Multidimensional Taylor expansions, derivatives as linear operators, and multidimensional chain rule.
-* Forward- and reverse-mode differentiation for manual and automatic multivariate differentiation.  Chain rules on computational graphs (e.g. neural networks).
-* Derivatives of matrix functions and factorizations.
-* Adjoint methods and vJp/pullback rules.
-* Applications in engineering/scientific optimization, machine learning.
-* Exterior calculus.   Linear operators and Kronecker products.
+* Derivatives as linear operators and linear approximation on arbitrary vector spaces: beyond gradients and Jacobians.
+* Derivatives of functions with matrix inputs and/or outputs (e.g. matrix inverses and determinants).  Kronecker products and matrix "vectorization".
+* Derivatives of matrix factorizations (e.g. eigenvalues/SVD) and derivatives with constraints (e.g. orthogonal matrices).
+* Multidimensional chain rules, and the signifance of right-to-left ("forward") vs. left-to-right ("reverse") composition.  Chain rules on computational graphs (e.g. neural networks).
+* Forward- and reverse-mode manual and automatic multivariate differentiation.  
+* Adjoint methods (vJp/pullback rules) for derivatives of solutions of linear, nonlinear, and differential equations.
+* Application to nonlinear root-finding and optimization.  Multidimensional Newton and steepest–descent methods.
+* Applications in engineering/scientific optimization and machine learning.
+* Second derivatives, Hessian matrices, quadratic approximations, and quasi-Newton methods.
 
 ## Lecture 1 (Jan 10)
 
