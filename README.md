@@ -24,7 +24,7 @@ Here are some of the topics covered:
 * Derivatives of functions with matrix inputs and/or outputs (e.g. matrix inverses and determinants).  Kronecker products and matrix "vectorization".
 * Derivatives of matrix factorizations (e.g. eigenvalues/SVD) and derivatives with constraints (e.g. orthogonal matrices).
 * Multidimensional chain rules, and the signifance of right-to-left ("forward") vs. left-to-right ("reverse") composition.  Chain rules on computational graphs (e.g. neural networks).
-* Forward- and reverse-mode manual and automatic multivariate differentiation.  
+* Forward- and reverse-mode manual and automatic multivariate differentiation.
 * Adjoint methods (vJp/pullback rules) for derivatives of solutions of linear, nonlinear, and differential equations.
 * Application to nonlinear root-finding and optimization.  Multidimensional Newton and steepest–descent methods.
 * Applications in engineering/scientific optimization and machine learning.
@@ -105,7 +105,7 @@ In physics, first and second derivatives of eigenvalues and first derivatives of
 # Lecture 7 (Jan 26)
 
 * part 1: continued [Hessian notes](https://www.dropbox.com/s/tde5cow6wuais8y/Hessians.pdf?dl=0) from previous lecture: minima/maxima and f″ definiteness, Hessian conditioning and steepest-descent convergence
-* part 2: derivatives and backpropagation on graphs and linear operators (to be posted)
+* part 2: derivatives and backpropagation on graphs and linear operators: [poster](backprop_poster.pdf)
 * [video](https://mit.zoom.us/rec/share/DblFFU72Nary_yKfaQis0WaDoFEznD-92EPr52LHE1QBKcVWPUlmBPgApjre2uf9.oqtYrgEg73glPWx-?startTime=1643212653000)
 * [pset 2 solutions](hw2sol.pdf) and computational [notebook](https://nbviewer.org/github/mitmath/matrixcalc/blob/main/hw2sol.ipynb)
 
