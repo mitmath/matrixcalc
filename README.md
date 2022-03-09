@@ -58,9 +58,9 @@ In part 2 (last few minutes), began setting up some example problems involving m
 
 ## Lecture 3 (Jan 14)
 
-* part 1: [slides](https://docs.google.com/presentation/d/1ov4Rl3wZ9ZbkYTDcCTHmyDiwHLYiGPYjCJjHKWWFiS4/edit?usp=sharing)
+* part 1: gradient = column or row vector? [slides](https://docs.google.com/presentation/d/1ov4Rl3wZ9ZbkYTDcCTHmyDiwHLYiGPYjCJjHKWWFiS4/edit?usp=sharing)
 * part 1: Matrix Jacobians notebook from lecture 2 [(html)](https://rawcdn.githack.com/mitmath/matrixcalc/7340d2a7d40e6548a5ca0945ecae96cbac659929/2x2Jacobians.jl.html), [(pluto notebook source code)](https://github.com/mitmath/matrixcalc/blob/main/2x2Jacobians.jl)
-* part 2: [notebook](https://nbviewer.org/github/mitmath/matrixcalc/blob/main/Finite%20difference%20checks.ipynb)
+* part 2: finite-difference [notebook](https://nbviewer.org/github/mitmath/matrixcalc/blob/main/Finite%20difference%20checks.ipynb)
 * [video](https://mit.zoom.us/rec/share/GUf5tZEboaxBSvSVID8wNaaudVFD2VeE3BBTYnlUASYL-vPRI621N2dPTIpFuJj7.jVbLIsHVyGK6wdd4?startTime=1642175965000)
 
 Revisiting the gradient ∇f.   Scalar functions of matrices, matrix dot products, and the trace.  Matrix Jacobians, continued from lecture 2.   Finite-difference approximation.
@@ -84,7 +84,7 @@ The formula for the [derivative of log(det A)](https://statisticaloddsandends.wo
 
 ## Lecture 5 (Jan 21)
 
-* [notes](https://rawcdn.githack.com/mitmath/matrixcalc/e90417f46a20bec6d9c743c6b7bf5b178e77913a/automatic_differentiation_done_quick.html) (also [Julia source](automatic_differentiation_done_quick.jl) in [Weave.jl](https://github.com/JunoLab/Weave.jl)-compatible form)
+* automatic differentiation [notes](https://rawcdn.githack.com/mitmath/matrixcalc/e90417f46a20bec6d9c743c6b7bf5b178e77913a/automatic_differentiation_done_quick.html) (also [Julia source](automatic_differentiation_done_quick.jl) in [Weave.jl](https://github.com/JunoLab/Weave.jl)-compatible form)
 * [video](https://mit.zoom.us/rec/share/OFTlEf7ytZnRKw3JCy467iTy2Vs_lwD4RR5v3qia0qIfGol-nOXStG26StCKRP4.41c3ahKtcd_gMyEi?startTime=1642780576000)
 
 Automatic differentiation, guest lecture by [Dr. Chris Rackauckas](https://chrisrackauckas.com/).
