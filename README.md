@@ -3,7 +3,7 @@
 This is the course page for an 18.S096 Special Subject in Mathematics at MIT taught in **January 2023** ([IAP](https://elo.mit.edu/iap/)) by
 Professors [Alan Edelman](https://math.mit.edu/~edelman/) and [Steven G. Johnson](https://math.mit.edu/~stevenj/).
 
-For a previous version of this course, see [Matrix Calculus in IAP 2022](https://github.com/mitmath/matrixcalc/tree/iap2022).
+For a previous version of this course, see [Matrix Calculus in IAP 2022 (OCW)](https://ocw.mit.edu/courses/18-s096-matrix-calculus-for-machine-learning-and-beyond-january-iap-2022/pages/lecture-notes-and-readings/) (also [on github](https://github.com/mitmath/matrixcalc/tree/iap2022)).
 
 **Lectures:** MWF 11am–1pm, Jan 16–Feb 3 in room 2-142 (+ video recording and posted notes).  3 units, *2 problem sets* due Jan 25 and Feb 1, no exams.  Piazza discussion forum TBA. TA/grader: TBA.
 
