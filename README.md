@@ -5,7 +5,7 @@ Professors [Alan Edelman](https://math.mit.edu/~edelman/) and [Steven G. Johnson
 
 For a previous version of this course, see [Matrix Calculus in IAP 2022 (OCW)](https://ocw.mit.edu/courses/18-s096-matrix-calculus-for-machine-learning-and-beyond-january-iap-2022/pages/lecture-notes-and-readings/) (also [on github](https://github.com/mitmath/matrixcalc/tree/iap2022)).
 
-**Lectures:** MWF 11am–1pm, Jan 16–Feb 3 in room 2-142 (+ video recording and posted notes).  3 units, *2 problem sets* due Jan 25 and Feb 1, no exams.  Piazza discussion forum TBA. TA/grader: TBA.
+**Lectures:** MWF 11am–1pm, Jan 18–Feb 3 in room 2-142 (+ video recording and posted notes).  3 units, *2 problem sets* due Jan 25 and Feb 1, no exams.  Piazza discussion forum TBA. TA/grader: TBA.
 
 **Description:**
 
@@ -32,7 +32,7 @@ Here are some of the planned topics:
 * Applications in engineering/scientific optimization and machine learning.
 * Second derivatives, Hessian matrices, quadratic approximations, and quasi-Newton methods.
 
-## Lecture 1 (Jan 16)
+## Lecture 1 (Jan 18)
 
 * part 1: [introductory slides](https://docs.google.com/presentation/d/1RqkL3AD6hVrUNpevQ7lhQ3InGr5-quQrnhQPsjvosDU/edit?usp=sharing)
 
