@@ -7,6 +7,8 @@ For a previous version of this course, see [Matrix Calculus in IAP 2022 (OCW)](h
 
 **Lectures:** MWF 11am–1pm, Jan 18–Feb 3 in room **4-163** (+ video recording and posted notes).  3 units, *2 problem sets* due Jan 25 and Feb 1, no exams.  Piazza discussion forum TBA. TA/grader: TBA.
 
+**Piazza forum:** ask questions on the [18.S096 piazza](https://piazza.com/mit/spring2023/18s096)
+
 **Description:**
 
 > We all know that calculus courses such as 18.01 and 18.02 are univariate and vector calculus, respectively. Modern applications such as machine learning and large-scale optimization require the next big step, "matrix calculus" and calculus on arbitrary vector spaces.
