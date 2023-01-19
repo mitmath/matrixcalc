@@ -39,6 +39,7 @@ Here are some of the planned topics:
 * part 1: [introductory slides](https://docs.google.com/presentation/d/1RqkL3AD6hVrUNpevQ7lhQ3InGr5-quQrnhQPsjvosDU/edit?usp=sharing)
 * part 2: derivatives as linear operators — [handwritten notes](https://www.dropbox.com/s/dtdriu0jg1sqoqr/Derivatives%20as%20Linear%20Operators.pdf?dl=0)
 * pset 1: coming soon, due Jan 25
+* video recording (MIT only): [zoom recording](https://mit.zoom.us/rec/share/zsxeWYPY-zUW63ENT000dYdTt-vvVqvKYfM7J2J1QAvPuHMAXvadv4FDrtXsh_M.1JmilTjYrXV9ycwD?startTime=1674057910000) and [classroom recording](https://mit.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=a72e3378-1c0f-425d-ae52-af880157e85c)
 
 **Further reading**: [matrixcalculus.org](http://www.matrixcalculus.org/) (linked in the slides) is a fun site to play with derivatives of matrix and vector functions.  The [Matrix Cookbook](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf) has a lot of formulas for these derivatives, but no derivations.  Some [notes on vector and matrix differentiation](https://cdn-uploads.piazza.com/paste/j779e63owl53k6/04b2cb8c2f300212d723bea822a6b856085b28e28ca9debc75a05761a436499c/6.S087_Lecture_2.pdf) were posted for 6.S087 from IAP 2021.
 
