@@ -51,7 +51,7 @@ Part 2: Re-thinking derivatives as linear operators: f(x+dx)-f(x)=df=f′(x)[dx]
 ## Lecture 2 (Jan 20)
 * part 0: examples of linear and nonlinear transformations of ℝ² via images (to be posted)
 * part 1: derivatives as linear operators — [handwritten notes](https://www.dropbox.com/s/dtdriu0jg1sqoqr/Derivatives%20as%20Linear%20Operators.pdf?dl=0)
-* video recording (MIT only): zoom recording (coming soon) and [classroom recording](https://mit.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=a72e3378-1c0f-425d-ae52-af880157e85c)
+* video recording (MIT only): [zoom recording](https://mit.zoom.us/rec/share/Ib9qBKqPFD85-IykgmyEVrpQB7ijB1bcebQMBPTarLWR3U7eqSvH13Hem81qBpKM.oHFTKkoUubxoji-B?startTime=1674230719000) and [classroom recording](https://mit.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=a72e3378-1c0f-425d-ae52-af880157e85c)
 * part 2: matrix Jacobians via [vectorization](https://en.wikipedia.org/wiki/Vectorization_(mathematics)); notes: [2×2 Matrix Jacobians (html)](https://rawcdn.githack.com/mitmath/matrixcalc/3f6758996e40c5c1070279f89f7f65e76e08003d/notes/2x2Jacobians.jl.html) [(pluto notebook source code)](https://github.com/mitmath/matrixcalc/blob/main/notes/2x2Jacobians.jl)
 * pset 1: coming soon, due Jan 25
 
