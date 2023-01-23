@@ -45,7 +45,7 @@ Here are some of the topics covered:
 ## Lecture 2 (Jan 12)
 * [video](https://mit.zoom.us/rec/share/QmAPatyA-0uih6FebzqgWb_i_6NUW-MG0vwUZwAKR46tkrXOWddBMqIThWoONEnU.EAVw3yrEBjRJYzft?startTime=1642003088000)
 * part 1: [derivatives as linear operators](https://www.dropbox.com/s/d7t8g9h19utqlcj/Fr%C3%A9chet%20Derivatives.pdf?dl=0), continued from lecture 1.
-* part 2: 2x2 Matrix Jacobians [(html)](https://rawcdn.githack.com/mitmath/matrixcalc/7340d2a7d40e6548a5ca0945ecae96cbac659929/2x2Jacobians.jl.html) [(pluto notebook source code)](https://github.com/mitmath/matrixcalc/blob/main/2x2Jacobians.jl)
+* part 2: 2x2 Matrix Jacobians [(html)](https://rawcdn.githack.com/mitmath/matrixcalc/7340d2a7d40e6548a5ca0945ecae96cbac659929/2x2Jacobians.jl.html) [(pluto notebook source code)](https://github.com/mitmath/matrixcalc/blob/iap2022/2x2Jacobians.jl)
 * [pset 1](hw1.pdf) (due next Wed)
 
 Continued discussing Jacobian matrices (for vector-valued functions of vectors), with some example.  Switched a streamlined "infinitesimal" notation df=f'(x)dx, where we now simply omit higher-order terms instead of writing o(δx), and f'(x) is taken to be a linear operator acting to the right on dx (≠ dx f'(x)!).  Sum, product, and chain rules for derivatives as linear operators.
@@ -59,8 +59,8 @@ In part 2 (last few minutes), began setting up some example problems involving m
 ## Lecture 3 (Jan 14)
 
 * part 1: gradient = column or row vector? [slides](https://docs.google.com/presentation/d/1ov4Rl3wZ9ZbkYTDcCTHmyDiwHLYiGPYjCJjHKWWFiS4/edit?usp=sharing)
-* part 1: Matrix Jacobians notebook from lecture 2 [(html)](https://rawcdn.githack.com/mitmath/matrixcalc/7340d2a7d40e6548a5ca0945ecae96cbac659929/2x2Jacobians.jl.html), [(pluto notebook source code)](https://github.com/mitmath/matrixcalc/blob/main/2x2Jacobians.jl)
-* part 2: finite-difference [notebook](https://nbviewer.org/github/mitmath/matrixcalc/blob/main/Finite%20difference%20checks.ipynb)
+* part 1: Matrix Jacobians notebook from lecture 2 [(html)](https://rawcdn.githack.com/mitmath/matrixcalc/7340d2a7d40e6548a5ca0945ecae96cbac659929/2x2Jacobians.jl.html), [(pluto notebook source code)](https://github.com/mitmath/matrixcalc/blob/iap2022/2x2Jacobians.jl)
+* part 2: finite-difference [notebook](https://nbviewer.org/github/mitmath/matrixcalc/blob/iap2022/Finite%20difference%20checks.ipynb)
 * [video](https://mit.zoom.us/rec/share/GUf5tZEboaxBSvSVID8wNaaudVFD2VeE3BBTYnlUASYL-vPRI621N2dPTIpFuJj7.jVbLIsHVyGK6wdd4?startTime=1642175965000)
 
 Revisiting the gradient ∇f.   Scalar functions of matrices, matrix dot products, and the trace.  Matrix Jacobians, continued from lecture 2.   Finite-difference approximation.
@@ -72,7 +72,7 @@ Revisiting the gradient ∇f.   Scalar functions of matrices, matrix dot product
 * part 1: derivative of matrix determinant and inverse [(html)](https://rawcdn.githack.com/mitmath/matrixcalc/c97512521a9ff63802454ee258f1759c45f7d8b6/determinant_and_inverse.html) [(julia source)](determinant_and_inverse.jl)
 * part 2: nonlinear root-finding, optimization, and adjoint-method differentiation [slides](https://docs.google.com/presentation/d/1U1lB5bhscjbxEuH5FcFwMl5xbHl0qIEkMf5rm0MO8uE/edit?usp=sharing)
 * [video](https://mit.zoom.us/rec/share/Fp41z7ftWiSyn8oFR12pb4Xgyf5hEghj6paskaE_MUVPo5id-ZFRJeQqlqMRE-My.ZT8OEUhWsmpBc_U5?startTime=1642607958000) (missing lecture part 2, sorry!)
-* [pset 1 solutions](hw1sol.pdf) and computational [notebook](https://nbviewer.org/github/mitmath/matrixcalc/blob/main/hw1sol.ipynb)
+* [pset 1 solutions](hw1sol.pdf) and computational [notebook](https://nbviewer.org/github/mitmath/matrixcalc/blob/iap2022/hw1sol.ipynb)
 * [pset 2](hw2.pdf) (due Wed Jan 26)
 
 **Further reading (part 1)**: There are lots of discussions of the
@@ -107,7 +107,7 @@ In physics, first and second derivatives of eigenvalues and first derivatives of
 * part 1: continued [Hessian notes](https://www.dropbox.com/s/tde5cow6wuais8y/Hessians.pdf?dl=0) from previous lecture: minima/maxima and f″ definiteness, Hessian conditioning and steepest-descent convergence
 * part 2: derivatives and backpropagation on graphs and linear operators: [poster](backprop_poster.pdf)
 * [video](https://mit.zoom.us/rec/share/DblFFU72Nary_yKfaQis0WaDoFEznD-92EPr52LHE1QBKcVWPUlmBPgApjre2uf9.oqtYrgEg73glPWx-?startTime=1643212653000)
-* [pset 2 solutions](hw2sol.pdf) and computational [notebook](https://nbviewer.org/github/mitmath/matrixcalc/blob/main/hw2sol.ipynb)
+* [pset 2 solutions](hw2sol.pdf) and computational [notebook](https://nbviewer.org/github/mitmath/matrixcalc/blob/iap2022/hw2sol.ipynb)
 
 **Further reading (part 1)**: [Positive-definite](https://en.wikipedia.org/wiki/Definite_matrix) Hessian matrices, or more generally [definite quadratic forms](https://en.wikipedia.org/wiki/Definite_quadratic_form) f″, appear at extrema (f′=0) of scalar-valued functions f(x) that are local minima; there a lot [more formal treatments](http://www.columbia.edu/~md3405/Unconstrained_Optimization.pdf) of the same idea, and conversely Khan academy has the [simple 2-variable version](https://www.khanacademy.org/math/multivariable-calculus/applications-of-multivariable-derivatives/optimizing-multivariable-functions/a/second-partial-derivative-test) where you can check the sign of the 2×2 eigenvalues just by looking at the determinant and a single entry (or the trace).  There's a nice [stackexchange discussion](https://math.stackexchange.com/questions/2285282/relating-condition-number-of-hessian-to-the-rate-of-convergence) on why an [ill-conditioned](https://nhigham.com/2020/03/19/what-is-a-condition-number/) Hessian tends to make steepest descent converge slowly; some Toronto [course notes on the topic](https://www.cs.toronto.edu/~rgrosse/courses/csc421_2019/slides/lec07.pdf) may also be helpful.
 
