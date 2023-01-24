@@ -66,7 +66,7 @@ Part 2: Began going into more detail on matrix-valued functions, and their relat
 
 * part 2: matrix Jacobians via [vectorization](https://en.wikipedia.org/wiki/Vectorization_(mathematics)); notes: [2×2 Matrix Jacobians (html)](https://rawcdn.githack.com/mitmath/matrixcalc/3f6758996e40c5c1070279f89f7f65e76e08003d/notes/2x2Jacobians.jl.html) [(pluto notebook source code)](https://github.com/mitmath/matrixcalc/blob/main/notes/2x2Jacobians.jl)
 * part 2: finite-differences ([notes](notes/Finite%20difference%20checks.ipynb))
-* video recording (MIT only): zoom recording (to be posted) and [classroom recording](https://mit.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=a72e3378-1c0f-425d-ae52-af880157e85c)
+* video recording (MIT only): [zoom recording](https://mit.zoom.us/rec/share/76jdWTLvGd4ND7cvTpebMTLBwU97iFwap8dG72sAAaEyf6Gnelwi0k1FhVhQo7Qy.AckiCGpbmvVWUP3S?startTime=1674490057000) and [classroom recording](https://mit.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=a72e3378-1c0f-425d-ae52-af880157e85c)
 
 Continued from lecture 2: Matrix functions, Jacobians, vectorizations, and Kronecker products.  More examples of matrix functions, including LU factorization and 2×2 eigenproblems.
 
