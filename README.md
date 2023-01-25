@@ -79,7 +79,7 @@ Finite-difference methods: viewing f(x+δx)–f(x) as an approximation for f'(x)
 
 * part 1: generalized gradients and inner products — [handwritten notes](https://www.dropbox.com/s/dtdriu0jg1sqoqr/Derivatives%20as%20Linear%20Operators.pdf?dl=0)
 * part 2: nonlinear root-finding, optimization, and adjoint-method differentiation [slides](https://docs.google.com/presentation/d/1U1lB5bhscjbxEuH5FcFwMl5xbHl0qIEkMf5rm0MO8uE/edit?usp=sharing)
-* video recording (MIT only): zoom recording (to be posted) and [classroom recording](https://mit.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=a72e3378-1c0f-425d-ae52-af880157e85c)
+* video recording (MIT only): [zoom recording](https://mit.zoom.us/rec/share/WmvhY3Z-1LDQZ5MDh68KJO6Rlpya4lUvbhpd0cCIrz3CO6Wk3zz8kLQi_spx8kWf.WhCTDIEHR66GxzSh?startTime=1674662811000) and [classroom recording](https://mit.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=a72e3378-1c0f-425d-ae52-af880157e85c)
 
 **part 0:** To begin with, spent a few minutes talking about the last few sections of the [finite-difference notes](notes/Finite%20difference%20checks.ipynb)) from last lecture: higher-order finite-difference rules, and finite differences in higher dimensions (e.g. for gradients).
 
