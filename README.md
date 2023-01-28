@@ -103,7 +103,7 @@ Defined the most obvious inner product of m×n matrices: the [Frobenius inner pr
 * part 1: [derivative of matrix determinant and inverse](https://rawcdn.githack.com/mitmath/matrixcalc/b08435612045b17745707f03900e4e4187a6f489/notes/determinant_and_inverse.html) [(julia source)](notes/determinant_and_inverse.jl)
 * part 2: forward-mode automatic differentiation via dual numbers: notes to be posted
 * part 3: forward and reverse-mode automatic differentiation on computational graphs
-* video recording (MIT only): zoom recording (coming soon) and [classroom recording](https://mit.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=a72e3378-1c0f-425d-ae52-af880157e85c)
+* video recording (MIT only): [zoom recording](https://mit.zoom.us/rec/share/-66aaqteX5m71gdDmldkVBejXQlVDLq9zdOa9tAh1h4HqF6sogxKXyLOyfBrDw9m.6MBc75vdxMU1tHSs?startTime=1674836150000) and [classroom recording](https://mit.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=a72e3378-1c0f-425d-ae52-af880157e85c)
 * pset 2, coming soon: due Feb 1
 
 **Further reading (part 1)**: There are lots of discussions of the
