@@ -104,7 +104,7 @@ Defined the most obvious inner product of m×n matrices: the [Frobenius inner pr
 * part 2: forward-mode automatic differentiation via dual numbers ([notes](notes/AutoDiff.ipynb))
 * part 3: forward and reverse-mode automatic differentiation on computational graphs ([handwritten notes](https://github.com/mitmath/JuliaComputation/blob/ec6861bc9396d2b577f1bbc8136683d4298d7dc8/slides/ad_handwritten.pdf))
 * video recording (MIT only): [zoom recording](https://mit.zoom.us/rec/share/-66aaqteX5m71gdDmldkVBejXQlVDLq9zdOa9tAh1h4HqF6sogxKXyLOyfBrDw9m.6MBc75vdxMU1tHSs?startTime=1674836150000) and [classroom recording](https://mit.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=a72e3378-1c0f-425d-ae52-af880157e85c)
-* pset 2, coming soon: due Feb 1
+* [pset 2](psets/pset2.pdf): due ~~Feb 1~~ Feb 3
 
 **Further reading (part 1)**: There are lots of discussions of the
 [derivative of a determinant](https://en.wikipedia.org/wiki/Jacobi%27s_formula) online, involving the ["adjugate" matrix](https://en.wikipedia.org/wiki/Adjugate_matrix) det(A)A⁻¹.
