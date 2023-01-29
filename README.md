@@ -101,8 +101,8 @@ Defined the most obvious inner product of m×n matrices: the [Frobenius inner pr
 
 * part 0: norms and derivatives: why a norm of the input and output are needed to *define* a derivative — [handwritten notes](https://www.dropbox.com/s/dtdriu0jg1sqoqr/Derivatives%20as%20Linear%20Operators.pdf?dl=0)
 * part 1: [derivative of matrix determinant and inverse](https://rawcdn.githack.com/mitmath/matrixcalc/b08435612045b17745707f03900e4e4187a6f489/notes/determinant_and_inverse.html) [(julia source)](notes/determinant_and_inverse.jl)
-* part 2: forward-mode automatic differentiation via dual numbers: notes to be posted
-* part 3: forward and reverse-mode automatic differentiation on computational graphs
+* part 2: forward-mode automatic differentiation via dual numbers ([notes](notes/AutoDiff.ipynb))
+* part 3: forward and reverse-mode automatic differentiation on computational graphs ([handwritten notes](https://github.com/mitmath/JuliaComputation/blob/ec6861bc9396d2b577f1bbc8136683d4298d7dc8/slides/ad_handwritten.pdf))
 * video recording (MIT only): [zoom recording](https://mit.zoom.us/rec/share/-66aaqteX5m71gdDmldkVBejXQlVDLq9zdOa9tAh1h4HqF6sogxKXyLOyfBrDw9m.6MBc75vdxMU1tHSs?startTime=1674836150000) and [classroom recording](https://mit.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=a72e3378-1c0f-425d-ae52-af880157e85c)
 * pset 2, coming soon: due Feb 1
 
