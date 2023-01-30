@@ -118,7 +118,7 @@ The formula for the [derivative of log(det A)](https://statisticaloddsandends.wo
 
 ## Lecture 6 (Jan 30)
 
-* part 1: adjoint differentiation of ODES (guest lecture by Dr. Frank Schäfer) — notes to be posted
+* part 1: adjoint differentiation of ODES (guest lecture by Dr. Frank Schäfer) — [notes](https://www.dropbox.com/s/nyfm5gss21gwolm/notes_sensitivity_analysis_ODEs.pdf?dl=0)
 * part 2: "calculus of variations" and gradients of f(u)∈ℝ where u(x) is a *function*  — [notes](https://www.dropbox.com/s/ajvw09z8agufp0d/Calculus%20of%20Variations.pdf?dl=0)
 * video recording (MIT only): [classroom recording](https://mit.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=a72e3378-1c0f-425d-ae52-af880157e85c)
 
