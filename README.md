@@ -131,7 +131,7 @@ The formula for the [derivative of log(det A)](https://statisticaloddsandends.wo
 
 * part 1: derivatives of random functions (guest lecture by Gaurav Arya) — notes to be posted
 * part 2: second derivatives, bilinear forms, and Hessian matrices [(notes)](https://www.dropbox.com/s/tde5cow6wuais8y/Hessians.pdf?dl=0)
-* video recording (MIT only): [zoom recording](https://mit.zoom.us/rec/share/WmvhY3Z-1LDQZ5MDh68KJO6Rlpya4lUvbhpd0cCIrz3CO6Wk3zz8kLQi_spx8kWf.WhCTDIEHR66GxzSh?startTime=1674662811000) and [classroom recording](https://mit.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=a72e3378-1c0f-425d-ae52-af880157e85c)
+* video recording (MIT only): [classroom recording](https://mit.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=a72e3378-1c0f-425d-ae52-af880157e85c)
 
 **Further reading (part 1)**: To be posted.
 
