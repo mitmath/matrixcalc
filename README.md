@@ -129,11 +129,15 @@ The formula for the [derivative of log(det A)](https://statisticaloddsandends.wo
 
 ## Lecture 7 (Feb 1)
 
-* part 1: derivatives of random functions (guest lecture by Gaurav Arya) — notes to be posted
+* part 1: derivatives of random functions (guest lecture by Gaurav Arya) — [(notes)](https://www.dropbox.com/s/j0l56rpvq2bey35/main.pdf?dl=0)
 * part 2: second derivatives, bilinear forms, and Hessian matrices [(notes)](https://www.dropbox.com/s/tde5cow6wuais8y/Hessians.pdf?dl=0)
 * video recording (MIT only): [classroom recording](https://mit.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=a72e3378-1c0f-425d-ae52-af880157e85c)
 
-**Further reading (part 1)**: To be posted.
+**Further reading (part 1)**:
+* The idea of computing gradients of programs with a sampleable random output is called [Monte-Carlo Gradient Estimation](https://arxiv.org/abs/1906.10652); the link leads to a nice survey.
+* This [StackOverflow answer](https://stats.stackexchange.com/a/226136) gives a concise, worked-out example of the reparameterization trick applied to a toy program. 
+* [The frontier of simulation-based inference](https://www.pnas.org/doi/10.1073/pnas.1912789117) gives an overview of stochastic simulations across many domains of science, and discusses attempts to deal with the fact that it is much easier to sample them than to exactly compute a "likelihood".
+* [Automatic differentiation of programs with discrete randomness](https://arxiv.org/abs/2210.08572) describes an approach for generalizing derivatives of continuous random functions based on the "reparameterization trick" to discrete random functions. [StochasticAD.jl](https://gaurav-arya.github.io/StochasticAD.jl/dev/) is an associated code package that implements the stochastic triples we played with at the end of class.
 
 **Further reading (part 2)**:
 * [Bilinear forms](https://en.wikipedia.org/wiki/Bilinear_form) are an important generalization of quadratic operations to arbitrary vector spaces, and we saw that the second derivative can be viewed as a [symmetric bilinear forms](https://en.wikipedia.org/wiki/Symmetric_bilinear_form).   This is closely related to a [quadratic form](https://en.wikipedia.org/wiki/Quadratic_form), which is just what we get by plugging in the same vector twice, e.g. the f''(x)[δx,δx]/2 that appears in quadratic approximations for f(x+δx) is a quadratic form.  The most familar multivariate version of f''(x) is the [Hessian matrix](https://en.wikipedia.org/wiki/Hessian_matrix); Khan academy has an elementary [introduction to quadratic approximation](https://www.khanacademy.org/math/multivariable-calculus/applications-of-multivariable-derivatives/quadratic-approxi
