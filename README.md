@@ -137,6 +137,7 @@ The formula for the [derivative of log(det A)](https://statisticaloddsandends.wo
 * The idea of computing gradients of programs with a sampleable random output is called [Monte-Carlo Gradient Estimation](https://arxiv.org/abs/1906.10652); the link leads to a nice survey.
 * This [StackOverflow answer](https://stats.stackexchange.com/a/226136) gives a concise, worked-out example of the reparameterization trick applied to a toy program. 
 * [The frontier of simulation-based inference](https://www.pnas.org/doi/10.1073/pnas.1912789117) gives an overview of stochastic simulations across many domains of science, and discusses attempts to deal with the fact that it is much easier to sample them than to exactly compute a "likelihood".
+* [Auto-encoding variational bayes](https://arxiv.org/abs/1312.6114) introduces the variational autoencoder, and introduces the reparameterization trick for use in training it.
 * [Automatic differentiation of programs with discrete randomness](https://arxiv.org/abs/2210.08572) describes an approach for generalizing derivatives of continuous random functions based on the "reparameterization trick" to discrete random functions. [StochasticAD.jl](https://gaurav-arya.github.io/StochasticAD.jl/dev/) is an associated code package that implements the stochastic triples we played with at the end of class.
 
 **Further reading (part 2)**:
