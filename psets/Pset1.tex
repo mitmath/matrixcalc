@@ -1,0 +1,102 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[serif]{pkige}
+\usepackage{hyperref}
+\usepackage{amsmath} 
+\usepackage{amsfonts}
+\usepackage{amssymb} 
+\usepackage{url}
+
+
+
+\newcommand{\vecm}{\operatorname{vec}}
+\newcommand{\diagm}{\operatorname{diagm}}
+\newcommand{\dotstar}{\mathbin{.*}}
+
+\title{18.S096 PSET 1}
+\author{IAP 2023}
+\date{Due 1/25/2023}
+
+\begin{document}
+
+\maketitle
+
+\subsection*{Problem 0 (4+4+4+4 points)}
+
+The hyperbolic Corgi notebook may be found at 
+\url{https://mit-c25.netlify.app/notebooks/1_hyperbolic_corgi}. 
+Compute the $2 \times 2$ Jacobian matrix for each of the following image
+transformations from that notebook:
+
+\begin{enumerate}[label=(\alph*)]
+
+\item rotate($\theta$):
+$(x,y)\rightarrow 
+(\cos(\theta)x + \sin(\theta)y, -\sin(\theta)x + \cos(\theta)y)$
+
+\item hyperbolic\_rotate($\theta$): $(x,y)\rightarrow(\cosh(\theta)x+\sinh(\theta)y,\sinh(\theta)x + \cosh(\theta)y )$
+
+\item nonlin\_shear($\theta$):
+$(x, y) \rightarrow (x, y + \theta x^2)$
+
+\item warp($\theta$):
+$ (x, y) \rightarrow  \mbox{rotate}(\theta \sqrt{x^2+y^2})(x, y)$
+
+\end{enumerate}
+
+
+\subsection*{Problem 1 (5+4 points)}
+
+
+\begin{enumerate}[label=(\alph*)]
+
+\item Suppose that $L[x]$ is a linear operation (for $x$ in some vector space $V$, with outputs $L[x]$ in some other vector space $W$).   If $f(x) = L[x] + y$ for a constant $y \in W$, what is $f'(x)$ (in terms of $L$ and/or $y$)?
+
+\item Give the derivatives of $f(A) = A^T$ (transpose) and $g(A) = 1 + \tr A$ (trace) as special cases of the rule you derived in the previous part. 
+
+\end{enumerate}
+
+\subsection*{Problem 2 (5+6+5+5 points)}
+
+
+Calculate derivatives of each of the following functions in the requested forms---as a linear operator $f'(x)[dx]$, a Jacobian matrix, or a gradient $\nabla f$ ---as specified in each part.
+
+\begin{enumerate}[label=(\alph*)]
+
+\item $f(x) = x^T (A + \diagm(x))^2 x$, where the inputs $x \in \mathbb{R}^n$ are vectors, the outputs are scalars, $A = A^T$ is a constant \emph{symmetric} $n\times n$ matrix $\in \mathbb{R}^{n\times n}$, and $\diagm(x)$ denotes the  $n\times n$  diagonal matrix $\begin{pmatrix} x_1 & & \\ & x_2 & \\ & & \ddots \end{pmatrix}$.  Give the \textbf{gradient} $\nabla f$, such that $f'(x)dx = (\nabla f)^T dx$.
+
+\item $f(x) = (A + yx^T)^{-1} b$, where the inputs $x$ and outputs $f(x)$ are $n$-component (column) vectors in $\mathbb{R}^n$, $y$ and $b$ are constant vectors $\in \mathbb{R}^n$, and $A$ is a constant $n\times n$ matrix $\in \mathbb{R}^{n\times n}$.   
+
+\begin{enumerate}[label=(\roman*)]
+\item Give $f'(x)$ as a \textbf{Jacobian} matrix.
+\item If you are given $A^{-1}$, then you can compute $(A + yx^T)^{-1}$ and hence $f(x)$ for any $x$ in $\sim n^2$ scalar-arithmetic operations (i.e., roughly proportional to $n^2$, or in computer-science terms $\Theta(n^2)$ ``complexity''), using the ``Sherman--Morrison'' formula (Google it).  \textbf{Explain} how your Jacobian matrix can therefore also be computed in $\sim n^2$ operations for any $x$ given $A^{-1}$ (i.e. give a sequence of computational steps, each of which costs no more than $\sim n^2$ arithmetic).
+
+\end{enumerate}
+
+\item $f(x) = \frac{xx^T}{x^T x}$, with vector inputs $x \in \mathbb{R}^n$ and matrix outputs $f\in \mathbb{R}^{n\times n}$.   Give $f'(x)$ as a linear operator, i.e.~a linear formula for $f'(x)[dx]$.
+
+\item $g(x) = \frac{xx^T}{x^T x} b$, with vector inputs $x \in \mathbb{R}^n$ and vector outputs $f\in \mathbb{R}^n$, where $b \in \mathbb{R}^n$ is a constant vector.   Give $g'(x)$ as a \textbf{Jacobian} matrix.
+
+\end{enumerate}
+
+\subsection*{Problem 3 (5+5+5 points)}
+
+
+\begin{enumerate}[label=(\alph*)]
+
+\item
+Argue briefly that linear functions that map $n \times n$ matrices to $n \times n$ matrices themselves form
+a vector space $V$.  What is the dimension of this vector space?
+
+\item
+Argue briefly that linear functions of 
+$n \times n$ matrices of the form $ X \rightarrow AX$, where $A$ is $n \times n$,  form a vector space.
+What is the dimension of this vector space?
+
+\item
+Argue briefly why it follows that there must be infinitely many linear functions $\in V$
+that are not of the form $X \rightarrow AX$.
+
+\end{enumerate}
+
+\end{document}

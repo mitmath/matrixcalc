@@ -1,0 +1,157 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[serif]{pkige}
+\usepackage{hyperref}
+\usepackage{amsmath} 
+\usepackage{amsfonts}
+\usepackage{amssymb} 
+
+\newcommand{\vecm}{\operatorname{vec}}
+\newcommand{\diagm}{\operatorname{diagm}}
+\newcommand{\dotstar}{\mathbin{.*}}
+
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelenumii}{(\roman{enumii})}
+
+\newcommand{\tr}{\operatorname{tr}}
+
+
+\title{18.S096 PSET 2, IAP 2023}
+\date{Due 2/3/2023}
+
+\begin{document}
+
+\maketitle
+
+
+\subsection*{Problem 1 (5+5+5 points)}
+
+Suppose that $A(p)$ takes a vector $p\in\mathbb{R}^{n-1}$ and returns
+the $n\times n$ tridiagonal real-symmetric matrix
+\[
+A(p)=\left(\begin{array}{ccccc}
+a_{1} & p_{1}\\
+p_{1} & a_{2} & p_{2}\\
+ & p_{2} & \ddots & \ddots\\
+ &  & \ddots & a_{n-1} & p_{n-1}\\
+ &  &  & p_{n-1} & a_{n}
+\end{array}\right),
+\]
+where $a\in\mathbb{R}^{n-1}$ is some constant vector. Now, define
+a scalar-valued function $f(p)$ by 
+\[
+f(p)=\left(c^{T}A(p)^{-1}b\right)^{2}
+\]
+for some constant vectors $b,c\in\mathbb{R}^{n}$ (assuming we choose
+$p$ and $a$ so that $A$ is invertible). Note that, in practice
+$A(p)^{-1}b$ is \emph{not }computed by explicitly inverting the matrix
+$A$---instead, it can be computed in $\Theta(n)$ (i.e., roughly
+proportional to $n$) arithmetic operations using Gaussian elimination
+that takes advantage of the ``sparsity'' of $A$ (the pattern of
+zero entries), a ``tridiagonal solve''.
+\begin{enumerate}
+\item Write down a formula for computing $\partial f/\partial p_{1}$ (in
+terms of matrix--vector products and matrix inverses). (Hint: once
+you know $df$ in terms of $dA$, you can get $\partial f/\partial p_{1}$
+by ``dividing'' both sides by $\partial p_{1}$, so that $dA$ becomes
+$\partial A/\partial p_{1}$.)
+\item Outline a sequence of steps to compute both $f$ and $\nabla f$ (with
+respect to $p$) using only \emph{two} tridiagonal solves $x=A^{-1}b$
+and an ``adjoint'' solve $v=A^{-1}\text{(something)}$, plus $\Theta(n)$
+(i.e., roughly proportional to $n$) additional arithmetic operations.
+\item Write a program implementing your $\nabla f$ procedure (in Julia,
+Python, Matlab, or any language you want) from the previous part.
+(You don't need to use a fancy tridiagonal solve if you don't know
+how to do this in your language; you can solve $A^{-1}\text{(vector)}$
+inefficiently if needed using your favorite matrix libraries.) Implement
+a finite-difference test: Choose $a,b,c,p$ at random, and check that
+$\nabla f\cdot\delta p\approx f(p+\delta p)-f(p)$ (to a few digits)
+for a randomly chosen small $\delta p$.
+\end{enumerate}
+
+\subsection*{Problem 2 (5+5 points)}
+
+Suppose that we have a two-argument function $f(x,y)$, where $x,y$
+and $f$ may belong to arbitrary vector (Banach) spaces. Let's define
+``partial'' derivatives $f_{x}$ and $f_{y}$ (also denoted $\frac{\partial f}{\partial x}$
+and $\frac{\partial f}{\partial y}$) by the linearization: 
+\[
+df=f(x+dx,y+dy)-f(x,y)=f_{x}(x,y)[dx]+f_{y}(x,y)[dy],
+\]
+implicitly dropping higher-order terms as usual. Compute the partial
+derivatives of the following functions:
+\begin{enumerate}
+\item $f(A,x)=A^{-1}x$ for $n\times n$ matrices $A\in\mathbb{R}^{n\times n}$
+and vectors $x\in\mathbb{R}^{n}$: give $f_{A}$ as a linear operator,
+and $f_{x}$ as a Jacobian matrix.
+\item $f(A,B)=\tr(A^{T}BA)$, for matrices $A,B\in\mathbb{R}^{n\times n}$:
+give the gradients $\nabla_{A}f$ and $\nabla_{B}f$ such that $f_{A}[dA]=\nabla_{A}f\cdot dA$
+and $f_{B}[dB]=\nabla_{B}f\cdot dB$ under the Frobenius inner product
+$X\cdot Y=\tr(X^{T}Y)=\tr(Y^{T}X)$.
+\end{enumerate}
+
+\subsection*{Problem 3 (5+5 points)}
+
+If $S$ is an $m\times m$ real-symmetric matrix with a ``simple''
+(multiplicity $=1$) eigenvalue $\lambda$ and corresponding eigenvector
+$q$ ($Sq=\lambda q)$, normalized to $q^{T}q=1$, then the ``Hellman--Feynman
+theorem'' states that 
+$d\lambda=q^{T}dS\:q$
+ for a change $dS$ in the matrix $S$.
+\begin{enumerate}
+\item Derive the Hellman--Feynman theorem by considering the differentials
+of both sides of the equations $d(\lambda=q^{T}Sq)$ and $d(q^{T}q=1$).
+\item What is the gradient $\nabla\lambda$ with respect to $S$, for the
+usual Frobenius inner product $\nabla\lambda\cdot 
+dS=\tr((\nabla\lambda)^{T}dS)$
+
+%\item The \emph{condition number $\kappa$} of \emph{any} full-column-rank
+%$m\times n$ matrix $A$ can be defined as $\kappa(A)=\sqrt{\frac{\lambda_{1}}{\lambda_{n}}}$
+%where $\lambda_{1}$ and $\lambda_{n}$ are the largest and smallest
+%eigenvalues, respectively, of the real-symmetric positive-definite
+%matrix $A^{T}A$ (equivalently, these are the squares of the largest and smallest singular values of $A$). Assuming that $\lambda_{1}$ and $\lambda_{n}$
+%are simple (multiplicity 1), and corresponding eigenvectors of $A^T A$ ($=$ singular vectors of $A$) are
+%$v_{1}$ and $v_{n}$ (normalized to length 1).  Give the matrix $\nabla \kappa$ (with respect to $A$)
+
+\end{enumerate}
+
+\subsection*{Problem 4 (6+6 points)}
+The Jacobian determinant (sometimes called simply ``the Jacobian,'' clashing with the concept of the Jacobian matrix) is
+the determinant of the Jacobian matrix.  Specifically if $f(x)$ is a function from $\mathbb{R}^n$ to $\mathbb{R}^n$ and
+$(\frac{\partial f_i}{\partial x_j})_{1 \le i,j \le n}$ is the Jacobian matrix $f'(x)$, then its determinant $\det f'(x)$ is the Jacobian determinant.
+Sometimes we take the absoute value and not worry too much about the sign.
+
+
+\begin{enumerate}
+\item The Jacobian determinant represents the  local scaling of volume.  Compute the Jacobian determinant of the
+hyperbolic rotation defined in Pset 1, problem 1b, in simplest form.  Use this to describe how a little square
+around a point generally transforms with a hyperbolic rotation.
+
+\item   There are many ways to equivalently take a scalar function $f(\alpha)$ and extend it to a matrix function $F(M)$, which takes in a square matrix and returns a square matrix of the same size.
+
+The simplest is to define
+$f(M)=X f(\Lambda) X^{-1},$ where $M=X\Lambda X^{-1}$ is an eigen-decomposition of $M$ (and use continuity to include
+non-diagonalizable matrices).  Here, $f(\Lambda)$ denotes the application of a scalar function $f(\lambda)$ to the eigenvalues $\lambda$ (on the diagonal of $\Lambda$).  (e.g., you've probably seen $e^M$ defined in terms of $e^\lambda$.)
+
+One could then write $f'(M)$ as an explicit $n^2\times n^2$ Jacobian matrix (e.g. via $\vecm(dM)$ and Kronecker products), and could then  compute its determinant.
+
+\begin{enumerate}
+
+\item Write a computer program (in any language) to find the $9\times 9$ Jacobian matrix of $f(M)$ and then the Jacobian determinant  by either finite differences or by using
+automatic differentiation, for $f(\lambda)$ being $e^\lambda$, $\lambda^2$, and $\sin(\lambda)$ on the $3\times 3$ matrix $M = [0\: 1\: 4;1\: 0\: 1;4\: 1\: 0]$ with entries $M_{i,j} = (i-j)^2$.
+
+\item Compare with the following known theoretical formula for the 
+Jacobian determinant for a scalar function $f(\lambda)$ applied to a diagonalizable matrix $M$,  in terms of $M$'s eigenvalues $\lambda$:
+$$
+\frac{\prod_{i < j} |f(\lambda_i)-
+f(\lambda_j)|^2}{\prod_{i < j} |\lambda_i-\lambda_j|^2}
+\prod_i f'(\lambda_i)
+$$
+
+\end{enumerate}
+
+
+
+\end{enumerate}
+
+\end{document}
