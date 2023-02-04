@@ -148,7 +148,7 @@ The formula for the [derivative of log(det A)](https://statisticaloddsandends.wo
 ## Lecture 8 (Feb 3)
 
 * part 1: derivatives of eigenproblems [(html)](https://rawcdn.githack.com/mitmath/matrixcalc/e9357997991a948951217a83e58fd2d9d3508d29/symeig.jl.html) [(julia source)](symeig.jl)
-* part 2: forward and reverse-mode automatic differentiation on computational graphs, continued from lecture 5 ([handwritten notes](https://github.com/mitmath/JuliaComputation/blob/ec6861bc9396d2b577f1bbc8136683d4298d7dc8/slides/ad_handwritten.pdf))
+* part 2: forward and reverse-mode automatic differentiation on computational graphs, continued from lecture 5 ([handwritten notes](https://github.com/mitmath/JuliaComputation/blob/ec6861bc9396d2b577f1bbc8136683d4298d7dc8/slides/ad_handwritten.pdf)) and [interactive notebook](https://simeonschaub.github.io/ReverseModePluto/notebook.html)
 * part 3: some topics we didn't cover
 * video recording (MIT only): [classroom recording](https://mit.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=a72e3378-1c0f-425d-ae52-af880157e85c)
 * [pset 2 solutions](psets/pset2sol.pdf) and Julia [notebook](psets/pset2sol.ipynb)
