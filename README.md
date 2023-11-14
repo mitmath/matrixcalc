@@ -1,11 +1,11 @@
 # Matrix Calculus for Machine Learning and Beyond
 
 This is the course page for an 18.S096 Special Subject in Mathematics at MIT taught in **January 2023** ([IAP](https://elo.mit.edu/iap/)) by
-Professors [Alan Edelman](https://math.mit.edu/~edelman/) and [Steven G. Johnson](https://math.mit.edu/~stevenj/).
+Professors [Alan Edelman](https://math.mit.edu/~edelman/) and [Steven G. Johnson](https://math.mit.edu/~stevenj/).  See also [Matrix Calculus in IAP 2023 (OCW)](https://ocw.mit.edu/courses/18-s096-matrix-calculus-for-machine-learning-and-beyond-january-iap-2023/) on OpenCourseWare for an edited archive of these materials.
 
 For a previous version of this course, see [Matrix Calculus in IAP 2022 (OCW)](https://ocw.mit.edu/courses/18-s096-matrix-calculus-for-machine-learning-and-beyond-january-iap-2022/pages/lecture-notes-and-readings/) (also [on github](https://github.com/mitmath/matrixcalc/tree/iap2022)).
 
-**Lectures:** MWF 11am–1pm, Jan 18–Feb 3 in room **2-190** (+ [video recording (MIT only)](https://mit.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=a72e3378-1c0f-425d-ae52-af880157e85c) and posted notes).  3 units, *2 problem sets* due Jan 25 and Feb 1 — submitted electronically [via Canvas](https://canvas.mit.edu/courses/17880), no exams.  Piazza discussion forum TBA. TA/grader: TBA.
+**Lectures:** MWF 11am–1pm, Jan 18–Feb 3 in room **2-190** (+ [video recording (~~MIT only~~ on YouTube)]([https://mit.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=a72e3378-1c0f-425d-ae52-af880157e85c](https://www.youtube.com/playlist?list=PLUl4u3cNGP62EaLLH92E_VCN4izBKK6OE)) and posted notes).  3 units, *2 problem sets* due Jan 25 and Feb 1 — submitted electronically [via Canvas](https://canvas.mit.edu/courses/17880), no exams.  Piazza discussion forum TBA. TA/grader: TBA.
 
 **Piazza forum:** ask questions on the [18.S096 piazza](https://piazza.com/mit/spring2023/18s096)
 
@@ -38,7 +38,7 @@ Here are some of the planned topics:
 
 * part 1: [introductory slides](https://docs.google.com/presentation/d/1RqkL3AD6hVrUNpevQ7lhQ3InGr5-quQrnhQPsjvosDU/edit?usp=sharing)
 * part 2: derivatives as linear operators — [handwritten notes](https://www.dropbox.com/s/dtdriu0jg1sqoqr/Derivatives%20as%20Linear%20Operators.pdf?dl=0)
-* video recording (MIT only): [zoom recording](https://mit.zoom.us/rec/share/zsxeWYPY-zUW63ENT000dYdTt-vvVqvKYfM7J2J1QAvPuHMAXvadv4FDrtXsh_M.1JmilTjYrXV9ycwD?startTime=1674057910000) and [classroom recording](https://mit.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=a72e3378-1c0f-425d-ae52-af880157e85c)
+* video recording (~~MIT only~~ on YouTube): [part 1](https://youtu.be/0YqjeqLhDDE?si=pEp_CQU9CxqKqXTm) and [part 2](https://youtu.be/5DUQ3-Y_gX4?si=F3u2sD8z6XhVB1Sf)
 
 Part 1: Overview, applications, and motivation.
 
@@ -51,8 +51,7 @@ Part 2: Re-thinking derivatives as linear operators: f(x+dx)-f(x)=df=f′(x)[dx]
 ## Lecture 2 (Jan 20)
 * part 0: examples of linear and nonlinear transformations of ℝ² via images — [try it online](https://mit-c25.netlify.app/notebooks/1_hyperbolic_corgi)
 * part 1: derivatives as linear operators — [handwritten notes](https://www.dropbox.com/s/dtdriu0jg1sqoqr/Derivatives%20as%20Linear%20Operators.pdf?dl=0)
-* video recording (MIT only): [zoom recording](https://mit.zoom.us/rec/share/Ib9qBKqPFD85-IykgmyEVrpQB7ijB1bcebQMBPTarLWR3U7eqSvH13Hem81qBpKM.oHFTKkoUubxoji-B?startTime=1674230719000) and [classroom recording](https://mit.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=a72e3378-1c0f-425d-ae52-af880157e85c)
-* part 2: matrix Jacobians via [vectorization](https://en.wikipedia.org/wiki/Vectorization_(mathematics)); notes: [2×2 Matrix Jacobians (html)](https://rawcdn.githack.com/mitmath/matrixcalc/3f6758996e40c5c1070279f89f7f65e76e08003d/notes/2x2Jacobians.jl.html) [(pluto notebook source code)](https://github.com/mitmath/matrixcalc/blob/main/notes/2x2Jacobians.jl)
+* video recording (~~MIT only~~ on YouTube): [part 1](https://youtu.be/v8EIBpBEC6A?si=5na5JYx_XFqCXY2b) and [part 2](https://youtu.be/DH118YqIgow?si=fX-viro7YjnavsmB); notes: [2×2 Matrix Jacobians (html)](https://rawcdn.githack.com/mitmath/matrixcalc/3f6758996e40c5c1070279f89f7f65e76e08003d/notes/2x2Jacobians.jl.html) [(pluto notebook source code)](https://github.com/mitmath/matrixcalc/blob/main/notes/2x2Jacobians.jl)
 * [pset 1](psets/pset1.pdf) due Jan 25
 
 Part 1: Continued discussing derivatives as linear operators, starting with Jacobian matrices.  Reviewed the sum rule d(f+g)=df+dg, the product rule d(fg) = (df)g+f(dg), and the chain rule for f(g(x)) (f'(x)=g'(h(x))h'(x), where this is a *composition* of two linear operations, performing h' then g' — g'h' ≠ h'g'!).   For functions from vectors to vectors, the chain rule is simply the *product of Jacobians*.   Moreover, as soon as you compose 3 or more functions, it can a make a huge difference whether you multiply the Jacobians from left-to-right ("reverse-mode", or "backpropagation", or "adjoint differentiation") or right-to-left ("forward-mode"). Showed, for example, that if you have *many inputs but a single output* (as is common in machine learning and other types of optimization problem), that it is vastly more efficient to multiply left-to-right than right-to-left, and such "backpropagation algorithms" are a key factor in the practicality of large-scale optimization.  Finally, began talking about functions in more general vector spaces, such as functions with **matrix inputs and/or outputs**.  For example, considered f(A)=A³, giving d(A³)=f′(A)[dA]=A²(dA)+A(dA)A+(dA)A² (≠3A²dA!), and f(A)=A⁻¹, giving d(A⁻¹)=-A⁻¹(dA)A⁻¹.
@@ -66,7 +65,7 @@ Part 2: Began going into more detail on matrix-valued functions, and their relat
 
 * part 2: matrix Jacobians via [vectorization](https://en.wikipedia.org/wiki/Vectorization_(mathematics)); notes: [2×2 Matrix Jacobians (html)](https://rawcdn.githack.com/mitmath/matrixcalc/3f6758996e40c5c1070279f89f7f65e76e08003d/notes/2x2Jacobians.jl.html) [(pluto notebook source code)](https://github.com/mitmath/matrixcalc/blob/main/notes/2x2Jacobians.jl)
 * part 2: finite-differences ([notes](notes/Finite%20difference%20checks.ipynb))
-* video recording (MIT only): [zoom recording](https://mit.zoom.us/rec/share/76jdWTLvGd4ND7cvTpebMTLBwU97iFwap8dG72sAAaEyf6Gnelwi0k1FhVhQo7Qy.AckiCGpbmvVWUP3S?startTime=1674490057000) and [classroom recording](https://mit.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=a72e3378-1c0f-425d-ae52-af880157e85c)
+* video recording (~~MIT only~~ on YouTube): [part 1](https://youtu.be/BKo57m-uU1k?si=iUS-Jms8rckRrkbZ) and [part 2](https://youtu.be/gtG62xaelPE?si=-ZPSQgmnNI_6CZHT)
 
 Continued from lecture 2: Matrix functions, Jacobians, vectorizations, and Kronecker products.  More examples of matrix functions, including LU factorization and 2×2 eigenproblems.
 
@@ -79,7 +78,7 @@ Finite-difference methods: viewing f(x+δx)–f(x) as an approximation for f'(x)
 
 * part 1: generalized gradients and inner products — [handwritten notes](https://www.dropbox.com/s/dtdriu0jg1sqoqr/Derivatives%20as%20Linear%20Operators.pdf?dl=0)
 * part 2: nonlinear root-finding, optimization, and adjoint-method differentiation [slides](https://docs.google.com/presentation/d/1U1lB5bhscjbxEuH5FcFwMl5xbHl0qIEkMf5rm0MO8uE/edit?usp=sharing)
-* video recording (MIT only): [zoom recording](https://mit.zoom.us/rec/share/WmvhY3Z-1LDQZ5MDh68KJO6Rlpya4lUvbhpd0cCIrz3CO6Wk3zz8kLQi_spx8kWf.WhCTDIEHR66GxzSh?startTime=1674662811000) and [classroom recording](https://mit.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=a72e3378-1c0f-425d-ae52-af880157e85c)
+* video recording (~~MIT only~~ on YouTube): [part 1](https://youtu.be/qWYtrT4TeIs?si=SZSB6OnUTyEoBTNc) and [part 2](https://youtu.be/lBfqvBJaFmc?si=_h5i83qjcCkJvbQh)
 * [pset 1 solutions](psets/pset1sol.pdf)
 
 **part 0:** To begin with, spent a few minutes talking about the last few sections of the [finite-difference notes](notes/Finite%20difference%20checks.ipynb)) from last lecture: higher-order finite-difference rules, and finite differences in higher dimensions (e.g. for gradients).
@@ -103,7 +102,7 @@ Defined the most obvious inner product of m×n matrices: the [Frobenius inner pr
 * part 1: [derivative of matrix determinant and inverse](https://rawcdn.githack.com/mitmath/matrixcalc/b08435612045b17745707f03900e4e4187a6f489/notes/determinant_and_inverse.html) [(julia source)](notes/determinant_and_inverse.jl)
 * part 2: forward-mode automatic differentiation via dual numbers ([notes](notes/AutoDiff.ipynb))
 * part 3: forward and reverse-mode automatic differentiation on computational graphs ([handwritten notes](https://github.com/mitmath/JuliaComputation/blob/ec6861bc9396d2b577f1bbc8136683d4298d7dc8/slides/ad_handwritten.pdf))
-* video recording (MIT only): [zoom recording](https://mit.zoom.us/rec/share/-66aaqteX5m71gdDmldkVBejXQlVDLq9zdOa9tAh1h4HqF6sogxKXyLOyfBrDw9m.6MBc75vdxMU1tHSs?startTime=1674836150000) and [classroom recording](https://mit.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=a72e3378-1c0f-425d-ae52-af880157e85c)
+* video recording (~~MIT only~~ on YouTube): [part 1](https://youtu.be/NIQ_kaVMRDA?si=LC_CyrGEelQS7UrJ) and [part 2](https://youtu.be/CYwXqjhDDUk?si=ASsYDL3zcu8V3qSP)
 * [pset 2](psets/pset2.pdf): due ~~Feb 1~~ Feb 3
 
 **Further reading (part 1)**: There are lots of discussions of the
@@ -120,8 +119,8 @@ The formula for the [derivative of log(det A)](https://statisticaloddsandends.wo
 
 * part 1: adjoint differentiation of ODES (guest lecture by Dr. Frank Schäfer) — [notes](https://www.dropbox.com/s/nyfm5gss21gwolm/notes_sensitivity_analysis_ODEs.pdf?dl=0)
 * part 2: "calculus of variations" and gradients of f(u)∈ℝ where u(x) is a *function*  — [notes](https://www.dropbox.com/s/ajvw09z8agufp0d/Calculus%20of%20Variations.pdf?dl=0)
-* video recording (MIT only): [classroom recording](https://mit.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=a72e3378-1c0f-425d-ae52-af880157e85c)
-
+* video recording (~~MIT only~~ on YouTube): [part 1](https://youtu.be/cvBHoCAUkD4?si=Vy9JuVSx18l838NO) and [part 2](https://youtu.be/tTUT7YuSMoc?si=e5PDCoHTSTdFjGnC)
+  
 **Further reading (part 1)**: A classic reference on adjoint-method (reverse-mode/backpropagation) differentiation of ODEs (and generalizations thereof), using notation similar to that used today, is [Cao et al (2003)](https://epubs.siam.org/doi/10.1137/S1064827501380630) ([pdf](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.65.455&rep=rep1&type=pdf)).  See also the [SciMLSensitivity.jl package](https://docs.sciml.ai/SciMLSensitivity/stable/) for sensitivity analysis with Chris Rackauckas's amazing [DifferentialEquations.jl software suite](https://diffeq.sciml.ai/stable/) for numerical solution of ODEs in Julia, along with his [notes from 18.337](https://rawcdn.githack.com/mitmath/18337/7b0e890e1211bfa253782f7862389aeaa321e8d7/lecture11/adjoints.html).  There is a nice YouTube [lecture on adjoint sensitivity of ODEs](https://www.youtube.com/watch?v=k6s2G5MZv-I), again using a similar notation.   A *discrete* version of this process is [adjoint methods for recurrence relations](https://math.mit.edu/~stevenj/18.336/recurrence2.pdf) (MIT course notes), in which case one obtains a reverse-order "adjoint" recurrence relation.
 
 **Further reading (part 2)** There are many resources on the ["calculus of variations"](https://en.wikipedia.org/wiki/Calculus_of_variations), which refers to derivatives of f(u)=∫F(u,u′,…)dx for functions u(x), but we saw that it is essentially just a special case of our general rule df=f(u+du)-f(u)=f′(u)[du]=∇f⋅du when du lies in a vector space of functions.  Setting ∇f to find an extremum of f(u) yields an [Euler–Lagrange equation](https://en.wikipedia.org/wiki/Euler%E2%80%93Lagrange_equation), the most famous examples of which are probably [Lagrangian mechanics](https://en.wikipedia.org/wiki/Lagrangian_mechanics) and also the [Brachistochrone problem](https://en.wikipedia.org/wiki/Brachistochrone_curve), but it also shows up in many other contexts such as [optimal control](https://en.wikipedia.org/wiki/Optimal_control).  A very readable textbook on the subject is [*Calculus of Variations* by Gelfand and Fomin](https://store.doverpublications.com/0486414485.html).
@@ -131,7 +130,7 @@ The formula for the [derivative of log(det A)](https://statisticaloddsandends.wo
 
 * part 1: derivatives of random functions (guest lecture by Gaurav Arya) [(notes)](https://www.dropbox.com/s/j0l56rpvq2bey35/main.pdf?dl=0)
 * part 2: second derivatives, bilinear forms, and Hessian matrices ([notes](https://www.dropbox.com/scl/fi/pt3s19j5mr2n1otxt9w3k/Hessians.pdf?rlkey=17mcyo48awkxwjfo5bxkofzzf&dl=0) and [longer notes from IAP 2022](https://www.dropbox.com/s/tde5cow6wuais8y/Hessians.pdf?dl=0))
-* video recording (MIT only): [classroom recording](https://mit.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=a72e3378-1c0f-425d-ae52-af880157e85c)
+* video recording (~~MIT only~~ on YouTube): [part 1](https://youtu.be/feU1kISxPDM?si=zvV3Pt6TLOalRlgs) and [part 2](https://youtu.be/PkpRIStmfrE?si=F_OyXxT6V3h2imNG)
 
 **Further reading (part 1)**:
 * The idea of computing gradients of programs with a sampleable random output is called [Monte-Carlo Gradient Estimation](https://arxiv.org/abs/1906.10652); the link leads to a nice survey.
@@ -150,7 +149,7 @@ The formula for the [derivative of log(det A)](https://statisticaloddsandends.wo
 * part 1: derivatives of eigenproblems [(html)](https://rawcdn.githack.com/mitmath/matrixcalc/d11b747d70a5d9e1a3da8cdb68a7f8a220d3afae/notes/symeig.jl.html) [(julia source)](notes/symeig.jl)
 * part 2: forward and reverse-mode automatic differentiation on computational graphs, continued from lecture 5 ([handwritten notes](https://github.com/mitmath/JuliaComputation/blob/ec6861bc9396d2b577f1bbc8136683d4298d7dc8/slides/ad_handwritten.pdf)) and [interactive notebook](https://simeonschaub.github.io/ReverseModePluto/notebook.html)
 * part 3: some topics we didn't cover
-* video recording (MIT only): [classroom recording](https://mit.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=a72e3378-1c0f-425d-ae52-af880157e85c)
+* video recording (MIT only): [part 1](https://youtu.be/v6w8hVZPt0o?si=4kXUHh0sGyzW-Ta5) and [part 2](https://youtu.be/43kl6wi1H6k?si=aoxXgvgacmAYb3XX)
 * [pset 2 solutions](psets/pset2sol.pdf) and Julia [notebook](psets/pset2sol.ipynb)
 
 **Further reading (part 1)**: Computing derivatives on curved surfaces ("manifolds") is closely related to [tangent spaces](https://en.wikipedia.org/wiki/Tangent_space) in differential geometry.   The effect of constraints can also be expressed in terms of [Lagrange multipliers](https://en.wikipedia.org/wiki/Lagrange_multiplier), which are useful in expressing optimization problems with constraints (see also chapter 5 of [Convex Optimization](https://web.stanford.edu/~boyd/cvxbook/) by Boyd and Vandenberghe).
