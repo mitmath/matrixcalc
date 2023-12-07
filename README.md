@@ -5,6 +5,8 @@ Professors [Alan Edelman](https://math.mit.edu/~edelman/) and [Steven G. Johnson
 
 For a previous version of this course, see [Matrix Calculus in IAP 2022 (OCW)](https://ocw.mit.edu/courses/18-s096-matrix-calculus-for-machine-learning-and-beyond-january-iap-2022/pages/lecture-notes-and-readings/) (also [on github](https://github.com/mitmath/matrixcalc/tree/iap2022)).
 
+For the latest version of this course, see [github.com/mitmath/matrixcalc](https://github.com/mitmath/matrixcalc).
+
 **Lectures:** MWF 11am–1pm, Jan 18–Feb 3 in room **2-190** (+ [video recording (~~MIT only~~ on YouTube)]([https://mit.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=a72e3378-1c0f-425d-ae52-af880157e85c](https://www.youtube.com/playlist?list=PLUl4u3cNGP62EaLLH92E_VCN4izBKK6OE)) and posted notes).  3 units, *2 problem sets* due Jan 25 and Feb 1 — submitted electronically [via Canvas](https://canvas.mit.edu/courses/17880), no exams.  Piazza discussion forum TBA. TA/grader: TBA.
 
 **Piazza forum:** ask questions on the [18.S096 piazza](https://piazza.com/mit/spring2023/18s096)
