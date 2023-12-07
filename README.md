@@ -149,7 +149,7 @@ The formula for the [derivative of log(det A)](https://statisticaloddsandends.wo
 * part 1: derivatives of eigenproblems [(html)](https://rawcdn.githack.com/mitmath/matrixcalc/d11b747d70a5d9e1a3da8cdb68a7f8a220d3afae/notes/symeig.jl.html) [(julia source)](notes/symeig.jl)
 * part 2: forward and reverse-mode automatic differentiation on computational graphs, continued from lecture 5 ([handwritten notes](https://github.com/mitmath/JuliaComputation/blob/ec6861bc9396d2b577f1bbc8136683d4298d7dc8/slides/ad_handwritten.pdf)) and [interactive notebook](https://simeonschaub.github.io/ReverseModePluto/notebook.html)
 * part 3: some topics we didn't cover
-* video recording (MIT only): [part 1](https://youtu.be/v6w8hVZPt0o?si=4kXUHh0sGyzW-Ta5) and [part 2](https://youtu.be/43kl6wi1H6k?si=aoxXgvgacmAYb3XX)
+* video recording (~~MIT only~~ on YouTube): [part 1](https://youtu.be/v6w8hVZPt0o?si=4kXUHh0sGyzW-Ta5) and [part 2](https://youtu.be/43kl6wi1H6k?si=aoxXgvgacmAYb3XX)
 * [pset 2 solutions](psets/pset2sol.pdf) and Julia [notebook](psets/pset2sol.ipynb)
 
 **Further reading (part 1)**: Computing derivatives on curved surfaces ("manifolds") is closely related to [tangent spaces](https://en.wikipedia.org/wiki/Tangent_space) in differential geometry.   The effect of constraints can also be expressed in terms of [Lagrange multipliers](https://en.wikipedia.org/wiki/Lagrange_multiplier), which are useful in expressing optimization problems with constraints (see also chapter 5 of [Convex Optimization](https://web.stanford.edu/~boyd/cvxbook/) by Boyd and Vandenberghe).
