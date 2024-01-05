@@ -5,7 +5,7 @@ Professors [Alan Edelman](https://math.mit.edu/~edelman/) and [Steven G. Johnson
 
 * For the previous version of this course, see [Matrix Calculus in IAP 2023 (OCW)](https://ocw.mit.edu/courses/18-s096-matrix-calculus-for-machine-learning-and-beyond-january-iap-2023/) on OpenCourseWare (also [on github](https://github.com/mitmath/matrixcalc/tree/iap2023), with videos [on YouTube](https://www.youtube.com/playlist?list=PLUl4u3cNGP62EaLLH92E_VCN4izBKK6OE)).  See also [Matrix Calculus in IAP 2022 (OCW)](https://ocw.mit.edu/courses/18-s096-matrix-calculus-for-machine-learning-and-beyond-january-iap-2022/pages/lecture-notes-and-readings/) (also [on github](https://github.com/mitmath/matrixcalc/tree/iap2022)).
 
-**Lectures:** MWF time 11am–1pm, ~~Jan 16~~ Jan 17–Feb 2 in room 2-131.  3 units, *2 problem sets* due Jan 24 and Jan 31 — submitted electronically via Canvas, no exams.  TA/grader: Fedir Yudin.
+**Lectures:** MWF time 11am–1pm, ~~Jan 16~~ Jan 17–Feb 2 in room 2-131.  3 units, *2 problem sets* due Jan 26 and Feb 2 — submitted electronically via Canvas, no exams.  TA/grader: Fedir Yudin.
 
 **Piazza forum:** TBA
 
