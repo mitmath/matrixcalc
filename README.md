@@ -7,7 +7,7 @@ Professors [Alan Edelman](https://math.mit.edu/~edelman/) and [Steven G. Johnson
 
 **Lectures:** MWF time 11am–1pm, ~~Jan 16~~ Jan 17–Feb 2 in room 2-131.  3 units, *2 problem sets* due Jan 26 and Feb 2 — submitted electronically via Canvas, no exams.  TA/grader: Fedir Yudin.
 
-**Piazza forum:** TBA
+**Piazza forum:** Online discussions at [this piazza link](https://piazza.com/class/lr11qx12l844lm).
 
 **Description:**
 
