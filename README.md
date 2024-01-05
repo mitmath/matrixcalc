@@ -36,5 +36,5 @@ Here are some of the planned topics:
 
 ## Lecture 1 (Jan 18)
 
-* part 1: overview
+* part 1: overview ([slides](https://docs.google.com/presentation/d/14TDndt-dWTYhjncv6Kms-opTx7KJbJF0KI0Le2VdazQ/edit?usp=sharing))
 * part 2: derivatives as linear operators
