@@ -7,6 +7,8 @@ Professors [Alan Edelman](https://math.mit.edu/~edelman/) and [Steven G. Johnson
 
 **Lectures:** MWF time 11am–1pm, ~~Jan 16~~ Jan 17–Feb 2 in room ~~2-131~~ 2-105; lecture recordings posted [on Panopto (MIT only)](https://canvas.mit.edu/courses/24125/external_tools/595).  3 units, *2 problem sets* due Jan 26 and Feb 2 — submitted electronically [via Canvas](https://canvas.mit.edu/courses/24125), no exams.  TA/grader: Fedir Yudin.
 
+**Course Notes**: [Draft notes from IAP 2023](https://www.dropbox.com/scl/fi/wmo5g2lfb599hwsulnees/Matrix-Calculus.pdf?rlkey=n9xll4xlref9n6lrr3zsmiv12&dl=0).  Other materials to be posted.
+
 **Piazza forum:** Online discussions at [this piazza link](https://piazza.com/class/lr11qx12l844lm).
 
 **Description:**
