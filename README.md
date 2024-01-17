@@ -40,6 +40,7 @@ Here are some of the planned topics:
 
 * part 1: overview ([slides](https://docs.google.com/presentation/d/14TDndt-dWTYhjncv6Kms-opTx7KJbJF0KI0Le2VdazQ/edit?usp=sharing))
 * part 2: derivatives as linear operators
+* [video (MIT only)](https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=04ba7bb3-569d-4b17-a764-b0f70083e47b)
 
  Re-thinking derivatives as linear operators: f(x+dx)-f(x)=df=f′(x)[dx] — f′ is the [linear operator](https://en.wikipedia.org/wiki/Linear_map) that gives the change df in the *output* from a "tiny" change dx in the *inputs*, to *first order* in dx (i.e. dropping higher-order terms).   When we have a vector function f(x)∈ℝᵐ of vector inputs x∈ℝⁿ, then f'(x) is a linear operator that takes n inputs to m outputs, which we can think of as an m×n matrix called the [Jacobian matrix](https://en.wikipedia.org/wiki/Jacobian_matrix_and_determinant) (typically covered only superficially in 18.02).
 
