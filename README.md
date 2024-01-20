@@ -56,8 +56,8 @@ Here are some of the planned topics:
 
 ## Lecture 2 (Jan 19)
 
-* part 1: more examples, gradients of scalar-valued functions, the chain rule, and forward/reverse mode differentiation (*slides* from lecture 1).
-* part 2: matrix Jacobians via [vectorization](https://en.wikipedia.org/wiki/Vectorization_(mathematics)); notes: [2×2 Matrix Jacobians (html)](https://rawcdn.githack.com/mitmath/matrixcalc/3f6758996e40c5c1070279f89f7f65e76e08003d/notes/2x2Jacobians.jl.html) [(pluto notebook source code)](https://github.com/mitmath/matrixcalc/blob/main/notes/2x2Jacobians.jl)
+* part 1: more examples, gradients of scalar-valued functions, the chain rule, and forward/reverse mode differentiation (*slides* from lecture 1).  Course notes: sections 2.3, 3.2, 7.1, 8.3.
+* part 2: matrix Jacobians via [vectorization](https://en.wikipedia.org/wiki/Vectorization_(mathematics)); notes: [2×2 Matrix Jacobians (html)](https://rawcdn.githack.com/mitmath/matrixcalc/3f6758996e40c5c1070279f89f7f65e76e08003d/notes/2x2Jacobians.jl.html) [(pluto notebook source code)](https://github.com/mitmath/matrixcalc/blob/main/notes/2x2Jacobians.jl).  Course notes: sections 4, 5.
 * [pset 1](psets/pset1.pdf), due Friday, Jan 26.
 * [video (MIT only)](https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=a2ae74c3-87c2-45f1-ab4e-b0f70083ec17)
 
