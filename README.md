@@ -80,7 +80,9 @@ Part 2: Another viewpoint on derivatives of matrix-valued functions via their re
 
 ## Lecture 3 (Jan 22)
 
-* TBA.
+* part 1: forward-mode automatic differentiation via dual numbers ([notes](notes/AutoDiff.ipynb))
+* part 2: finite-differences ([notes](notes/Finite%20difference%20checks.ipynb))
+
 
 ## *Optional* Julia Tutorial: Monday Jan 22 @ 5pm via Zoom
 
