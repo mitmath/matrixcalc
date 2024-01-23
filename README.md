@@ -82,11 +82,16 @@ Part 2: Another viewpoint on derivatives of matrix-valued functions via their re
 
 * part 1: forward-mode automatic differentiation via dual numbers ([notes](notes/AutoDiff.ipynb))
 * part 2: finite-differences ([notes](notes/Finite%20difference%20checks.ipynb))
+* [video (MIT only)](https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=6121f8ca-3226-4b8a-943d-b0fe0083f434)
+
+**Further reading (part 1)**: Googling "automatic differentiation" will turn up many, many resources — this is a huge practical field these days.   [ForwardDiff.jl](https://github.com/JuliaDiff/ForwardDiff.jl) (described detail by [this paper](https://arxiv.org/abs/1607.07892)) in Julia uses [dual number](https://en.wikipedia.org/wiki/Dual_number) arithmetic similar to lecture to compute derivatives; see also this [AMS review article](http://www.ams.org/publicoutreach/feature-column/fc-2017-12), or google "dual number automatic differentiation" for many other reviews.    Adrian Hill posted some nice [lecture notes on automatic differentiation (Julia-based)](https://adrhill.github.io/julia-ml-course/L6_Automatic_Differentiation/) for an ML course at TU Berlin (Summer 2023).  [TaylorDiff.jl](https://github.com/JuliaDiff/TaylorDiff.jl) extends this to higher-order derivatives.
+
+**Further reading (part 2)**: There is a lot of information online on [finite difference approximations](https://en.wikipedia.org/wiki/Finite_difference),  [these 18.303 notes](https://github.com/mitmath/18303/blob/fall16/difference-approx.pdf), or [Section 5.7 of *Numerical Recipes*](http://www.it.uom.gr/teaching/linearalgebra/NumericalRecipiesInC/c5-7.pdf).   The Julia [FiniteDifferences.jl package](https://github.com/JuliaDiff/FiniteDifferences.jl) provides lots of algorithms to compute finite-difference approximations; a particularly robust and powerful way to obtain high accuracy is to employ [Richardson extrapolation](https://github.com/JuliaDiff/FiniteDifferences.jl#richardson-extrapolation) to smaller and smaller δx.  If you make δx too small, the finite precision (#digits) of [floating-point arithmetic](https://en.wikipedia.org/wiki/Floating-point_arithmetic) leads to [catastrophic cancellation errors](https://en.wikipedia.org/wiki/Catastrophic_cancellation).
 
 
 ## *Optional* Julia Tutorial: Monday Jan 22 @ 5pm via Zoom
 
-* Virtually [via Zoom (MIT only)](https://mit.zoom.us/j/96237426531?pwd=eDcvNlNLMHJmSzFWRkx5dzZ3QUFUQT09).  A recording will be posted.
+* Virtually via Zoom.  [Recording (MIT only)](https://mit.zoom.us/rec/share/oirQFHELtxJkopybssFzml7YrudRyvIlmXjmgq4YemqmjT0P7wMGCd9ilC7SMZ_o.iBZ-UO6_ww9WjwF0?startTime=1705960822000).
 
 A basic overview of the Julia programming environment for numerical computations that we will use in 18.06 for simple computational exploration.   This (Zoom-based) tutorial will cover what Julia is and the basics of interaction, scalar/vector/matrix arithmetic, and plotting — we'll be using it as just a "fancy calculator" and no "real programming" will be required.
 
