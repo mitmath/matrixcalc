@@ -102,7 +102,8 @@ If possible, try to install Julia on your laptop beforehand using the instructio
 
 ## Lecture 4 (Jan 24)
 
-*  generalized gradients and inner products — [handwritten notes](https://www.dropbox.com/scl/fi/byg5mpcnnk4xh9tqjbjmk/Inner-Products-and-Norms.pdf?rlkey=egsdhyee9go9v17iuxxqx1edj&dl=0)
+*  [Handwritten notes](https://www.dropbox.com/scl/fi/byg5mpcnnk4xh9tqjbjmk/Inner-Products-and-Norms.pdf?rlkey=egsdhyee9go9v17iuxxqx1edj&dl=0)
+* generalized gradients and inner products — see handwritten notes
 * norms and derivatives: why norms of the input and output vector spaces are needed to *define* a derivative - see handwritten notes
 * steepest-ascent: why the gradient is the steepest-ascent direction for any inner product, using the corresponding norm.  example application: steepest-ascent optimization when x components have different units requires a weighted inner product and a corresponding norm - see handwritten notes
 * slides on nonlinear root-finding, optimization, and adjoint-method differentiation [slides](https://docs.google.com/presentation/d/1U1lB5bhscjbxEuH5FcFwMl5xbHl0qIEkMf5rm0MO8uE/edit?usp=sharing) - talked about optimization only
