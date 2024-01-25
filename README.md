@@ -98,3 +98,26 @@ A basic overview of the Julia programming environment for numerical computations
 * [Tutorial materials](https://github.com/mitmath/julia-mit) (and links to other resources)
 
 If possible, try to install Julia on your laptop beforehand using the instructions at the above link.  Failing that, you can run Julia in the cloud (see instructions above).
+
+
+## Lecture 4 (Jan 24)
+
+*  generalized gradients and inner products — [handwritten notes](https://www.dropbox.com/scl/fi/byg5mpcnnk4xh9tqjbjmk/Inner-Products-and-Norms.pdf?rlkey=egsdhyee9go9v17iuxxqx1edj&dl=0)
+* norms and derivatives: why norms of the input and output vector spaces are needed to *define* a derivative - see handwritten notes
+* steepest-ascent: why the gradient is the steepest-ascent direction for any inner product, using the corresponding norm.  example application: steepest-ascent optimization when x components have different units requires a weighted inner product and a corresponding norm - see handwritten notes
+* slides on nonlinear root-finding, optimization, and adjoint-method differentiation [slides](https://docs.google.com/presentation/d/1U1lB5bhscjbxEuH5FcFwMl5xbHl0qIEkMf5rm0MO8uE/edit?usp=sharing) - talked about optimization only
+* [video (MIT only)](https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=0547884e-2a94-4696-acdb-b0fe0083f36d)
+
+Generalizing **gradients** to *scalar* functions f(x) for x in arbitrary *vector spaces* x ∈ V.   The key thing is that we need not just a vector space, but an **inner product** x⋅y (a "dot product", also denoted ⟨x,y⟩ or ⟨x|y⟩); V is then formally called a [Hilbert space](https://en.wikipedia.org/wiki/Hilbert_space).   Then, for *any* scalar function, since df=f'(x)[dx] is a linear operator mapping dx∈V to scalars df∈ℝ (a "[linear form](https://en.wikipedia.org/wiki/Linear_form)"), it turns out that it [*must* be a dot product](https://en.wikipedia.org/wiki/Riesz_representation_theorem) of dx with "something", and we call that "something" the gradient!  That is, once we define a dot product, then for any scalar function f(x) we can define ∇f by f'(x)[dx]=∇f⋅dx.  So ∇f is always something with the same "shape" as x (the [steepest-ascent](https://math.stackexchange.com/questions/223252/why-is-gradient-the-direction-of-steepest-ascent) direction).
+
+Talked about the general [requirements for an inner product](https://en.wikipedia.org/wiki/Inner_product_space): linearity, positivity, and (conjugate) symmetry (and also mentioned the [Cauchy–Schwarz inequality](https://en.wikipedia.org/wiki/Cauchy%E2%80%93Schwarz_inequality), which follows from these properties).  Gave some examples of inner products, such as the familiar Euclidean inner product xᵀy or a weighted inner product.  Defined the most obvious inner product of m×n matrices: the [Frobenius inner product](https://en.wikipedia.org/wiki/Frobenius_inner_product) A⋅B=`sum(A .* B)`=trace(AᵀB)=vec(A)ᵀvec(B), the sum of the products of the matrix entries.  This also gives us the "Frobenius norm" ‖A‖²=A⋅A=trace(AᵀA)=‖vec(A)‖², the square root of the sum of the squares of the entries.   Using this, we can now take the derivatives of various scalar functions of matrices, e.g. we considered
+
+* f(A)=‖A‖ ⥰ ∇f = A/‖A‖
+* f(A)=xᵀAy ⥰ ∇f = xyᵀ (for constant x, y)
+* f(A)=det(A) ⥰ ∇f = det(A)(A⁻¹)ᵀ = [adjugate](https://en.wikipedia.org/wiki/Adjugate_matrix)(A)ᵀ: we will prove this later
+
+Also talked about the definition of a [norm](https://en.wikipedia.org/wiki/Norm_(mathematics)) (which can be obtained from an inner product if you have one, but can also be defined by itself), and why a norm is necessary to define a derivative: it is embedded in the definition of what a higher-order term o(δx) means.   (Although there are many possible norms, [in finite dimensions all norms are equivalent up to constant factors](https://math.mit.edu/~stevenj/18.335/norm-equivalence.pdf), so the definition of a derivative does not depend on the choice of norm.)
+
+Made precise and derived (with the help of Cauchy–Schwarz) the well known fact that ∇f is the **steepest-ascent** direction, for *any* scalar-valued function on a vector space with an inner product (any Hilbert space), in the norm corresponding to that inner product.  That is, if you take a step δx with a fixed length ‖δx‖=s, the greatest increase in f(x) to first order is found in a direction parallel to ∇f.
+
+**Further reading:** Course notes, section 7 and section 8.2.   SGJ gave another [overview of optimization](https://github.com/mitmath/18335/blob/spring21/notes/optimization.pdf) in 18.335 ([video](https://mit.zoom.us/rec/share/QwT0OMMFfkgi9dD0Zoa_3UK-14LbQR8GFcd7Q-O9PqIJTbbULGYqX3isDkLa1kOw.CNhZ0KukrqW2kxeT?startTime=1619031558000)).  There are many textbooks on [nonlinear optimization](http://www.athenasc.com/nonlinbook.html) algorithms of various sorts, including specialized books on [convex optimization](http://web.stanford.edu/~boyd/cvxbook/), [derivative-free optimization](http://bookstore.siam.org/mp08/), etcetera.
