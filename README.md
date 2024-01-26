@@ -122,3 +122,12 @@ Also talked about the definition of a [norm](https://en.wikipedia.org/wiki/Norm_
 Made precise and derived (with the help of Cauchy–Schwarz) the well known fact that ∇f is the **steepest-ascent** direction, for *any* scalar-valued function on a vector space with an inner product (any Hilbert space), in the norm corresponding to that inner product.  That is, if you take a step δx with a fixed length ‖δx‖=s, the greatest increase in f(x) to first order is found in a direction parallel to ∇f.
 
 **Further reading:** Course notes, section 7 and section 8.2.   SGJ gave another [overview of optimization](https://github.com/mitmath/18335/blob/spring21/notes/optimization.pdf) in 18.335 ([video](https://mit.zoom.us/rec/share/QwT0OMMFfkgi9dD0Zoa_3UK-14LbQR8GFcd7Q-O9PqIJTbbULGYqX3isDkLa1kOw.CNhZ0KukrqW2kxeT?startTime=1619031558000)).  There are many textbooks on [nonlinear optimization](http://www.athenasc.com/nonlinbook.html) algorithms of various sorts, including specialized books on [convex optimization](http://web.stanford.edu/~boyd/cvxbook/), [derivative-free optimization](http://bookstore.siam.org/mp08/), etcetera.
+
+## Lecture 5 (Jan 24)
+
+* More on handling units - a change of variables (to nondimensionalize the problem) is equivalent (for steepest descent) to a nondimensionalization of the inner-product/norm, but the former is typically easier for use with off-the-shelf optimization software.   See end of [handwritten notes](https://www.dropbox.com/scl/fi/byg5mpcnnk4xh9tqjbjmk/Inner-Products-and-Norms.pdf?rlkey=egsdhyee9go9v17iuxxqx1edj&dl=0) from last lecture.
+* Adjoint/reverse-mode gradients for linear and nonlinear equations - see [slides](https://docs.google.com/presentation/d/1U1lB5bhscjbxEuH5FcFwMl5xbHl0qIEkMf5rm0MO8uE/edit?usp=sharing) on nonlinear root-finding, optimization, and adjoint-method differentiation.  Example from [IAP 2023 pset 2](https://ocw.mit.edu/courses/18-s096-matrix-calculus-for-machine-learning-and-beyond-january-iap-2023/resources/mit18_s096iap23_pset2sol_pdf/).
+* Reverse-mode gradients for neural networks: [handwritten backpropagation notes](https://www.dropbox.com/scl/fi/bke4pbr342e1jhv9qytg1/NN-Backpropagation.pdf?rlkey=b7krtzdt4hgsj63zyq9ok2gqv&dl=0)
+* The [gradient of the determinant](https://rawcdn.githack.com/mitmath/matrixcalc/b08435612045b17745707f03900e4e4187a6f489/notes/determinant_and_inverse.html) is ∇(det A) = det(A)A⁻ᵀ
+* pset 1 solutions - coming soon
+* pset 2 (due midnight Feb 2) - coming soon
