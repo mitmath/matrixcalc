@@ -129,7 +129,7 @@ Made precise and derived (with the help of Cauchy–Schwarz) the well known fact
 * Adjoint/reverse-mode gradients for linear and nonlinear equations - see [slides](https://docs.google.com/presentation/d/1U1lB5bhscjbxEuH5FcFwMl5xbHl0qIEkMf5rm0MO8uE/edit?usp=sharing) on nonlinear root-finding, optimization, and adjoint-method differentiation.  Example from [IAP 2023 pset 2](https://ocw.mit.edu/courses/18-s096-matrix-calculus-for-machine-learning-and-beyond-january-iap-2023/resources/mit18_s096iap23_pset2sol_pdf/).
 * Reverse-mode gradients for neural networks: [handwritten backpropagation notes](https://www.dropbox.com/scl/fi/bke4pbr342e1jhv9qytg1/NN-Backpropagation.pdf?rlkey=b7krtzdt4hgsj63zyq9ok2gqv&dl=0)
 * The [gradient of the determinant](https://rawcdn.githack.com/mitmath/matrixcalc/b08435612045b17745707f03900e4e4187a6f489/notes/determinant_and_inverse.html) is ∇(det A) = det(A)A⁻ᵀ
-* pset 1 solutions - coming soon
+* [pset 1 solutions](psets/pset1sol.pdf) and [computational notebook](psets/pset1sol.ipynb)
 * [pset 2](psets/pset2.pdf) (due midnight Feb 2)
 
 **Further reading on adjoint methods** Course notes, section 8.3. A useful review of topology-optimization methods in engineering (where "every pixel/voxel" of a structure is a degree of freedom) can be found in [Sigmund and Maute (2013)](https://link.springer.com/article/10.1007/s00158-013-0978-6).  See the [notes on adjoint methods](https://github.com/mitmath/18335/blob/spring21/notes/adjoint/adjoint.pdf) and [slides](https://github.com/mitmath/18335/blob/spring21/notes/adjoint/adjoint-intro.pdf) from 18.335 ([video](https://mit.zoom.us/rec/share/xLxMyhBSoIhSFxce5lHb1ubItby5BKFs6mgJJ7kMmjotETmaYm4YA22TA8w8n13i.6sTEFrkkloG7LFeR?startTime=1619463273000)).
