@@ -130,4 +130,4 @@ Made precise and derived (with the help of Cauchy–Schwarz) the well known fact
 * Reverse-mode gradients for neural networks: [handwritten backpropagation notes](https://www.dropbox.com/scl/fi/bke4pbr342e1jhv9qytg1/NN-Backpropagation.pdf?rlkey=b7krtzdt4hgsj63zyq9ok2gqv&dl=0)
 * The [gradient of the determinant](https://rawcdn.githack.com/mitmath/matrixcalc/b08435612045b17745707f03900e4e4187a6f489/notes/determinant_and_inverse.html) is ∇(det A) = det(A)A⁻ᵀ
 * pset 1 solutions - coming soon
-* pset 2 (due midnight Feb 2) - coming soon
+* [pset 2](psets/pset2.pdf) (due midnight Feb 2)
