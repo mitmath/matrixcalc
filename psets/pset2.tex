@@ -1,9 +1,9 @@
 \documentclass[10pt,oneside]{article}
-\usepackage{amsmath}
-\usepackage{graphicx}
-\usepackage{subcaption}
+\usepackage{amsmath} 
+\usepackage{graphicx} 
+\usepackage{subcaption} 
 \usepackage{amsfonts}
-\usepackage{amssymb}
+\usepackage{amssymb} 
 
 \newcommand{\tr}{\operatorname{trace}}
 \newcommand{\vecm}{\operatorname{vec}}
@@ -49,7 +49,7 @@
 
 
 \usepackage{algpseudocode}
-\usepackage{algorithm}
+\usepackage{algorithm} 
 \floatname{algorithm}{Algoritmo}
 
 \usepackage{enumitem}
@@ -59,20 +59,20 @@
 \fancyhf{}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{MIT IAP January 2024}
-\fancyhead[C]{Matrix Calculus}
-\fancyhead[R]{Profs. Edelman and Johnson}
+\fancyhead[L]{MIT IAP January 2024} 
+\fancyhead[C]{Matrix Calculus} 
+\fancyhead[R]{Profs. Edelman and Johnson} 
 \fancyfoot[R]{}
 % https://tex.stackexchange.com/questions/227/how-can-i-add-page-of-on-my-document
 \fancyfoot[C]{\thepage\ of \pageref*{LastPage}}
 %\fancyfoot[C]{ of }
-\fancyfoot[L]{}
-\renewcommand{\headrulewidth}{2pt}
+\fancyfoot[L]{} 
+\renewcommand{\headrulewidth}{2pt} 
 \renewcommand{\footrulewidth}{2pt}
 
-\usepackage[newfloat=true]{minted}
+\usepackage[newfloat=true]{minted} 
 
-\author{}
+\author{} 
 \title{Homework 2}
 
 \date{\today}
@@ -84,17 +84,17 @@
   font=footnotesize,singlelinecheck=off,format=mitedFormat,labelsep=space}
 \newenvironment{mintedCode}{\captionsetup{type=listing,style=minetdStyle}}{}
 
-\usepackage{dirtytalk}
+\usepackage{dirtytalk} 
 
 \SetupFloatingEnvironment{listing}{}
 
 \usepackage[parfill]{parskip}
 
-\usepackage{csquotes}
+\usepackage{csquotes} 
 
 \begin{document}
 \maketitle
-\thispagestyle{fancy}
+\thispagestyle{fancy} 
 
 {\bf Please submit your HW on Canvas; include a PDF printout of any code and results, clearly labeled, e.g. from a Jupyter notebook.  For coding problems, we recommend using Julia, but you can use other languages if you wish. It is due Friday February~2nd by 11:59pm EST.  }
 
@@ -169,7 +169,7 @@ linear operators such that $dg=\frac{\partial g}{\partial x}dx+\frac{\partial g}
 for any change $dx$ and $dp$, to first order.)
 \item In Julia (or Python etc.), implement Newton's method to solve $g(x,p)=0$
 from a given starting guess~$x$. Using $p=[1,2,1]$, start your
-Newton iteration at $x=[1,2]$ and show that it converges rapidly
+Newton iteration at $x=[1.2,1.3]$ and show that it converges rapidly
 to $x=[1,1]$ (it should converge to machine precision in $<10$ steps).
 \item Now, consider the function $f(p)=\Vert x(p)\Vert$, where the ``implicit
 function''\footnote{This $x(p)$ can be defined uniquely in some neighborhood of a root
@@ -186,7 +186,7 @@ by Newton's method starting from $x(p)$).
 \item Suppose that $f(A)$ is a function that maps (real) $m\times m$ matrices
 to $m\times m$ matrices, and its derivative is the linear operator
 $f'(A)[dA]$. For the Frobenius inner product $\langle X,Y\rangle=\tr(X^{T}Y)$,
-it turns out that we typically have
+it turns out that we typically have 
 \[
 \left\langle X,f'(A)[Y]\right\rangle =\left\langle f'(A^{T})[X],Y\right\rangle ,
 \]
@@ -207,9 +207,9 @@ as $e^{A}$.
 $f(A)=p(A)q(A)^{-1}$ for any polynomials~$p$ and~$q$, i.e.~for
 any rational function of $A$. You need not do this, however.)
 \end{enumerate}
-\item Consider the function $f(A)=\det(\exp(A))$.
+\item Consider the function $f(A)=\det(A + \exp(A))$.
 \begin{enumerate}
-\item Write $f'(A)[dA]$ in terms of $\exp'(A)[dA]$. (You learned how to
+\item Write $f'(A)[dA]$ in terms of $\exp'(A)[dA]$ and other standard matrix operations. (You learned how to
 compute $\exp'$ in pset~1.)
 \item Using the identity from the previous part, write $\nabla f$ in a
 way that can be evaluated efficiently (“reverse mode”) using
