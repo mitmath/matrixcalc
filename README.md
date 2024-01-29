@@ -145,6 +145,7 @@ The formula for the [derivative of log(det A)](https://statisticaloddsandends.wo
 ## Lecture 6 (Jan 29)
 * part 1: second derivatives, bilinear forms, and Hessian matrices; applications of Hessians to optimization - course notes, section 14
 * part 2: calculus of variations - course notes, section 12
+* [video (MIT only)](https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=5f2f2002-7f55-41ac-9b9a-b1050083ea1f)
 
 **Further reading (part 1)**:
 * [Bilinear forms](https://en.wikipedia.org/wiki/Bilinear_form) are an important generalization of quadratic operations to arbitrary vector spaces, and we saw that the second derivative can be viewed as a [symmetric bilinear forms](https://en.wikipedia.org/wiki/Symmetric_bilinear_form).   This is closely related to a [quadratic form](https://en.wikipedia.org/wiki/Quadratic_form), which is just what we get by plugging in the same vector twice, e.g. the f''(x)[δx,δx]/2 that appears in quadratic approximations for f(x+δx) is a quadratic form.  The most familar multivariate version of f''(x) is the [Hessian matrix](https://en.wikipedia.org/wiki/Hessian_matrix); Khan academy has an elementary [introduction to quadratic approximation](https://www.khanacademy.org/math/multivariable-calculus/applications-of-multivariable-derivatives/quadratic-approximations/a/quadratic-approximation)
