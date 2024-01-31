@@ -159,3 +159,8 @@ The formula for the [derivative of log(det A)](https://statisticaloddsandends.wo
 
 * part 1: derivatives with constratins, derivatives of eigenproblems [(html)](https://rawcdn.githack.com/mitmath/matrixcalc/d11b747d70a5d9e1a3da8cdb68a7f8a220d3afae/notes/symeig.jl.html) [(julia source)](notes/symeig.jl)
 * part 2: complex numbers and CR calculus - handwritten notes to be posted
+
+## Lecture 8 (Feb 2)
+
+* part 1: derivatives of random functions (guest lecture by Gaurav Arya)
+* part 2: forward and reverse-mode automatic differentiation on computational graphs
