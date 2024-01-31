@@ -143,8 +143,8 @@ Not as well documented is that the gradient of the determinant is the cofactor m
 The formula for the [derivative of log(det A)](https://statisticaloddsandends.wordpress.com/2018/05/24/derivative-of-log-det-x/) is also nice, and logs of determinants appear in surprisingly many applications (from statistics to quantum field theory).  The [Matrix Cookbook](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf) contains many of these formulas, but no derivations.   A nice application of d(det(A)) is solving for eigenvalues λ by applying Newton's method to det(A-λI)=0, and more generally one can solve det(M(λ))=0 for any function Μ(λ) — the resulting roots λ are called [nonlinear eigenvalues](https://en.wikipedia.org/wiki/Nonlinear_eigenproblem) (if M is nonlinear in λ), and one can [apply Newton's method](https://www.maths.manchester.ac.uk/~ftisseur/talks/FT_talk2.pdf) using the determinant-derivative formula here.
 
 ## Lecture 6 (Jan 29)
-* part 1: second derivatives, bilinear forms, and Hessian matrices; applications of Hessians to optimization - course notes, section 14
-* part 2: calculus of variations - course notes, section 12
+* part 1: second derivatives, bilinear forms, and Hessian matrices; applications of Hessians to optimization - course notes, section 14 + [handwritten notes](https://www.dropbox.com/scl/fi/65qq9ikolerns2dsu8ooh/Second-Derivatives.pdf?rlkey=shn2991jn37g8sesygpn7eseb&dl=0)
+* part 2: calculus of variations - course notes, section 12 + [handwritten notes](https://www.dropbox.com/scl/fi/21axf5shg7nb9jcvksma4/Calculus-of-Variations.pdf?rlkey=1r7mwjzhfs1v9nrtfizpkuarq&dl=0)
 * [video (MIT only)](https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=5f2f2002-7f55-41ac-9b9a-b1050083ea1f)
 
 **Further reading (part 1)**:
