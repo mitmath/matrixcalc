@@ -1,9 +1,9 @@
 \documentclass[10pt,oneside]{article}
-\usepackage{amsmath} 
-\usepackage{graphicx} 
-\usepackage{subcaption} 
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{subcaption}
 \usepackage{amsfonts}
-\usepackage{amssymb} 
+\usepackage{amssymb}
 
 \newcommand{\tr}{\operatorname{trace}}
 \newcommand{\vecm}{\operatorname{vec}}
@@ -49,7 +49,7 @@
 
 
 \usepackage{algpseudocode}
-\usepackage{algorithm} 
+\usepackage{algorithm}
 \floatname{algorithm}{Algoritmo}
 
 \usepackage{enumitem}
@@ -59,20 +59,20 @@
 \fancyhf{}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{MIT IAP January 2024} 
-\fancyhead[C]{Matrix Calculus} 
-\fancyhead[R]{Profs. Edelman and Johnson} 
+\fancyhead[L]{MIT IAP January 2024}
+\fancyhead[C]{Matrix Calculus}
+\fancyhead[R]{Profs. Edelman and Johnson}
 \fancyfoot[R]{}
 % https://tex.stackexchange.com/questions/227/how-can-i-add-page-of-on-my-document
 \fancyfoot[C]{\thepage\ of \pageref*{LastPage}}
 %\fancyfoot[C]{ of }
-\fancyfoot[L]{} 
-\renewcommand{\headrulewidth}{2pt} 
+\fancyfoot[L]{}
+\renewcommand{\headrulewidth}{2pt}
 \renewcommand{\footrulewidth}{2pt}
 
-\usepackage[newfloat=true]{minted} 
+\usepackage[newfloat=true]{minted}
 
-\author{} 
+\author{}
 \title{Homework 2}
 
 \date{\today}
@@ -84,17 +84,17 @@
   font=footnotesize,singlelinecheck=off,format=mitedFormat,labelsep=space}
 \newenvironment{mintedCode}{\captionsetup{type=listing,style=minetdStyle}}{}
 
-\usepackage{dirtytalk} 
+\usepackage{dirtytalk}
 
 \SetupFloatingEnvironment{listing}{}
 
 \usepackage[parfill]{parskip}
 
-\usepackage{csquotes} 
+\usepackage{csquotes}
 
 \begin{document}
 \maketitle
-\thispagestyle{fancy} 
+\thispagestyle{fancy}
 
 {\bf Please submit your HW on Canvas; include a PDF printout of any code and results, clearly labeled, e.g. from a Jupyter notebook.  For coding problems, we recommend using Julia, but you can use other languages if you wish. It is due Friday February~2nd by 11:59pm EST.  }
 
@@ -142,7 +142,7 @@ a function of $h$ on a log–log scale, similar to the course notebook.
 What power law in $h$ does the truncation error (approximately) seem
 to follow? That is, what is the “order of accuracy”?
 \item Derive the stencil equation $Aw=e_{m+1}$ above: write out the first
-$n-1$ terms of the Taylor series for $f(x_{0}+\delta x)$, and try
+$n$ terms of the Taylor series (up to the $f^{(n-1)}$ derivative) for $f(x_{0}+\delta x)$, and try
 to find a linear combination of this series evaluated at $\delta x=x_{k}-x_{0}$
 for $k=1\ldots n$ in such a way that you obtain $f^{(m)}(x_{0})$.
 \end{enumerate}
@@ -186,7 +186,7 @@ by Newton's method starting from $x(p)$).
 \item Suppose that $f(A)$ is a function that maps (real) $m\times m$ matrices
 to $m\times m$ matrices, and its derivative is the linear operator
 $f'(A)[dA]$. For the Frobenius inner product $\langle X,Y\rangle=\tr(X^{T}Y)$,
-it turns out that we typically have 
+it turns out that we typically have
 \[
 \left\langle X,f'(A)[Y]\right\rangle =\left\langle f'(A^{T})[X],Y\right\rangle ,
 \]
