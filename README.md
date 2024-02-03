@@ -173,7 +173,7 @@ In physics, first and second derivatives of eigenvalues and first derivatives of
 * part 1: derivatives of random functions (guest lecture by Gaurav Arya)
 * part 2: forward and reverse-mode automatic differentiation on computational graphs
 * video (MIT only): coming soon
-* pset 2 solutions: coming soon
+* [pset 2 solutions](psets/pset2sol.pdf) and [Julia notebook](psets/pset2sol.ipynb)
 
 **Further reading (part 1):** Course notes, chapter 13.
 * The idea of computing gradients of programs with a sampleable random output is called [Monte-Carlo Gradient Estimation](https://arxiv.org/abs/1906.10652); the link leads to a nice survey.
