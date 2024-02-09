@@ -184,7 +184,7 @@ In physics, first and second derivatives of eigenvalues and first derivatives of
 
 **Further reading (part 2):** Course notes, section 10.2.  See [Prof. Edelman's poster](notes/backprop_poster.pdf) about backpropagation on graphs, this blog post on [calculus on computational graphs](https://colah.github.io/posts/2015-08-Backprop/) for a gentle review, and these Columbia [course notes](http://www.cs.columbia.edu/~mcollins/ff2.pdf) for a more formal approach.  Implementing automatic reverse-mode AD is much more complicated than defining a new number type, unfortunately, and involves a lot more intricacies of compiler technology.  See also Chris Rackauckas's blog post on [tradeoffs in AD](https://www.stochasticlifestyle.com/engineering-trade-offs-in-automatic-differentiation-from-tensorflow-and-pytorch-to-jax-and-julia/), and Chris's discussion post on [AD limitations](https://discourse.julialang.org/t/open-discussion-on-the-state-of-differentiable-physics-in-julia/72900/2).
 
-# Other Topics in Differentiation
+## Other Topics in Differentiation
 
 There are many topics that we did not have time to cover, even in 16 hours of lectures.  If you came into this class thinking that taking derivatives is easy and you already learned everything there is to know about it in first-year calculus, hopefully we've convinced you that it is an enormously rich subject that is impossible to exhaust in a single course.  Some of the things it might have been nice to include are:
 
