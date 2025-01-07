@@ -9,7 +9,7 @@ Professors [Alan Edelman](https://math.mit.edu/~edelman/) and [Steven G. Johnson
 
 **Course Notes**: [Draft notes from IAP 2024](https://www.dropbox.com/scl/fi/iq4plt8oqja845cuuosa4/Matrix-Calculus-latest.pdf?rlkey=nsnytdu28jje41nhh1bl2dbba&st=i6lfha0r&dl=0).  Other materials to be posted.
 
-**Piazza forum:** Online discussions at Piazza (link TBD).
+**Piazza forum:** Online discussions at [Piazza](https://piazza.com/mit/spring2025/18063).
 
 **Description:**
 
