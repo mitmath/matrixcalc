@@ -36,7 +36,7 @@ Here are some of the planned topics:
 * Applications in engineering/scientific optimization and machine learning.
 * Second derivatives, Hessian matrices, quadratic approximations, and quasi-Newton methods.
 
-## Lecture 1 (Jan 17)
+## Lecture 1 (Jan 13)
 
 * part 1: overview ([slides](https://docs.google.com/presentation/d/16uwYARbg4unaGU4Enp6uQvlBb6N21j1UINQW99om6R4/edit?usp=sharing))
 * part 2: derivatives as linear operators
