@@ -61,8 +61,11 @@ Here are some of the planned topics:
 
 ## Lecture 2 (Jan 15)
 
-* part 0: example of reverse-mode/adjoint differentiation for optimizing g(p) = f(A(p)⁻¹b).  (Last few slides of lecture 1.)
-
 * part 1: matrix Jacobians via [vectorization](https://en.wikipedia.org/wiki/Vectorization_(mathematics)); notes: [2×2 Matrix Jacobians (html)](https://rawcdn.githack.com/mitmath/matrixcalc/3f6758996e40c5c1070279f89f7f65e76e08003d/notes/2x2Jacobians.jl.html) [(pluto notebook source code)](https://github.com/mitmath/matrixcalc/blob/main/notes/2x2Jacobians.jl).  Course notes: chapter 3.
 
-* part 2: finite-difference approximations ([notes](notes/Finite%20difference%20checks.ipynb)): course notes, chapter 4.
+* example of reverse-mode/adjoint differentiation for optimizing g(p) = f(A(p)⁻¹b), showing why a linear-operator formula like d(A⁻¹)=–A⁻¹ dA A⁻¹ is actually perfectly practical and usable, and why evaluating the chain rule outputs-to-inputs is so practically important.  Last few slides of lecture 1.
+
+* [video (MIT only)](https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=0abdc678-c7bd-4253-9e11-b263008420eb)
+
+
+**Further reading**: Wikipedia has a useful list of [properties of the matrix trace](https://en.wikipedia.org/wiki/Trace_(linear_algebra)#Properties).  The "matrix dot product" introduced today is also called the [Frobenius inner product](https://en.wikipedia.org/wiki/Frobenius_inner_product), and the corresponding norm ("length" of the matrix viewed as a vector) is the [Frobenius norm](https://mathworld.wolfram.com/FrobeniusNorm.html).   When you "flatten" a matrix A by stacking its columns into a single vector, the result is called [vec(A)](https://en.wikipedia.org/wiki/Vectorization_(mathematics)), and many important linear operations on matrices can be expressed as [Kronecker products](https://en.wikipedia.org/wiki/Kronecker_product).  The [Matrix Cookbook](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf) has lots of formulas for derivatives of matrix functions.  See the [notes on adjoint methods](https://github.com/mitmath/18335/blob/spring21/notes/adjoint/adjoint.pdf) and [slides](https://github.com/mitmath/18335/blob/spring21/notes/adjoint/adjoint-intro.pdf) from 18.335 ([video](https://mit.zoom.us/rec/share/xLxMyhBSoIhSFxce5lHb1ubItby5BKFs6mgJJ7kMmjotETmaYm4YA22TA8w8n13i.6sTEFrkkloG7LFeR?startTime=1619463273000)).
