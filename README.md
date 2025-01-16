@@ -61,7 +61,7 @@ Here are some of the planned topics:
 
 ## Lecture 2 (Jan 15)
 
-* part 1: matrix Jacobians via [vectorization](https://en.wikipedia.org/wiki/Vectorization_(mathematics)); notes: [2×2 Matrix Jacobians (html)](https://rawcdn.githack.com/mitmath/matrixcalc/3f6758996e40c5c1070279f89f7f65e76e08003d/notes/2x2Jacobians.jl.html) [(pluto notebook source code)](https://github.com/mitmath/matrixcalc/blob/main/notes/2x2Jacobians.jl).  Course notes: chapter 3.
+* part 1: matrix Jacobians via [vectorization](https://en.wikipedia.org/wiki/Vectorization_(mathematics)); notes: [2×2 Matrix Jacobians (html)](https://rawcdn.githack.com/mitmath/matrixcalc/3f6758996e40c5c1070279f89f7f65e76e08003d/notes/2x2Jacobians.jl.html) [(pluto notebook source code)](https://github.com/mitmath/matrixcalc/blob/main/notes/2x2Jacobians.jl) [(jupyter notebook)](notes/2x2Jacobians.ipynb).  Course notes: chapter 3.
 
 * example of reverse-mode/adjoint differentiation for optimizing g(p) = f(A(p)⁻¹b), showing why a linear-operator formula like d(A⁻¹)=–A⁻¹ dA A⁻¹ is actually perfectly practical and usable, and why evaluating the chain rule outputs-to-inputs is so practically important.  Last few slides of lecture 1.
 
