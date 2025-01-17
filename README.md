@@ -78,7 +78,7 @@ Here are some of the planned topics:
 
 * The [gradient of the determinant](https://rawcdn.githack.com/mitmath/matrixcalc/b08435612045b17745707f03900e4e4187a6f489/notes/determinant_and_inverse.html) is ∇(det A) = det(A)A⁻ᵀ
 
-* an amazing trick by [Mathias (1996)](https://doi.org/10.1137/S0895479895283409): `f([A dA; 0I A]) = [f(A) f′(A)[dA]; 0I f(A)]` for any analytic/smooth function f(A) acting on square matrices.  (e.g. matrix powers/polynomials, matrix exponentials, etcetera).
+* an amazing trick by [Mathias (1996)](https://doi.org/10.1137/S0895479895283409): `f([A dA; 0I A]) = [f(A) f′(A)[dA]; 0I f(A)]` (in Julia notation) for any analytic/smooth function f(A) acting on square matrices.  (e.g. matrix powers/polynomials, matrix exponentials, etcetera).
 
 * [video (MIT only)](https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=134a6f3a-b1b9-442e-8e53-b26300842887)
 
