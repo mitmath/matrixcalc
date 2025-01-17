@@ -102,7 +102,7 @@ Closed with a sketch of an amazing formula by Mathias for the derivatives of smo
 f(\begin{bmatrix} A & \delta A \\ & A \end{bmatrix}) =
     \begin{bmatrix} f(A) & f'(A)[\delta A] \\ & f(A) \end{bmatrix} \, .
 ```
-(This is *exact* for any δA, even if it is not small!)
+(This is *exact* for any δA, even if it is not small!)  You will investigate this more closely for homework.
 
 **Further reading (∇det)**: Course notes, chapter 7.  There are lots of discussions of the
 [derivative of a determinant](https://en.wikipedia.org/wiki/Jacobi%27s_formula) online, involving the ["adjugate" matrix](https://en.wikipedia.org/wiki/Adjugate_matrix) det(A)A⁻¹.
