@@ -97,7 +97,12 @@ Also talked about the definition of a [norm](https://en.wikipedia.org/wiki/Norm_
 
 Made precise and derived (with the help of Cauchy–Schwarz) the well known fact that ∇f is the **steepest-ascent** direction, for *any* scalar-valued function on a vector space with an inner product (any Hilbert space), in the norm corresponding to that inner product.  That is, if you take a step δx with a fixed length ‖δx‖=s, the greatest increase in f(x) to first order is found in a direction parallel to ∇f.
 
-Closed with a sketch of an amazing formula by Mathias for the derivatives of smooth functions from square matrices to square matrices, which you will investigate more for homework.
+Closed with a sketch of an amazing formula by Mathias for the derivatives of smooth functions from square matrices to square matrices, which you will investigate more for homework: for a sufficiently smooth function f(A) from square matrices to square matrices, it turns out that:
+$$
+f(\begin{bmatrix} A & \delta A \\\ & A \end{bmatrix}) =
+    \begin{bmatrix} f(A) & f'(A)[\delta A] \\\ & f(A) \end{bmatrix} \, .
+$$
+(This is *exact* for any δA, even if it is not small!)
 
 **Further reading (gradients and norms):** Course notes, chapter 5.
 
