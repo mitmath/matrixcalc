@@ -72,7 +72,7 @@ Here are some of the planned topics:
 
 ## Lecture 3 (Jan 17)
 
-* generalized gradients and inner products — [handwritten notes](https://www.dropbox.com/s/dtdriu0jg1sqoqr/Derivatives%20as%20Linear%20Operators.pdf?dl=0)
+* generalized gradients and inner products — [handwritten notes](https://www.dropbox.com/scl/fi/byg5mpcnnk4xh9tqjbjmk/Inner-Products-and-Norms.pdf?rlkey=egsdhyee9go9v17iuxxqx1edj&dl=0)
  - also norms and derivatives: why a norm of the input and output are needed to *define* a derivative
  - more on handling units: when the components of the vector are quantities different units, defining the inner product (and hence the norm) requires dimensional weight factors to scale the quantities.  (Using standard gradient / inner product implicitly uses weights given by whatever units you are using.) A change of variables (to nondimensionalize the problem) is equivalent (for steepest descent) to a nondimensionalization of the inner-product/norm, but the former is typically easier for use with off-the-shelf optimization software.   Usually, you want to use units/scaling so that all your quantities have similar scales, otherwise steepest descent may converge very slowly!
 
