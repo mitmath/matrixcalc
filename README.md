@@ -72,11 +72,11 @@ Here are some of the planned topics:
 
 ## Lecture 3 (Jan 17)
 
-* generalized gradients and inner products — [handwritten notes](https://www.dropbox.com/scl/fi/byg5mpcnnk4xh9tqjbjmk/Inner-Products-and-Norms.pdf?rlkey=egsdhyee9go9v17iuxxqx1edj&dl=0)
+* generalized gradients and inner products — [handwritten notes](https://www.dropbox.com/scl/fi/byg5mpcnnk4xh9tqjbjmk/Inner-Products-and-Norms.pdf?rlkey=egsdhyee9go9v17iuxxqx1edj&dl=0) and course notes chapter 5
  - also norms and derivatives: why a norm of the input and output are needed to *define* a derivative
  - more on handling units: when the components of the vector are quantities different units, defining the inner product (and hence the norm) requires dimensional weight factors to scale the quantities.  (Using standard gradient / inner product implicitly uses weights given by whatever units you are using.) A change of variables (to nondimensionalize the problem) is equivalent (for steepest descent) to a nondimensionalization of the inner-product/norm, but the former is typically easier for use with off-the-shelf optimization software.   Usually, you want to use units/scaling so that all your quantities have similar scales, otherwise steepest descent may converge very slowly!
 
-* The [gradient of the determinant](https://rawcdn.githack.com/mitmath/matrixcalc/b08435612045b17745707f03900e4e4187a6f489/notes/determinant_and_inverse.html) is ∇(det A) = det(A)A⁻ᵀ
+* The [gradient of the determinant](https://rawcdn.githack.com/mitmath/matrixcalc/b08435612045b17745707f03900e4e4187a6f489/notes/determinant_and_inverse.html) is ∇(det A) = det(A)A⁻ᵀ (course notes chapter 7)
 
 * an amazing trick by [Mathias (1996)](https://doi.org/10.1137/S0895479895283409): `f([A dA; 0I A]) = [f(A) f′(A)[dA]; 0I f(A)]` (in Julia notation) for any analytic/smooth function f(A) acting on square matrices.  (e.g. matrix powers/polynomials, matrix exponentials, etcetera).
 
@@ -103,8 +103,6 @@ f(\begin{bmatrix} A & \delta A \\ & A \end{bmatrix}) =
     \begin{bmatrix} f(A) & f'(A)[\delta A] \\ & f(A) \end{bmatrix} \, .
 ```
 (This is *exact* for any δA, even if it is not small!)
-
-**Further reading (gradients and norms):** Course notes, chapter 5.
 
 **Further reading (∇det)**: Course notes, chapter 7.  There are lots of discussions of the
 [derivative of a determinant](https://en.wikipedia.org/wiki/Jacobi%27s_formula) online, involving the ["adjugate" matrix](https://en.wikipedia.org/wiki/Adjugate_matrix) det(A)A⁻¹.
