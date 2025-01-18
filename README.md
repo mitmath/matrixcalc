@@ -82,7 +82,7 @@ Here are some of the planned topics:
 
 * [video (MIT only)](https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=134a6f3a-b1b9-442e-8e53-b26300842887)
 
-* pset 1: to be posted soon
+* [pset 1](psets/pset1.pdf) (due Feb 24)
 
 Generalizing **gradients** to *scalar* functions f(x) for x in arbitrary *vector spaces* x ∈ V.   The key thing is that we need not just a vector space, but an **inner product** x⋅y (a "dot product", also denoted ⟨x,y⟩ or ⟨x|y⟩); V is then formally called a [Hilbert space](https://en.wikipedia.org/wiki/Hilbert_space).   Then, for *any* scalar function, since df=f'(x)[dx] is a linear operator mapping dx∈V to scalars df∈ℝ (a "[linear form](https://en.wikipedia.org/wiki/Linear_form)"), it turns out that it [*must* be a dot product](https://en.wikipedia.org/wiki/Riesz_representation_theorem) of dx with "something", and we call that "something" the gradient!  That is, once we define a dot product, then for any scalar function f(x) we can define ∇f by f'(x)[dx]=∇f⋅dx.  So ∇f is always something with the same "shape" as x (the [steepest-ascent](https://math.stackexchange.com/questions/223252/why-is-gradient-the-direction-of-steepest-ascent) direction).
 
