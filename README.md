@@ -128,7 +128,7 @@ The formula for the [derivative of log(det A)](https://statisticaloddsandends.wo
 ## Lecture 5 (Jan 24)
 * part 0: interpreting the Kronecker product A₃⊗A₂⊗A₁ of *three* matrices as a linear operator Y = (A₃⊗A₂⊗A₁)[X] mapping "3d arrays" X to 3d arrays Y.  It is the ["tensor contraction"](https://en.wikipedia.org/wiki/Tensor_contraction) operation $Y[i_1,i_2,i_3] = \sum_{j_1,j_2,j_3} A_1[i_1,j_1] A_2[i_2,j_2] A_3[i_3,j_3] X[j_1,j_2,j_3]$, which is equivalent to the ["vectorized"](https://en.wikipedia.org/wiki/Vectorization_%28mathematics%29) matrix–vector operation vec(Y)=(A₃⊗A₂⊗A₁)vec(X), and can also be viewed as acting the 3 matrices along the "3 directions" of X.
 * part 1: forward and reverse-mode automatic differentiation on computational graphs: course notes section 8.3
-* part 2: differentiation of ODE solutions (forward mode): course notes chapter 9, [double-pendulum example notebook](https://github.com/mitmath/matrixcalc/blob/main/notes/double-pendulum-sensitivity.ipynb)
+* part 2: differentiation of ODE solutions (forward mode): course notes chapter 9, [double-pendulum example notebook](https://github.com/mitmath/matrixcalc/blob/main/notes/double-pendulum-sensitivity.ipynb) ([Wikipedia](https://en.wikipedia.org/wiki/Double_pendulum) has some nice double-pendulum animations)
 * [video (MIT only)](https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=b777873f-f6a0-4309-bf7d-b26a00842046)
 * pset 1 solutions: coming soon
 * pset 2: coming soon
