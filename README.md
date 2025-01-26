@@ -130,7 +130,7 @@ The formula for the [derivative of log(det A)](https://statisticaloddsandends.wo
 * part 1: forward and reverse-mode automatic differentiation on computational graphs: course notes section 8.3
 * part 2: differentiation of ODE solutions (forward mode): course notes chapter 9, [double-pendulum example notebook](https://github.com/mitmath/matrixcalc/blob/main/notes/double-pendulum-sensitivity.ipynb) ([Wikipedia](https://en.wikipedia.org/wiki/Double_pendulum) has some nice double-pendulum animations)
 * [video (MIT only)](https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=b777873f-f6a0-4309-bf7d-b26a00842046)
-* pset 1 solutions: coming soon
+* [pset 1 solutions](psets/pset1sol.pdf) and [Julia notebook](psets/pset1sol.ipynb)
 * [pset 2](psets/pset2.pdf): due Friday January 31 at midnight
 
 **Further reading (AD on graphs):** Course notes, section 8.3.  See [Prof. Edelman's poster](notes/backprop_poster.pdf) about backpropagation on graphs, this blog post on [calculus on computational graphs](https://colah.github.io/posts/2015-08-Backprop/) for a gentle review, and these Columbia [course notes](http://www.cs.columbia.edu/~mcollins/ff2.pdf) for a more formal approach.  Implementing automatic reverse-mode AD is much more complicated than defining a new number type, unfortunately, and involves a lot more intricacies of compiler technology.  See also Chris Rackauckas's blog post on [tradeoffs in AD](https://www.stochasticlifestyle.com/engineering-trade-offs-in-automatic-differentiation-from-tensorflow-and-pytorch-to-jax-and-julia/), and Chris's discussion post on [AD limitations](https://discourse.julialang.org/t/open-discussion-on-the-state-of-differentiable-physics-in-julia/72900/2).
