@@ -140,5 +140,6 @@ The formula for the [derivative of log(det A)](https://statisticaloddsandends.wo
 ## Lecture 6 (Jan 27)
 * part 1: differentiation of ODE solutions (reverse mode, for scalar functions G of the solution): course notes chapter 9, [double-pendulum example notebook](https://github.com/mitmath/matrixcalc/blob/main/notes/double-pendulum-sensitivity.ipynb) ([Wikipedia](https://en.wikipedia.org/wiki/Double_pendulum) has some nice double-pendulum animations)
 * part 2: forward and reverse-mode automatic differentiation on computational graphs: course notes chapter 8
+* [video link (MIT only)](https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=0199e13d-4812-49d7-9a4a-b27100840437)
 
 **Further reading**: See the further reading from lecture 5.  You can find many discussions of Diract delta functions online and in textbooks — as a starting point, here are [Prof. Johnson's notes on delta functions and distributions](https://math.mit.edu/~stevenj/18.303/delta-notes.pdf), aimed at an elementary-calculus level.
