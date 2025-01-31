@@ -158,7 +158,7 @@ The formula for the [derivative of log(det A)](https://statisticaloddsandends.wo
 ## Lecture 8 (Jan 31)
 * part 1: more AD on graphs, this time re-visiting the differentiation of ODEs.
 * part 2: derivatives with constraints, derivatives of eigenproblems [(html)](https://rawcdn.githack.com/mitmath/matrixcalc/d11b747d70a5d9e1a3da8cdb68a7f8a220d3afae/notes/symeig.jl.html) [(julia source)](notes/symeig.jl) — course notes, chapter 13
-* [video link (MIT only)](https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=2b297d48-a286-4549-b531-b27100840bb0)
+* [video link (MIT only)](https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=16c81f60-25b4-4e53-b1cd-b271008412ff)
 
 **Further reading (transposes of derivatives)**: In the graph picture, applying reverse-mode differentiation to ODEs involved "transposing" the derivative of the ODE constraint ∂u/∂t – f(u,p,t) = 0, and in particular "transposing" the linear operator ∂/∂t on functions.  Linear algebra applied to differential operators is important to the study of partial differential equatios, e.g. in 18.303, 18.101 (functional analysis), and many other courses (e.g. quantum mechanics 8.04+ is taught this way, where the "transpose" is denoted by the "dagger" operation †). See also my [notes on differential operators for 18.06](http://web.mit.edu/18.06/www/Fall07/operators.pdf) from Fall 2007 which gives an informal introduction to the "transpose of a derivative" (denoted by a superscript "H" rather than "T" to include the complex case).
 
