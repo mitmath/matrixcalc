@@ -5,7 +5,7 @@ Professors [Alan Edelman](https://math.mit.edu/~edelman/) and [Steven G. Johnson
 
 * For past versions of this course, see [Matrix Calculus in IAP 2023 (OCW)](https://ocw.mit.edu/courses/18-s096-matrix-calculus-for-machine-learning-and-beyond-january-iap-2023/) on OpenCourseWare (also [on github](https://github.com/mitmath/matrixcalc/tree/iap2023), with videos [on YouTube](https://www.youtube.com/playlist?list=PLUl4u3cNGP62EaLLH92E_VCN4izBKK6OE)).  See also [Matrix Calculus in IAP 2022 (OCW)](https://ocw.mit.edu/courses/18-s096-matrix-calculus-for-machine-learning-and-beyond-january-iap-2022/pages/lecture-notes-and-readings/) (also [on github](https://github.com/mitmath/matrixcalc/tree/iap2022)), and [Matrix Calculus 2024 (github)](https://github.com/mitmath/matrixcalc/tree/iap2024) and [Matrix Calculus 2025 (github)](https://github.com/mitmath/matrixcalc/tree/iap2025); some previous years used the temporary 18.S096 "special subject" course number.
 
-**Lectures:** MWF time 11am–1pm, Jan 12–Jan 30 (except Jan 19) in room 2-131.  3 units, *2 problem sets* due Jan 23 and Jan 30 — submitted electronically [via Canvas](https://canvas.mit.edu/courses/35760), no exams.
+**Lectures:** MWF time 11am–1pm, Jan 12–Jan 30 (except Jan 19) in room 3-133.  3 units, *2 problem sets* due Jan 23 and Jan 30 — submitted electronically [via Canvas](https://canvas.mit.edu/courses/35760), no exams.
 
 **Course Notes**: [18.063 COURSE NOTES](https://www.dropbox.com/scl/fi/iq4plt8oqja845cuuosa4/Matrix-Calculus-latest.pdf?rlkey=nsnytdu28jje41nhh1bl2dbba&st=i6lfha0r&dl=0).  Other materials to be posted below.
 
