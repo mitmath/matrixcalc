@@ -63,4 +63,6 @@ Here are some of the planned topics:
 
 * part 1: the chain rule and forward vs. reverse "mode" differentiation: course notes **section 2.4**.  Example applications, **chapter 6**: slides on nonlinear root-finding, optimization, and adjoint-method differentiation [slides](https://docs.google.com/presentation/d/1U1lB5bhscjbxEuH5FcFwMl5xbHl0qIEkMf5rm0MO8uE/edit?usp=sharing)
 
-* Jacobian of the matrix inverse and the [gradient of the determinant](https://rawcdn.githack.com/mitmath/matrixcalc/b08435612045b17745707f03900e4e4187a6f489/notes/determinant_and_inverse.html) is ∇(det A) = det(A)A⁻ᵀ (course notes **chapter 7**).
+* matrix gradients via the matrix inner product (the ["Frobenius" inner product](https://en.wikipedia.org/wiki/Frobenius_inner_product))" course notes **chapter 5**
+
+* [pset 1](psets/pset1.pdf) posted, due Friday Jan 23 at midnight.
