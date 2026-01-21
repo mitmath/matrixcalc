@@ -66,3 +66,30 @@ Here are some of the planned topics:
 * matrix gradients via the matrix inner product (the ["Frobenius" inner product](https://en.wikipedia.org/wiki/Frobenius_inner_product))" course notes **chapter 5**
 
 * [pset 1](psets/pset1.pdf) posted, due Friday Jan 23 at midnight.
+
+## Lecture 4 (Jan 21)
+
+* part 1: generalized gradients and inner products — [handwritten notes](https://www.dropbox.com/scl/fi/byg5mpcnnk4xh9tqjbjmk/Inner-Products-and-Norms.pdf?rlkey=egsdhyee9go9v17iuxxqx1edj&dl=0) and course notes **chapter 5**
+    - also norms and derivatives: why a norm of the input and output are needed to *define* a derivative, and in particular to define what "higher-order terms" and o(δx) mean
+    - more on handling units: when the components of the vector are quantities different units, defining the inner product (and hence the norm) requires dimensional weight factors to scale the quantities.  (Using standard gradient / inner product implicitly uses weights given by whatever units you are using.) A change of variables (to nondimensionalize the problem) is equivalent (for steepest descent) to a nondimensionalization of the inner-product/norm, but the former is typically easier for use with off-the-shelf optimization software.   Usually, you want to use units/scaling so that all your quantities have similar scales, otherwise steepest descent may converge very slowly!
+
+
+* The [gradient of the determinant](https://rawcdn.githack.com/mitmath/matrixcalc/b08435612045b17745707f03900e4e4187a6f489/notes/determinant_and_inverse.html) is ∇(det A) = det(A)A⁻ᵀ (course notes **chapter 7**)
+
+Generalizing **gradients** to *scalar* functions f(x) for x in arbitrary *vector spaces* x ∈ V.   The key thing is that we need not just a vector space, but an **inner product** x⋅y (a "dot product", also denoted ⟨x,y⟩ or ⟨x|y⟩); V is then formally called a [Hilbert space](https://en.wikipedia.org/wiki/Hilbert_space).   Then, for *any* scalar function, since df=f'(x)[dx] is a linear operator mapping dx∈V to scalars df∈ℝ (a "[linear form](https://en.wikipedia.org/wiki/Linear_form)"), it turns out that it [*must* be a dot product](https://en.wikipedia.org/wiki/Riesz_representation_theorem) of dx with "something", and we call that "something" the gradient!  That is, once we define a dot product, then for any scalar function f(x) we can define ∇f by f'(x)[dx]=∇f⋅dx.  So ∇f is always something with the same "shape" as x (the [steepest-ascent](https://math.stackexchange.com/questions/223252/why-is-gradient-the-direction-of-steepest-ascent) direction).
+
+Talked about the general [requirements for an inner product](https://en.wikipedia.org/wiki/Inner_product_space): linearity, positivity, and (conjugate) symmetry (and also mentioned the [Cauchy–Schwarz inequality](https://en.wikipedia.org/wiki/Cauchy%E2%80%93Schwarz_inequality), which follows from these properties).  Gave some examples of inner products, such as the familiar Euclidean inner product xᵀy or a weighted inner product.  Defined the most obvious inner product of m×n matrices: the [Frobenius inner product](https://en.wikipedia.org/wiki/Frobenius_inner_product) A⋅B=`sum(A .* B)`=trace(AᵀB)=vec(A)ᵀvec(B), the sum of the products of the matrix entries.  This also gives us the "Frobenius norm" ‖A‖²=A⋅A=trace(AᵀA)=‖vec(A)‖², the square root of the sum of the squares of the entries.   Using this, we can now take the derivatives of various scalar functions of matrices, e.g. we considered
+
+* f(A)=tr(A) ⥰ ∇f = I
+* f(A)=‖A‖ ⥰ ∇f = A/‖A‖
+* f(A)=xᵀAy ⥰ ∇f = xyᵀ (for constant x, y)
+* f(A)=det(A) ⥰ ∇f = det(A)(A⁻¹)ᵀ = transpose of the [adjugate](https://en.wikipedia.org/wiki/Adjugate_matrix) of A
+
+Also talked about the definition of a [norm](https://en.wikipedia.org/wiki/Norm_(mathematics)) (which can be obtained from an inner product if you have one, but can also be defined by itself), and why a norm is necessary to define a derivative: it is embedded in the definition of what a higher-order term o(δx) means.   (Although there are many possible norms, [in finite dimensions all norms are equivalent up to constant factors](https://math.mit.edu/~stevenj/18.335/norm-equivalence.pdf), so the definition of a derivative does not depend on the choice of norm.)
+
+Made precise and derived (with the help of Cauchy–Schwarz) the well known fact that ∇f is the **steepest-ascent** direction, for *any* scalar-valued function on a vector space with an inner product (any Hilbert space), in the norm corresponding to that inner product.  That is, if you take a step δx with a fixed length ‖δx‖=s, the greatest increase in f(x) to first order is found in a direction parallel to ∇f.
+
+**Further reading (∇det)**: Course notes, chapter 7.  There are lots of discussions of the
+[derivative of a determinant](https://en.wikipedia.org/wiki/Jacobi%27s_formula) online, involving the ["adjugate" matrix](https://en.wikipedia.org/wiki/Adjugate_matrix) det(A)A⁻¹.
+Not as well documented is that the gradient of the determinant is the cofactor matrix widely used for the [Laplace expansion](https://en.wikipedia.org/wiki/Laplace_expansion) of a determinant.
+The formula for the [derivative of log(det A)](https://statisticaloddsandends.wordpress.com/2018/05/24/derivative-of-log-det-x/) is also nice, and logs of determinants appear in surprisingly many applications (from statistics to quantum field theory).  The [Matrix Cookbook](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf) contains many of these formulas, but no derivations.   A nice application of d(det(A)) is solving for eigenvalues λ by applying Newton's method to det(A-λI)=0, and more generally one can solve det(M(λ))=0 for any function Μ(λ) — the resulting roots λ are called [nonlinear eigenvalues](https://en.wikipedia.org/wiki/Nonlinear_eigenproblem) (if M is nonlinear in λ), and one can [apply Newton's method](https://www.maths.manchester.ac.uk/~ftisseur/talks/FT_talk2.pdf) using the determinant-derivative formula here.
