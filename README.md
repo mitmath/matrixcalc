@@ -98,7 +98,7 @@ The formula for the [derivative of log(det A)](https://statisticaloddsandends.wo
 * Directional derivatives: $f'(x)[v] = \frac{d}{d\alpha} f(x + \alpha v) \left. \right|_{\alpha=0}$.  Connection to "components" of gradient or derivative = directional derivative when $v$ is a Cartesian basis vector.  course notes **section 2.2.1**
 * Reverse-mode gradients for neural networks (NNs): [handwritten backpropagation notes](https://www.dropbox.com/scl/fi/bke4pbr342e1jhv9qytg1/NN-Backpropagation.pdf?rlkey=b7krtzdt4hgsj63zyq9ok2gqv&dl=0), course notes **chapter 9**.
 * forward-mode automatic differentiation (AD) via [dual numbers](https://en.wikipedia.org/wiki/Dual_number) ([Julia notebook](notes/AutoDiff.ipynb)) - course notes, **chapter 8**
-* pset 1 solutions: coming soon
+* [pset 1 solutions](psets/pset1sol.pdf)
 * [pset 2](psets/pset2.pdf): due midnight Jan 30
 
 **Further reading on backpropagation for NNs**:  [Strang (2019)](https://math.mit.edu/~gs/learningfromdata/) section VII.3 and [18.065 OCW lecture 27](https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-27-backpropagation-find-partial-derivatives/). You can find many, many articles online about [backpropagation](https://en.wikipedia.org/wiki/Backpropagation) in neural networks. Backpropagation for neural networks is closely related to [backpropagation/adjoint methods for recurrence relations (course notes)](https://math.mit.edu/~stevenj/18.336/recurrence2.pdf), and on [computational graphs (blog post)](https://colah.github.io/posts/2015-08-Backprop/).  We will return to computational graphs in a future lecture.
