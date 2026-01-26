@@ -109,7 +109,7 @@ The formula for the [derivative of log(det A)](https://statisticaloddsandends.wo
 
 Due to the snow emergency, Monday's lecture will be held via Zoom at the link above.
 
-* part 1: forward and reverse-mode automatic differentiation on computational graphs: course notes **section 8.3** and ["Backpropagation through back substitution with a backslash (2003)](https://arxiv.org/abs/2303.15449).
+* part 1: forward and reverse-mode automatic differentiation on computational graphs: course notes **section 8.3** and [slides](notes/gilbert_autodiff_2023.pdf) based on ["Backpropagation through back substitution with a backslash (2003)](https://arxiv.org/abs/2303.15449).  [Julia notebook](https://simeonschaub.github.io/ReverseModePluto/notebook.html).
 * part 2: calculus of variations: course notes **chapter 11**
 
 **Further reading (AD on graphs):** Course notes, section 8.3.  See [Prof. Edelman's poster](notes/backprop_poster.pdf) about backpropagation on graphs, this blog post on [calculus on computational graphs](https://colah.github.io/posts/2015-08-Backprop/) for a gentle review, and these Columbia [course notes](http://www.cs.columbia.edu/~mcollins/ff2.pdf) for a more formal approach.  Implementing automatic reverse-mode AD is much more complicated than defining a new number type, unfortunately, and involves a lot more intricacies of compiler technology.  See also Chris Rackauckas's blog post on [tradeoffs in AD](https://www.stochasticlifestyle.com/engineering-trade-offs-in-automatic-differentiation-from-tensorflow-and-pytorch-to-jax-and-julia/), and Chris's discussion post on [AD limitations](https://discourse.julialang.org/t/open-discussion-on-the-state-of-differentiable-physics-in-julia/72900/2).
