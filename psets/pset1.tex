@@ -1,0 +1,166 @@
+\documentclass[10pt,oneside]{article}
+\usepackage{amsmath} 
+\usepackage{graphicx} 
+\usepackage{subcaption} 
+\usepackage{amsfonts}
+\usepackage{amssymb} 
+
+\newcommand{\tr}{\operatorname{trace}}
+\newcommand{\vecm}{\operatorname{vec}}
+\newcommand{\diag}{\operatorname{diag}}
+
+\newcommand{\dotstar}{\operatorname{.*}}
+
+%\usepackage{polyglossia}
+
+
+
+
+\usepackage[
+  backend=biber
+]{biblatex}
+\addbibresource{biblio.bib}
+
+
+\usepackage[
+  letterpaper,
+  left=1cm,
+  right=1cm,
+  top=1.5cm,
+  bottom=1.5cm
+]{geometry}
+
+
+\usepackage[
+  final,
+  unicode,
+  colorlinks=true,
+  citecolor=blue,
+  linkcolor=blue,
+  plainpages=false,
+  urlcolor=blue,
+  pdfpagelabels=true,
+  pdfsubject={Cálculo},
+  pdfauthor={José Doroteo Arango Arámbula},
+  pdftitle={Tarea 1},
+  pdfkeywords={UNAM, FES Acatlán, 2021-I}
+]{hyperref}
+
+\usepackage{booktabs}
+
+
+\usepackage{algpseudocode}
+\usepackage{algorithm} 
+\floatname{algorithm}{Algoritmo}
+
+\usepackage{enumitem}
+
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\fancyhf{}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{MIT IAP January 2025} 
+\fancyhead[C]{18.063 Matrix Calculus} 
+\fancyhead[R]{Profs. Edelman and Johnson} 
+\fancyfoot[R]{}
+% https://tex.stackexchange.com/questions/227/how-can-i-add-page-of-on-my-document
+\fancyfoot[C]{\thepage\ of \pageref*{LastPage}}
+%\fancyfoot[C]{ of }
+\fancyfoot[L]{} 
+\renewcommand{\headrulewidth}{2pt} 
+\renewcommand{\footrulewidth}{2pt}
+
+\usepackage[newfloat=true]{minted} 
+
+\author{} 
+\title{Homework 1}
+
+\date{\today}
+
+
+\DeclareCaptionFormat{mitedFormat}{%
+    \textbf{#1#2}#3}
+\DeclareCaptionStyle{minetdStyle}{skip=0cm,width=.85\textwidth,justification=centering,
+  font=footnotesize,singlelinecheck=off,format=mitedFormat,labelsep=space}
+\newenvironment{mintedCode}{\captionsetup{type=listing,style=minetdStyle}}{}
+
+\usepackage{dirtytalk} 
+
+\SetupFloatingEnvironment{listing}{}
+
+\usepackage[parfill]{parskip}
+
+\usepackage{csquotes} 
+
+\begin{document}
+\maketitle
+\thispagestyle{fancy} 
+
+{\bf Please submit your HW on Canvas; include a PDF printout of any code and results, clearly labeled, e.g. from a Jupyter notebook.  For coding problems, we recommend using Julia, but you can use other languages if you wish. It is due Friday January 23rd by 11:59pm EST.  }
+
+\subsection*{Problem 1 (10 points)}
+
+Start reading the draft course notes (linked from \url{https://github.com/mitmath/matrixcalc/}).   Find a place that you found confusing, and write a paragraph explaining the source of your confusion and (ideally) suggesting a possible improvement.
+
+(Any other corrections/comments are welcome, too.)
+
+\subsection*{Problem 2 (5+5 points)}
+
+Show that \emph{any} linear operator $L$ mapping $m \times n$ matrices $X$ to $m \times n$  matrices $L[X]$  can be written as a linear combination of linear operations of the form of $BXA^T$ .  In particular, show that any such $L[X]$ can be written in the form $$L[X]=\sum_{\substack{i_1,i_2\in\{1,\ldots,m\}\\ j_1,j_2\in\{1,\ldots,n\}}} c_{i_1,i_2,j_1,j_2} M^{(i_1,i_2)}X (N^{(j_1,j_2)})^T 
+\, , $$
+where $c_{i_1,i_2,j_1,j_2} \in \mathbb{R}$ are some coefficients, $M^{(i_1,i_2)}$ is the ``one-hot'' $m \times m$ matrix with a $1$  in entry $(i_1,i_2)$ and zero elsewhere, and  $N^{(j_1,j_2)}$ is the ``one-hot'' $n \times n$ matrix with a $1$  in entry $(j_1,j_2)$ and zero elsewhere.
+
+You can do this in two steps:
+\begin{enumerate}
+    \item Show that the set of matrices $M^{(i_1,i_2)}\otimes N^{(j_1,j_2)}$ form a \emph{basis} for the vector space of all $mn \times mn$  matrices.  (Try computing one or two examples of these basis matrices to start with.)
+    \item Relate this to operators $L[X]$ via vectorization and the Kronecker identity $\vecm(BXA^T) = (A \otimes B) \vecm{X}$ from class.
+\end{enumerate}
+
+\subsection*{Problem 3 (5+5 points)}
+\begin{enumerate}
+    \item Pick a computer language with built-in function for Kronecker products and other linear algebra (e.g. \texttt{kron} in Julia's \texttt{LinearAlgebra} library or \texttt{numpy.kron} in Python.  Generate random $50\times 50$ matrices $A,B,C$.  Use a timing tool to measure the time to compute the matrix--matrix--matrix product  $BCA^T$.   (The \texttt{BenchmarkTools} package in Julia does a good job of this, timing multiple runs and collecting statistics.) Then, form $M = A\otimes B$ and $c = \vecm C$ (via \texttt{c=vec(C)} in Julia or \texttt{c=numpy.ravel(C, order='F')} in Python). Check that $Mc$ approximately equals $\vecm(BCA^T)$ up to roundoff errors, and measure the time to compute the matrix--vector product $Mc$.
+    \item In the previous part, you should hopefully have found that of the two times is \emph{much} slower than the other. Give a likely explanation for this observation. (Predicting precise performance timings is difficult because computers are complicated, but you can get a rough idea by estimating a count of arithmetic operations.)
+\end{enumerate}
+
+\subsection*{Problem 4 (3+3+3+3 points)}
+Do Exercise 2.1 (Elementwise Products) in the course notes, parts~(a--d) (not part~e).
+
+\newpage
+
+\subsection*{Problem 5 (3+3+3+3+3 points)}
+
+Find the derivatives $f'$ of the following functions.  If $f$ maps column vectors or matrices to scalars, give $\nabla f$ (so that $f'(x)[dx] = \langle \nabla f,  dx\rangle$ in the usual inner product $x^T y$  for column vectors or $\tr(X^T Y)$ for matrices). If $f$ maps column vectors to column vectors, give the Jacobian matrix. Otherwise, simply write down $f'$ as a linear operation.
+
+\begin{enumerate}
+
+\item $f(x) = (xx^T)\sin.(x)$, the dot denoting (in Julia notation) element-wise application of  the $\sin$ function, for $x \in \mathbb{R}^m$.  (The notations of problem~4 might be helpful in expressing the final answer.)
+\item $f(x) = \tr(Axx^T)$ where $x \in \mathbb{R}^n$ and $A$ is a constant $n\times n$ matrix.
+\item $f(x) = \tr((A \diag(x) A^T)^{-1})$ where $x \in \mathbb{R}^n$, $A$ is a constant $m \times n$ matrix, and $\diag$  was defined in problem~4.   You can assume that the matrix inverse here exists (which is true if $A$ has full row rank and the entries of $x$ are nonnegative, for example).  (Differentiating this function came up on an online forum from a real application!)
+\item $f(A) = \tr(Axx^T)$  as above, except that you are differentiating with respect to $n\times n$ matrices $A$ and $x$ is constant.
+\item $f(x) = \tr((A \diag(x) A^T)^{-1})$  as above, except that you are differentiating with respect to $m \times n$ matrices $A$ and $x$ is constant.
+
+\end{enumerate}
+ 
+\subsection*{Problem 6 (5+5+5 points)}
+Suppose that $A(p)$ takes a vector of parameters $p\in\mathbb{R}^{n}$ and returns the $n\times n$ matrix
+\[
+A(p)=A_0 + p p^T
+\]
+where $A_0$ is some constant $n \times n$ vector. matrix, define
+a scalar-valued function $g(p)$ by 
+\[
+g(p)=\Vert A(p)^{-1}b\Vert ^{2}
+\]
+for some constant vector $b\in\mathbb{R}^{n}$ (assuming we choose
+$p$ and $A_0$ so that $A$ is invertible). Note that, in practice,
+$A(p)^{-1}b$ is best \emph{not }computed by explicitly inverting the matrix $A$ or even by Gaussian elimination/factorization, especially if the process is repeated for multiple $p$ values---instead, it can be computed more quickly by exploiting the structure of this matrix (e.g.~by computing $A_0^{-1}$ or its equivalent  \emph{once} and thereafter using the Sherman--Morrison formula; look it up).
+\begin{enumerate}
+\item[(a)] Write down a formula for computing the gradient $\nabla g$ with respect to $p$ (in
+terms of matrix--vector products and matrix inverses). 
+\item[(b)] Outline an algorithm to compute both $g$ and $\nabla g$  using only \emph{two} linear solves $x=A^{-1}b$  and an ``adjoint'' solve $v=A^{-T}\text{(something)}$, plus only $\Theta(n)$ (i.e., roughly proportional to $n$) additional arithmetic operations.
+\item[(c)] Write a program implementing your $\nabla g$ algorithm (in Julia, Python, Matlab, or any language you want) from the previous part. (You don't need to use a fancy Sherman--Morrison solver; you can solve $A^{-1}\text{(vector)}$
+straightforwardly using your favorite matrix library.) Implement a finite-difference test: Choose $A_0,b,p$ at random for $n=5$, and check that $\nabla g\cdot\delta p\approx g(p+\delta p)-g(p)$ (to a few digits) for a randomly chosen small $\delta p$.
+\end{enumerate}
+ 
+\end{document}
